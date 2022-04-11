@@ -1,0 +1,25 @@
+{
+    "name": "lucasvolpati/painel-adm",
+    "description": "Painel de controle.",
+    "minimum-stability": "stable",
+    "authors": [{
+        "name": "Lucas Alcantara R. Volpati",
+        "email": "lucas.volpati@outlook.com",
+        "role": "Developer"
+    }],
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "autoload": {
+        "psr-4" : {
+            "Source\\": "source/"
+        },
+        "files": [
+            "source/Support/Config.php",
+            "source/Support/Helpers.php"
+        ]
+    },
+    "require": {
+        
+    }
+}
