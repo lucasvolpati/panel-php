@@ -2,11 +2,19 @@
     "name": "lucasvolpati/painel-adm",
     "description": "Painel de controle.",
     "minimum-stability": "stable",
-    "authors": [{
-        "name": "Lucas Alcantara R. Volpati",
-        "email": "lucas.volpati@outlook.com",
-        "role": "Developer"
-    }],
+    "authors": 
+    [
+        {
+            "name": "Lucas Alcantara Rodrigues Volpati",
+            "email": "lucas.volpati@outlook.com",
+            "role": "Back-end developer"
+        },
+        {
+            "name": "José Venicio ded Oliveira Marinho",
+            "email": "viniciork@gmail.com",
+            "role": "Front-end developer"
+        }
+    ],
     "config": {
         "vendor-dir": "vendor"
     },
