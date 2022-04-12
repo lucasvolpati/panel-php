@@ -56,10 +56,9 @@ use Source\Core\Message;
                         $stmt->execute();
                         $pass = $stmt->fetch();
 
-                        if (password_verify($data['password'], $pass->password)) {
-                            echo $message->success("Login efetuado com sucesso!");
-                        }
-                        // var_dump($password->password);
+                        echo password_verify($data['password'], $pass->password) 
+                            ? $message->success("Login efetuado com sucesso!") 
+                            : $message->error("A senha está incorreta!");
                     }
                 }
             ?>
