@@ -32,18 +32,34 @@
 
         <section class="validate">
             <?php
+
+use Source\Core\Connect;
+use Source\Core\Message;
+
                 require_once __DIR__ . "/vendor/autoload.php";
 
                 $data = filter_input_array(INPUT_GET, FILTER_SANITIZE_SPECIAL_CHARS);
 
+                $message = new Message();
+
                 if ($data) {
                     if (in_array("", $data)) {
-                        echo "<div class='".CONF_MESSAGE_CLASS." ".CONF_MESSAGE_ERROR."'>Favor preencher todos os campos!</div>";
+                        echo $message->error("Favor preencher todos os campos!");
                         return null;
                     }elseif(!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-                        echo "<div class='".CONF_MESSAGE_CLASS." ".CONF_MESSAGE_ERROR."'>Favor informar um e-mail válido!</div>";
+                        echo $message->error("Favor informar um e-mail válido!");
                     }elseif(strlen($data['password']) < CONF_PASSWD_MIN_LEN || strlen($data['password']) > CONF_PASSWD_MAX_LEN) {
-                        echo "<div class='".CONF_MESSAGE_CLASS." ".CONF_MESSAGE_ERROR."'>A senha deve conter entre 8 e 40 caracteres!</div>";
+                        echo $message->error("A senha deve conter entre 8 e 40 caracteres!");
+                    }else {
+                        $email = $data['email'];
+                        $stmt = Connect::getInstance()->prepare("SELECT password FROM users WHERE email = '$email' ");
+                        $stmt->execute();
+                        $pass = $stmt->fetch();
+
+                        if (password_verify($data['password'], $pass->password)) {
+                            echo $message->success("Login efetuado com sucesso!");
+                        }
+                        // var_dump($password->password);
                     }
                 }
             ?>

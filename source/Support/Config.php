@@ -6,7 +6,7 @@
 define('CONF_DB_HOST', 'localhost');
 define('CONF_DB_USER', 'lucas');
 define('CONF_DB_PASS', 'Luk1805@');
-define('CONF_DB_NAME', 'panel');
+define('CONF_DB_NAME', 'panel-peach');
 
 
 /**
