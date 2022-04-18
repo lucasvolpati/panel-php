@@ -44,7 +44,7 @@ body {
             width: 100%;
             padding: 20px 20px 0px 30px;
 
-            .usu, .paginas, .categorias, .artigos, .comentario, .funcao, .perm {
+            .usu, .paginas, .categorias, .artigos, .comentario, .funcao, .perm, .depoimentos {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -109,6 +109,10 @@ body {
 
             .categorias i {
                 color: #198754;
+            }
+
+            .depoimentos i {
+                color: $orange;
             }
 
             .artigos i {

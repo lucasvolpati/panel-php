@@ -2,6 +2,7 @@
 
 namespace Source\Models;
 
+use Source\Core\Connect;
 use Source\Core\Model;
 
 class User extends Model 
@@ -26,5 +27,14 @@ class User extends Model
     public function findUserByEmail(string $email, string $columns = "*")
     {
         return $this->find("email = :email", "email={$email}", $columns);
+    }
+
+    public function findAll()
+    {
+        $stmt = Connect::getInstance()->prepare("SELECT id_user, name, email FROM users");
+        $stmt->execute();
+
+        $users = $stmt->fetchAll();
+        return $users;
     }
 }

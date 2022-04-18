@@ -1,8 +1,8 @@
 <!-- MENU DE NAVEGAÇÃO -->
 <nav id="nav">
         <div id="head">
-            <h3 id="user" name="user"><?= "Teste"//$user->name?></h3>
-            <h3 id="useremail" name="useremail"><?= "teste@gmail.com"//$user->email?></h3>
+            <h3 id="user" name="user"><?= $user->name?></h3>
+            <h3 id="useremail" name="useremail"><?= $user->email?></h3>
         </div>
 
         <a href="<?= CONF_URL_BASE . "/admin" ?>"><i class="fas fa-home"></i> <span>Início</span></a>
@@ -52,7 +52,7 @@
         </div>
 
         <div class="user-container">
-            <h3 id="username" name="username"><?= "Teste"//$user->name?> <i class="fas fa-caret-down"></i></h3>
+            <h3 id="username" name="username"><i class="fas fa-user"></i><?= $user->name?><i class="fas fa-caret-down"></i></h3>
 
             <a href=<?= CONF_URL_BASE . "/exit.php"?> class="exit"><i class="fas fa-sign-out-alt"></i> Sair</a>
         </div>

@@ -6,15 +6,21 @@ require_once __DIR__ . "/../vendor/autoload.php";
 use Source\Core\Session;
 use Source\Models\User;
 
-// $session = new Session();
+$session = new Session();
 
-// if (!$session->login) {
-//     header('location:../index.php');
+if (!$session->login) {
+    header('location:../index.php');
+}
+
+$user = (new User())->findNameByEmail($session->login);
+
+$users = (new User())->findAll();
+
+// for ($i=0; $i < count($users) ; $i++) { 
+//     var_dump($users[$i]->id_user);
 // }
 
-// $user = (new User())->findNameByEmail($session->login);
-
-
+// var_dump(count($users));
 
 //Include Head
 require_once __DIR__ . "/../includes/head.php";
@@ -29,7 +35,7 @@ require_once __DIR__ . "/../includes/head.php";
     <!-- CONTEUDO PRINCIPAL -->
 
     <main id="main">
-        
+            
             <!-- GERAL -->    
             <section id="geral">
                 <div class="head">
@@ -37,8 +43,8 @@ require_once __DIR__ . "/../includes/head.php";
                 </div>
         
                 <div class="content">
-                    <a href="" class="usu">
-                        <h3>0</h3>
+                    <a href="<?= CONF_URL_BASE . "/admin/usuarios"?>" class="usu">
+                        <h3><?= count($users)?></h3>
                         
                         <div class="subtitle">
                             <i class="fas fa-users"></i>
@@ -71,6 +77,15 @@ require_once __DIR__ . "/../includes/head.php";
                         <div class="subtitle">
                             <i class="fas fa-tag"></i>
                             <span>categorias</span>
+                        </div>
+                    </a>
+
+                    <a href="" class="depoimentos">
+                        <h3>0</h3>
+
+                        <div class="subtitle">
+                        <i class="fas fa-quote-right"></i>
+                            <span>depoimentos</span>
                         </div>
                     </a>
                 </div>
