@@ -32,33 +32,49 @@
 
         <section class="validate">
             <?php
-
-use Source\Core\Connect;
-use Source\Core\Message;
-
                 require_once __DIR__ . "/vendor/autoload.php";
 
+                use Source\Core\Message;
+                use Source\Core\Session;
+                use Source\Models\User;
+
+                $session = new Session();
+                
                 $data = filter_input_array(INPUT_GET, FILTER_SANITIZE_SPECIAL_CHARS);
 
                 $message = new Message();
+                $user = new User();
+
+                
+                
 
                 if ($data) {
+                    $email = $data['email'];
+                    $password = $data['password'];
+
                     if (in_array("", $data)) {
                         echo $message->error("Favor preencher todos os campos!");
                         return null;
-                    }elseif(!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+                    }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                         echo $message->error("Favor informar um e-mail válido!");
-                    }elseif(strlen($data['password']) < CONF_PASSWD_MIN_LEN || strlen($data['password']) > CONF_PASSWD_MAX_LEN) {
+                        return null;
+                    }elseif(strlen($password) < CONF_PASSWD_MIN_LEN || strlen($password) > CONF_PASSWD_MAX_LEN) {
                         echo $message->error("A senha deve conter entre 8 e 40 caracteres!");
-                    }else {
-                        $email = $data['email'];
-                        $stmt = Connect::getInstance()->prepare("SELECT password FROM users WHERE email = '$email' ");
-                        $stmt->execute();
-                        $pass = $stmt->fetch();
+                    }//else {
+                    //         header('location:protected.php');
+                    elseif(!$user->findNameByEmail($email)) {
+                        echo $message->error("Email não cadastrado!");
 
-                        echo password_verify($data['password'], $pass->password) 
-                            ? $message->success("Login efetuado com sucesso!") 
-                            : $message->error("A senha está incorreta!");
+                        return null;
+                    }
+                    $dataUser = $user->findUserByEmail($email);
+                    if($email == $dataUser->email && password_verify($password, $dataUser->password)) {
+                        // echo $message->success("Login concedido");
+                        $session->set("login", $email);
+                        
+                        header('location:home-panel.php');
+                    }else {
+                        echo $message->error("Email ou senha inválidos, verifique e tente novamente!");
                     }
                 }
             ?>

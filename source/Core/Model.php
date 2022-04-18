@@ -55,4 +55,27 @@ abstract class Model {
         return 0;
     }
 
+    protected function read(string $select, string $params = null): ?\PDOStatement
+    {
+        try {
+            $stmt = Connect::getInstance()->prepare($select);
+            if ($params) {
+                parse_str($params, $paramsArr);
+                foreach($paramsArr as $key => $value) {
+                    if ($key == 'limit' || $key == 'offset') {
+                        $stmt->bindValue(":{$key}", $value, \PDO::PARAM_INT);
+                    }else {
+                        $stmt->bindValue(":{$key}", $value, \PDO::PARAM_STR);
+                    }
+                }
+            }
+
+            $stmt->execute();
+            return $stmt;
+
+        } catch (\PDOException $e) {
+            $this->fail = $e;
+        }
+    }
+
 }
