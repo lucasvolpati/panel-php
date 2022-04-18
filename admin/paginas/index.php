@@ -7,8 +7,13 @@ require_once __DIR__ . "/../../vendor/autoload.php";
 use Source\Core\Session;
 use Source\Models\User;
 
-$session = new Session();
-$user = (new User())->findNameByEmail($session->login);
+// $session = new Session();
+
+// if (!$session->login) {
+//     header('location:index.php');
+// }
+
+// $user = (new User())->findNameByEmail($session->login);
 
 require_once __DIR__ . "/../../includes/head.php";
 ?>
@@ -18,8 +23,12 @@ require_once __DIR__ . "/../../includes/head.php";
         require_once __DIR__ . "/../../includes/menu.php";
     ?>
     
+    <main>
 
-    <!-- ARQUIVOS JAVASCRIPT -->
-    <script src=<?=CONF_URL_BASE . "/assets/js/nav.js" ?>></script>
+    </main>
+
+    <?php
+        require_once __DIR__ . "/../../includes/footer.php";
+    ?>
 </body>
 </html>

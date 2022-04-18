@@ -1,16 +1,16 @@
 <!-- MENU DE NAVEGAÇÃO -->
 <nav id="nav">
         <div id="head">
-            <h3 id="user" name="user"><?= $user->name?></h3>
-            <h3 id="useremail" name="useremail"><?= $user->email?></h3>
+            <h3 id="user" name="user"><?= "Teste"//$user->name?></h3>
+            <h3 id="useremail" name="useremail"><?= "teste@gmail.com"//$user->email?></h3>
         </div>
 
-        <a href="<?= CONF_URL_BASE . "/home-panel.php" ?>"><i class="fas fa-home"></i> <span>Início</span></a>
+        <a href="<?= CONF_URL_BASE . "/admin" ?>"><i class="fas fa-home"></i> <span>Início</span></a>
         <a href=""><i class="fas fa-users"></i> <span>Usuários</span></a>
 
         <p>Site</p>
 
-        <a href=<?= CONF_URL_BASE . "/views/paginas" ?>><i class="fas fa-file"></i> <span>Páginas</span></a>
+        <a href=<?= CONF_URL_BASE . "/admin/paginas" ?>><i class="fas fa-file"></i> <span>Páginas</span></a>
         <a class="disabled"><i class="fas fa-users"></i> <span>Clientes</span></a>
         <a href=""><i class="fas fa-tag"></i> <span>Categorias</span></a>
         <a class="disabled"><i class="fas fa-image"></i> <span>Carrossel</span></a>
@@ -36,7 +36,7 @@
         <a href=""><i class="fas fa-cog"></i> <span>Sistema</span></a>
         <a href=""><i class="fas fa-sitemap"></i> <span>Funções</span></a>
         <a href=""><i class="fas fa-lock"></i> <span>Permissões</span></a>
-        <a href=""><i class="fas fa-sign-out-alt"></i> <span>Sair</span></a>
+        <a href=<?= CONF_URL_BASE . "/exit.php"?>><i class="fas fa-sign-out-alt"></i> <span>Sair</span></a>
     </nav>
 
     <!-- SUB-MENU DE NAVEGAÇÃO -->
@@ -52,7 +52,7 @@
         </div>
 
         <div class="user-container">
-            <h3 id="username" name="username"><?= $user->name?> <i class="fas fa-caret-down"></i></h3>
+            <h3 id="username" name="username"><?= "Teste"//$user->name?> <i class="fas fa-caret-down"></i></h3>
 
             <a href=<?= CONF_URL_BASE . "/exit.php"?> class="exit"><i class="fas fa-sign-out-alt"></i> Sair</a>
         </div>

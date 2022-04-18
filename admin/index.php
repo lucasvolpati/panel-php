@@ -1,29 +1,29 @@
 <?php
 
 
-require_once __DIR__ . "/vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 
 use Source\Core\Session;
 use Source\Models\User;
 
-$session = new Session();
+// $session = new Session();
 
-if (!$session->login) {
-    header('location:index.php');
-}
+// if (!$session->login) {
+//     header('location:../index.php');
+// }
 
-$user = (new User())->findNameByEmail($session->login);
+// $user = (new User())->findNameByEmail($session->login);
 
 
 
 //Include Head
-require_once __DIR__ . "/includes/head.php";
+require_once __DIR__ . "/../includes/head.php";
 
 ?>
 <body>
 
     <?php
-        require_once __DIR__ . "/includes/menu.php";
+        require_once __DIR__ . "/../includes/menu.php";
     ?>
 
     <!-- CONTEUDO PRINCIPAL -->
@@ -134,7 +134,7 @@ require_once __DIR__ . "/includes/head.php";
     </main>
 
     <?php
-        require_once __DIR__ . "/includes/footer.php";
+        require_once __DIR__ . "/../includes/footer.php";
     ?>
     
 </body>
