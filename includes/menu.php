@@ -6,7 +6,7 @@
         </div>
 
         <a href="<?= CONF_URL_BASE . "/admin" ?>"><i class="fas fa-home"></i> <span>Início</span></a>
-        <a href=""><i class="fas fa-users"></i> <span>Usuários</span></a>
+        <a href="<?= CONF_URL_BASE . "/admin/usuarios" ?>"><i class="fas fa-users"></i> <span>Usuários</span></a>
 
         <p>Site</p>
 
