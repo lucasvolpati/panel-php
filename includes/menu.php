@@ -48,7 +48,7 @@
                 <span></span>
             </label>
 
-            <img src="assets/img/favicon.png" alt="">
+            <p style="margin-left: 20px; font-weight: bold;">Painel Peach Brasil</p>
         </div>
 
         <div class="user-container">
