@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 <?php
-
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
@@ -18,11 +15,7 @@ $user = (new User())->findNameByEmail($session->login);
 
 $users = (new User())->findAll();
 
-// for ($i=0; $i < count($users) ; $i++) { 
-//     var_dump($users[$i]->id_user);
-// }
 
-// var_dump(count($users));
 
 //Include Head
 require_once __DIR__ . "/../includes/head.php";

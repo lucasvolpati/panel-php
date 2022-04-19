@@ -50,11 +50,30 @@ abstract class Model {
      * @param array $data
      * @return int|null
      */
-    protected function create(): ?int
+    protected function create(string $entity, array $data): ?int
     {
-        return 0;
+        try {
+            
+            $columns = implode(", ", array_keys($data));
+            $values = ":" . implode(", :", array_keys($data));
+
+            $stmt = Connect::getInstance()->prepare("INSERT INTO {$entity} ({$columns}) VALUES ({$values})");
+            $stmt->execute($this->filter($data));
+
+            return Connect::getInstance()->lastInsertId();
+
+        } catch (\PDOException $exception) {
+            $this->fail = $exception;
+            return null;
+        }
     }
 
+
+    /**
+     * @param string $select
+     * @param string $params
+     * @return PDOStatement|null
+     */
     protected function read(string $select, string $params = null): ?\PDOStatement
     {
         try {
@@ -76,6 +95,25 @@ abstract class Model {
         } catch (\PDOException $e) {
             $this->fail = $e;
         }
+    }
+
+    public function safe()
+    {
+        
+    }
+
+
+    /**
+     * @return null|array
+     */
+    protected function filter(array $data): ?array
+    {
+        $filter = [];
+        foreach ($data as $key => $value) {
+            $filter[$key] = (is_null($value) ? null : filter_var($value, FILTER_SANITIZE_SPECIAL_CHARS));
+        }
+
+        return $filter;
     }
 
 }
