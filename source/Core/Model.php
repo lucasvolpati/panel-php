@@ -77,7 +77,7 @@ abstract class Model {
     protected function read(string $select, string $params = null): ?\PDOStatement
     {
         try {
-            $stmt = Connect::getInstance()->prepare($select);
+            $stmt = Connect::getInstance()->prepare($select); 
             if ($params) {
                 parse_str($params, $paramsArr);
                 foreach($paramsArr as $key => $value) {

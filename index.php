@@ -1,83 +1,48 @@
 <?php
-require_once __DIR__ . "/vendor/autoload.php";
+ob_start();
 
-use Source\Core\Message;
+require "vendor/autoload.php";
+
+/**
+ * BBOSTRAP
+ */
 use Source\Core\Session;
 use Source\Models\User;
+use CoffeeCode\Router\Router;
 
 $session = new Session();
-$message = new Message();
-$user = new User();
+$route = new Router(url(), ":");
 
-?>
+if (!$session->login) {
+    header("Location: ".url()."/painel");
+}
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/**
+ * WEB ROUTES
+ */
+$route->namespace("Source\App");
+$route->get("/", "Web:home");
+$route->get("/usuarios", "Web:users");
+$route->get("/editar-usuario", "Web:edit");
+$route->get("/novo-usuario", "Web:new_user");
 
-    <!-- LINK CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+/**
+ * ERROR ROUTES
+*/
+$route->namespace("Source\App")->group("/ops");
+$route->get("/{errcode}", "Web:error");
 
-    <link rel="shortcut icon" href="assets/img/favicon-peach.png" type="image/x-icon">
-    <title>Peach Brasil | Login</title>
-</head>
-<body>
-   
-    <main id="main">
-        <img src="assets/img/logo.png" alt="logo peachbrail">
+/**
+ * ROUTE
+ */
+$route->dispatch();
 
-        <form action="" method="post" id="content" novalidate>
-            <label for="email"><i class="fa-solid fa-lock"></i>Email</label>
-            <input type="email" name="email" id="email" placeholder="Email">
 
-            <label for="senha"><i class="fa-solid fa-key"></i>Senha</label>
-            <input type="password" name="password" id="senha" placeholder="Senha">
+/**
+ * ERROR REDIRECT
+ */
+if ($route->error()) {
+    $route->redirect("/ops/{$route->error()}");
+}
 
-            <button type="submit"><i class="fa-solid fa-arrow-right-to-bracket"></i>FAZER LOGIN</button>
-        </form>
-
-        <div class="copy">
-            <p>&copy; Desenvolvido por <a href="https://peachbrasil.com.br">Peach Brasil &trade;</a>  | <script> document.write(new Date().getFullYear()) </script></p>
-        </div>
-
-        <section class="validate">
-        <?php
-
-            $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS);
-            
-            if ($data) {
-                $email = $data['email'];
-                $password = $data['password'];
-
-                if (in_array("", $data)) {
-                    echo $message->error("Favor preencher todos os campos!");
-                    return null;
-                }elseif(!is_email($email)) {
-                    echo $message->error("Favor informar um e-mail válido!");
-                    return null;
-                }elseif(!is_passwd($password)) {
-                    echo $message->error("A senha deve conter entre 8 e 40 caracteres!");
-                    return null;
-                }elseif(!$user->findNameByEmail($email)) {
-                    echo $message->error("Email não cadastrado!");
-                    return null;
-                }
-                $dataUser = $user->findUserByEmail($email);
-                if($email == $dataUser->email && passwd_verify($password, $dataUser->password)) {
-                    $session->set("login", $email);
-                    header('location:admin/');
-                }else {
-                    echo $message->error("Email ou senha inválidos, verifique e tente novamente!");
-                }
-            }
-        ?>
-        </section>
-    </main>
-
-    <!-- JS FONTAWESOME -->
-    <script src="https://kit.fontawesome.com/860f00444a.js" crossorigin="anonymous"></script>
-</body>
-</html>
+ob_end_flush();

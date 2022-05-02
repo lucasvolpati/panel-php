@@ -8,4 +8,4 @@ $session = new Session();
 
 $session->unset("login");
 
-header("location:index.php");
+header("location:".url()."/login");

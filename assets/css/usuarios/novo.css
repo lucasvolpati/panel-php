@@ -1,0 +1,24 @@
+#main-new {
+  padding: 0px 30px;
+  margin: 40px 0px;
+}
+#main-new form {
+  padding: 0px 20px 20px 20px;
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  font-size: 11pt;
+}
+#main-new form input::placeholder {
+  font-size: 11pt;
+}
+#main-new form select {
+  font-size: 11pt;
+}
+#main-new form label {
+  font-weight: bold;
+}
+#main-new form .col-md-4 {
+  width: 100%;
+}
+
+/*# sourceMappingURL=novo.css.map */

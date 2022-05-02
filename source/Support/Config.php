@@ -24,7 +24,8 @@ define("CONF_PASSWD_OPTION", ["cost" => 10]);
  * URLS
  */
 
-define("CONF_URL_BASE", "http://localhost/Peach/panel-php");
+define("CONF_URL_BASE", "https://peachbrasil.com.br");
+define("CONF_URL_TEST", "https://localhost/Peach/panel-php");
 
 
 /**
@@ -43,3 +44,12 @@ define("CONF_MESSAGE_ERROR", "error");
  */
 
  define("CONF_SES_PATH", __DIR__ . "/../../storage/sessions");
+
+
+/**
+ * VIEWS
+ */
+
+ define("CONF_VIEW_PATH", __DIR__ . "/../../assets/panel");
+ define("CONF_VIEW_THEME", "panel");
+ define("CONF_VIEW_EXT", "php");

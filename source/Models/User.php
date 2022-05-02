@@ -40,14 +40,14 @@ class User extends Model
         return $this->find("email = :email", "email={$email}", $columns);
     }
 
-    public function findById(string $id, string $columns = "*")
+    public function findById(int $id, string $columns = "*")
     {
-        return $this->find("id = :id", "id = {$id}", $columns);
+        return $this->find("id_user = :id", "id={$id}", $columns);
     }
 
     public function findAll()
     {
-        $stmt = Connect::getInstance()->prepare("SELECT id_user, name, email FROM users");
+        $stmt = Connect::getInstance()->prepare("SELECT id_user, name, email, updated_at FROM users");
         $stmt->execute();
 
         $users = $stmt->fetchAll();
