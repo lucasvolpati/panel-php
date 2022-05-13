@@ -5,7 +5,7 @@
 //     padding: 0;
 // }
 
-#main {
+#main-login {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,6 +68,7 @@
 
     input[type=email] {
         margin: 0px 0px 20px 0px;
+        
     }
 
     input {
@@ -77,6 +78,7 @@
         border: none;
         outline: none;
         border-radius: 3px;
+        background-color: #ededed;
     }
 
     button {

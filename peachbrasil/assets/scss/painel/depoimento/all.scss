@@ -1,0 +1,15 @@
+@import '../nav.scss';
+
+main {
+    background: $white;
+    margin: 20px;
+
+    .col-md-2 {
+        display: flex;
+        justify-content: left;
+    }
+
+    form:nth-child(1) {
+        display: block;
+    }
+}

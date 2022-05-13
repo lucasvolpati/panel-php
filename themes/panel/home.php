@@ -1,11 +1,17 @@
 <?php
-    use Source\Models\User;
+
+use Source\Models\Testimonials;
+use Source\Models\User;
+use Source\Models\Article;
+
     $users = (new User())->findAll();
+    $depo = (new Testimonials())->findAll();
+    $article = (new Article())->findAll();
     
     $v->layout("template");
 ?>
 
-<main id="main"> 
+<main id="main-home"> 
     <!-- GERAL -->    
     <section id="geral">
         <div class="head">
@@ -32,7 +38,7 @@
         </div>
 
         <div class="content">
-            <a href="" class="paginas">
+            <a href="<?= url() . "/paginas"?>" class="paginas">
                 <h3>0</h3>
 
                 <div class="subtitle">
@@ -50,11 +56,11 @@
                 </div>
             </a>
 
-            <a href="" class="depoimentos">
-                <h3>0</h3>
+            <a href="<?= url() . "/depoimentos"?>" class="depoimentos">
+                <h3><?= count($depo)?></h3>
 
                 <div class="subtitle">
-                <i class="fas fa-quote-right"></i>
+                <i class="fas fa-grin-beam"></i>
                     <span>depoimentos</span>
                 </div>
             </a>
@@ -69,8 +75,8 @@
         </div>
 
         <div class="content">
-            <a href="" class="artigos">
-                <h3>0</h3>
+            <a href="<?= url() . "/artigos"?>" class="artigos">
+                <h3><?= count($article)?></h3>
 
                 <div class="subtitle">
                     <i class="fas fa-newspaper"></i>

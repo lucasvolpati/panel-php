@@ -6,7 +6,7 @@
 ?>
 
 
-<body>
+<body id="body">
 
     <?php if($_SESSION['login']): ?>
         <?php 
@@ -35,7 +35,7 @@
         <a class="disabled"><i class="fas fa-images"></i> <span>Banners</span></a>
         <a class="disabled"><i class="fas fa-handshake"></i> <span>Parceiros</span></a>
         <a class="disabled"><i class="fas fa-camera-retro"></i> <span>Galerias</span></a>
-        <a class="disabled"><i class="fas fa-smile"></i> <span>Depoimentos</span></a>
+        <a href="<?= url() ?>/depoimentos"><i class="fas fa-smile"></i> <span>Depoimentos</span></a>
 
         <p>Loja Virtual</p>
 
@@ -46,14 +46,14 @@
 
         <p>Blog/Notícias</p>
 
-        <a href=""><i class="fas fa-newspaper"></i> <span>Artigos</span></a>
+        <a href="<?= url("/artigos") ?>"><i class="fas fa-newspaper"></i> <span>Artigos</span></a>
         <a href=""><i class="fas fa-comments"></i> <span>Comentários</span></a>
 
         <p>Configurações</p>
 
-        <a href=""><i class="fas fa-cog"></i> <span>Sistema</span></a>
-        <a href=""><i class="fas fa-sitemap"></i> <span>Funções</span></a>
-        <a href=""><i class="fas fa-lock"></i> <span>Permissões</span></a>
+        <a href="<?= url("/sistema") ?>"><i class="fas fa-cog"></i> <span>Sistema</span></a>
+        <a href="<?=url("/funcoes") ?>"><i class="fas fa-sitemap"></i> <span>Funções</span></a>
+        <a href="<?=url("/permissoes") ?>"><i class="fas fa-lock"></i> <span>Permissões</span></a>
         <a href=<?= url() . "/exit.php"?>><i class="fas fa-sign-out-alt"></i> <span>Sair</span></a>
     </nav>
 
@@ -66,7 +66,7 @@
                 <span></span>
             </label>
 
-            <p style="margin-left: 20px; font-weight: bold;">Painel Peach Brasil</p>
+            <p style="margin-left: 20px; margin-bottom: 0;font-weight: bold;">CMS PANEL</p>
         </div>
 
         <div class="user-container">

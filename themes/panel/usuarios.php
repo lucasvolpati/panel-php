@@ -9,7 +9,29 @@
 
 ?>
 
-<main id="main">
+<main id="main-user">
+    <?php
+    $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
+
+    
+    if ($id) {
+
+        $user = new User();
+        
+        if (!$user->deleteUser($id)) {
+            echo $user->message();
+        }else {
+            echo $user->message()->success("Usuário deletado com sucesso!");
+        }
+    }
+    
+    ?>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= url("/") ?>">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Usuários</li>
+        </ol>
+    </nav>
     <div id="buscar">
         <!-- <input type="text" name="seach" id="seach" placeholder="Buscar"> -->
 
@@ -34,37 +56,34 @@
                         echo "<th scope='row'>{$users[$i]->id_user}</th>" . "\n";
                             echo "<td>{$users[$i]->name}</td>" . "\n";
                             echo "<td>{$users[$i]->email}</td>" . "\n";
-                            echo "<td>{$users[$i]->updated_at}</td>" . "\n";
+                            echo "<td>".date_fmt($users[$i]->updated_at)."</td>" . "\n";
                             echo "<td>
                                     <a class='btn btn-primary' href='editar-usuario&id={$users[$i]->id_user}'><i id='edit' class='fas fa-pencil-alt'></i></a>
-                                    <a class='btn btn-danger' href='?id={$users[$i]->id_user}' data-bs-toggle='modal' data-bs-target='#modalDelete'><i id='delete' class='fas fa-trash'></i></a>
+                                    <button id='{$users[$i]->id_user}' class='btn btn-danger deleteBtn' ><i class='fas fa-trash'></i></button>
                                     
-                                </td>" . "\n";
-                    echo "</tr>"; 
-                } //<form>
-                //<input type='hidden' value='{$users[$i]->id_user}' name='id'>
-                //<button class='btn btn-danger' type='submit' data-bs-toggle='modal' data-bs-target='#modalDelete'><i id='delete' class='fas fa-trash'></i></button>
-            //</form>
+                                </td>" . "\n"; 
+                    echo "</tr>"; //onclick='deleteUser({$users[$i]->id_user})'
+                }
             
             
             ?>
             <div class="modal" id="modalDelete" tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Excluir usuário</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Deseja mesmo exluir <?= $_GET['id'] ?></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-danger">Excluir <i id='delete' class='fas fa-trash'></i></button>
-                    </div>
+                        <div class="modal-header">
+                            <h5 class="modal-title">Excluir usuário</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Deseja exluir permanentemente este usuário?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <a id="deleteConfirm" type="button" class="btn btn-danger">Excluir <i id='delete' class='fas fa-trash'></i></a>
+                        </div>
                     </div>
                 </div>
-                </div>
+            </div>
         </tbody>
     </table>
 </main>

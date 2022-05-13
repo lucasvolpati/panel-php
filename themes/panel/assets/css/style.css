@@ -1,16 +1,18 @@
+@charset "UTF-8";
 /*Import CONFIG*/
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
   font-size: 1em;
-  font-weight: 300;
   font-family: "Roboto", sans-serif;
 }
 
 /*Background Menu*/
 /* Messages */
 /*Buttons*/
+/* From Nav file */
 .trigger {
   padding: 15px;
   font-size: 0.875em;
@@ -44,8 +46,8 @@
 }
 
 /*Import HEADER*/
-/*Import BODY*/
-#main {
+/* Seção Login Page */
+#main-login {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,22 +56,22 @@
   width: 100%;
   height: 100vh;
 }
-#main img {
+#main-login img {
   width: 250px;
 }
-#main .copy {
+#main-login .copy {
   margin-top: 20px;
   color: #fff;
   font-size: 0.85em;
 }
-#main .copy a {
+#main-login .copy a {
   text-decoration: none;
-  color: #ff8400;
+  color: #ff6a00;
 }
-#main .copy a:hover {
+#main-login .copy a:hover {
   text-decoration: underline;
 }
-#main .validate {
+#main-login .validate {
   margin-top: 20px;
 }
 
@@ -88,7 +90,7 @@
   width: 40px;
   display: flex;
   align-items: center;
-  color: #aaa;
+  color: #808080;
   font-weight: 400;
   font-size: 0.9em;
   margin-bottom: 5px;
@@ -106,9 +108,10 @@
   border: none;
   outline: none;
   border-radius: 3px;
+  background-color: #ededed;
 }
 #content button {
-  background: #ff8400;
+  background: #ff6a00;
   padding: 15px 0px;
   border: none;
   border-radius: 3px;
@@ -121,8 +124,552 @@
   margin-right: 10px;
 }
 #content button:hover {
-  background-color: #ff9d33;
+  background-color: #ff8833;
   cursor: pointer;
+}
+
+/* Seção Home Painel */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+#main-home {
+  width: 100%;
+  height: 100%;
+  padding: 15px 20px;
+}
+#main-home #geral, #main-home #site, #main-home #blog, #main-home #configuracao {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: white;
+  margin-top: 20px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+#main-home #geral .head, #main-home #site .head, #main-home #blog .head, #main-home #configuracao .head {
+  background: #f5f5f5;
+  width: 100%;
+  height: 100%;
+  padding: 15px 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+#main-home #geral .head h2, #main-home #site .head h2, #main-home #blog .head h2, #main-home #configuracao .head h2 {
+  font-size: 13pt;
+}
+#main-home #geral .content, #main-home #site .content, #main-home #blog .content, #main-home #configuracao .content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20px 20px 0px 30px;
+}
+#main-home #geral .content .usu, #main-home #geral .content .paginas, #main-home #geral .content .categorias, #main-home #geral .content .artigos, #main-home #geral .content .comentario, #main-home #geral .content .funcao, #main-home #geral .content .perm, #main-home #geral .content .depoimentos, #main-home #site .content .usu, #main-home #site .content .paginas, #main-home #site .content .categorias, #main-home #site .content .artigos, #main-home #site .content .comentario, #main-home #site .content .funcao, #main-home #site .content .perm, #main-home #site .content .depoimentos, #main-home #blog .content .usu, #main-home #blog .content .paginas, #main-home #blog .content .categorias, #main-home #blog .content .artigos, #main-home #blog .content .comentario, #main-home #blog .content .funcao, #main-home #blog .content .perm, #main-home #blog .content .depoimentos, #main-home #configuracao .content .usu, #main-home #configuracao .content .paginas, #main-home #configuracao .content .categorias, #main-home #configuracao .content .artigos, #main-home #configuracao .content .comentario, #main-home #configuracao .content .funcao, #main-home #configuracao .content .perm, #main-home #configuracao .content .depoimentos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 180px;
+  height: 80px;
+  padding: 20px 30px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  text-decoration: none;
+}
+#main-home #geral .content .usu h3, #main-home #geral .content .paginas h3, #main-home #geral .content .categorias h3, #main-home #geral .content .artigos h3, #main-home #geral .content .comentario h3, #main-home #geral .content .funcao h3, #main-home #geral .content .perm h3, #main-home #geral .content .depoimentos h3, #main-home #site .content .usu h3, #main-home #site .content .paginas h3, #main-home #site .content .categorias h3, #main-home #site .content .artigos h3, #main-home #site .content .comentario h3, #main-home #site .content .funcao h3, #main-home #site .content .perm h3, #main-home #site .content .depoimentos h3, #main-home #blog .content .usu h3, #main-home #blog .content .paginas h3, #main-home #blog .content .categorias h3, #main-home #blog .content .artigos h3, #main-home #blog .content .comentario h3, #main-home #blog .content .funcao h3, #main-home #blog .content .perm h3, #main-home #blog .content .depoimentos h3, #main-home #configuracao .content .usu h3, #main-home #configuracao .content .paginas h3, #main-home #configuracao .content .categorias h3, #main-home #configuracao .content .artigos h3, #main-home #configuracao .content .comentario h3, #main-home #configuracao .content .funcao h3, #main-home #configuracao .content .perm h3, #main-home #configuracao .content .depoimentos h3 {
+  color: #000;
+  font-size: 15pt;
+}
+#main-home #geral .content .usu i, #main-home #geral .content .paginas i, #main-home #geral .content .categorias i, #main-home #geral .content .artigos i, #main-home #geral .content .comentario i, #main-home #geral .content .funcao i, #main-home #geral .content .perm i, #main-home #geral .content .depoimentos i, #main-home #site .content .usu i, #main-home #site .content .paginas i, #main-home #site .content .categorias i, #main-home #site .content .artigos i, #main-home #site .content .comentario i, #main-home #site .content .funcao i, #main-home #site .content .perm i, #main-home #site .content .depoimentos i, #main-home #blog .content .usu i, #main-home #blog .content .paginas i, #main-home #blog .content .categorias i, #main-home #blog .content .artigos i, #main-home #blog .content .comentario i, #main-home #blog .content .funcao i, #main-home #blog .content .perm i, #main-home #blog .content .depoimentos i, #main-home #configuracao .content .usu i, #main-home #configuracao .content .paginas i, #main-home #configuracao .content .categorias i, #main-home #configuracao .content .artigos i, #main-home #configuracao .content .comentario i, #main-home #configuracao .content .funcao i, #main-home #configuracao .content .perm i, #main-home #configuracao .content .depoimentos i {
+  font-size: 20pt;
+}
+#main-home #geral .content .usu:hover .subtitle i, #main-home #geral .content .paginas:hover .subtitle i, #main-home #geral .content .categorias:hover .subtitle i, #main-home #geral .content .artigos:hover .subtitle i, #main-home #geral .content .comentario:hover .subtitle i, #main-home #geral .content .funcao:hover .subtitle i, #main-home #geral .content .perm:hover .subtitle i, #main-home #geral .content .depoimentos:hover .subtitle i, #main-home #site .content .usu:hover .subtitle i, #main-home #site .content .paginas:hover .subtitle i, #main-home #site .content .categorias:hover .subtitle i, #main-home #site .content .artigos:hover .subtitle i, #main-home #site .content .comentario:hover .subtitle i, #main-home #site .content .funcao:hover .subtitle i, #main-home #site .content .perm:hover .subtitle i, #main-home #site .content .depoimentos:hover .subtitle i, #main-home #blog .content .usu:hover .subtitle i, #main-home #blog .content .paginas:hover .subtitle i, #main-home #blog .content .categorias:hover .subtitle i, #main-home #blog .content .artigos:hover .subtitle i, #main-home #blog .content .comentario:hover .subtitle i, #main-home #blog .content .funcao:hover .subtitle i, #main-home #blog .content .perm:hover .subtitle i, #main-home #blog .content .depoimentos:hover .subtitle i, #main-home #configuracao .content .usu:hover .subtitle i, #main-home #configuracao .content .paginas:hover .subtitle i, #main-home #configuracao .content .categorias:hover .subtitle i, #main-home #configuracao .content .artigos:hover .subtitle i, #main-home #configuracao .content .comentario:hover .subtitle i, #main-home #configuracao .content .funcao:hover .subtitle i, #main-home #configuracao .content .perm:hover .subtitle i, #main-home #configuracao .content .depoimentos:hover .subtitle i {
+  margin-top: 0px;
+}
+#main-home #geral .content .usu:hover .subtitle span, #main-home #geral .content .paginas:hover .subtitle span, #main-home #geral .content .categorias:hover .subtitle span, #main-home #geral .content .artigos:hover .subtitle span, #main-home #geral .content .comentario:hover .subtitle span, #main-home #geral .content .funcao:hover .subtitle span, #main-home #geral .content .perm:hover .subtitle span, #main-home #geral .content .depoimentos:hover .subtitle span, #main-home #site .content .usu:hover .subtitle span, #main-home #site .content .paginas:hover .subtitle span, #main-home #site .content .categorias:hover .subtitle span, #main-home #site .content .artigos:hover .subtitle span, #main-home #site .content .comentario:hover .subtitle span, #main-home #site .content .funcao:hover .subtitle span, #main-home #site .content .perm:hover .subtitle span, #main-home #site .content .depoimentos:hover .subtitle span, #main-home #blog .content .usu:hover .subtitle span, #main-home #blog .content .paginas:hover .subtitle span, #main-home #blog .content .categorias:hover .subtitle span, #main-home #blog .content .artigos:hover .subtitle span, #main-home #blog .content .comentario:hover .subtitle span, #main-home #blog .content .funcao:hover .subtitle span, #main-home #blog .content .perm:hover .subtitle span, #main-home #blog .content .depoimentos:hover .subtitle span, #main-home #configuracao .content .usu:hover .subtitle span, #main-home #configuracao .content .paginas:hover .subtitle span, #main-home #configuracao .content .categorias:hover .subtitle span, #main-home #configuracao .content .artigos:hover .subtitle span, #main-home #configuracao .content .comentario:hover .subtitle span, #main-home #configuracao .content .funcao:hover .subtitle span, #main-home #configuracao .content .perm:hover .subtitle span, #main-home #configuracao .content .depoimentos:hover .subtitle span {
+  transform: scaleY(1);
+}
+#main-home #geral .content .usu .subtitle, #main-home #geral .content .paginas .subtitle, #main-home #geral .content .categorias .subtitle, #main-home #geral .content .artigos .subtitle, #main-home #geral .content .comentario .subtitle, #main-home #geral .content .funcao .subtitle, #main-home #geral .content .perm .subtitle, #main-home #geral .content .depoimentos .subtitle, #main-home #site .content .usu .subtitle, #main-home #site .content .paginas .subtitle, #main-home #site .content .categorias .subtitle, #main-home #site .content .artigos .subtitle, #main-home #site .content .comentario .subtitle, #main-home #site .content .funcao .subtitle, #main-home #site .content .perm .subtitle, #main-home #site .content .depoimentos .subtitle, #main-home #blog .content .usu .subtitle, #main-home #blog .content .paginas .subtitle, #main-home #blog .content .categorias .subtitle, #main-home #blog .content .artigos .subtitle, #main-home #blog .content .comentario .subtitle, #main-home #blog .content .funcao .subtitle, #main-home #blog .content .perm .subtitle, #main-home #blog .content .depoimentos .subtitle, #main-home #configuracao .content .usu .subtitle, #main-home #configuracao .content .paginas .subtitle, #main-home #configuracao .content .categorias .subtitle, #main-home #configuracao .content .artigos .subtitle, #main-home #configuracao .content .comentario .subtitle, #main-home #configuracao .content .funcao .subtitle, #main-home #configuracao .content .perm .subtitle, #main-home #configuracao .content .depoimentos .subtitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#main-home #geral .content .usu .subtitle i, #main-home #geral .content .paginas .subtitle i, #main-home #geral .content .categorias .subtitle i, #main-home #geral .content .artigos .subtitle i, #main-home #geral .content .comentario .subtitle i, #main-home #geral .content .funcao .subtitle i, #main-home #geral .content .perm .subtitle i, #main-home #geral .content .depoimentos .subtitle i, #main-home #site .content .usu .subtitle i, #main-home #site .content .paginas .subtitle i, #main-home #site .content .categorias .subtitle i, #main-home #site .content .artigos .subtitle i, #main-home #site .content .comentario .subtitle i, #main-home #site .content .funcao .subtitle i, #main-home #site .content .perm .subtitle i, #main-home #site .content .depoimentos .subtitle i, #main-home #blog .content .usu .subtitle i, #main-home #blog .content .paginas .subtitle i, #main-home #blog .content .categorias .subtitle i, #main-home #blog .content .artigos .subtitle i, #main-home #blog .content .comentario .subtitle i, #main-home #blog .content .funcao .subtitle i, #main-home #blog .content .perm .subtitle i, #main-home #blog .content .depoimentos .subtitle i, #main-home #configuracao .content .usu .subtitle i, #main-home #configuracao .content .paginas .subtitle i, #main-home #configuracao .content .categorias .subtitle i, #main-home #configuracao .content .artigos .subtitle i, #main-home #configuracao .content .comentario .subtitle i, #main-home #configuracao .content .funcao .subtitle i, #main-home #configuracao .content .perm .subtitle i, #main-home #configuracao .content .depoimentos .subtitle i {
+  margin-top: 13px;
+  transition: 0.1s;
+}
+#main-home #geral .content .usu .subtitle span, #main-home #geral .content .paginas .subtitle span, #main-home #geral .content .categorias .subtitle span, #main-home #geral .content .artigos .subtitle span, #main-home #geral .content .comentario .subtitle span, #main-home #geral .content .funcao .subtitle span, #main-home #geral .content .perm .subtitle span, #main-home #geral .content .depoimentos .subtitle span, #main-home #site .content .usu .subtitle span, #main-home #site .content .paginas .subtitle span, #main-home #site .content .categorias .subtitle span, #main-home #site .content .artigos .subtitle span, #main-home #site .content .comentario .subtitle span, #main-home #site .content .funcao .subtitle span, #main-home #site .content .perm .subtitle span, #main-home #site .content .depoimentos .subtitle span, #main-home #blog .content .usu .subtitle span, #main-home #blog .content .paginas .subtitle span, #main-home #blog .content .categorias .subtitle span, #main-home #blog .content .artigos .subtitle span, #main-home #blog .content .comentario .subtitle span, #main-home #blog .content .funcao .subtitle span, #main-home #blog .content .perm .subtitle span, #main-home #blog .content .depoimentos .subtitle span, #main-home #configuracao .content .usu .subtitle span, #main-home #configuracao .content .paginas .subtitle span, #main-home #configuracao .content .categorias .subtitle span, #main-home #configuracao .content .artigos .subtitle span, #main-home #configuracao .content .comentario .subtitle span, #main-home #configuracao .content .funcao .subtitle span, #main-home #configuracao .content .perm .subtitle span, #main-home #configuracao .content .depoimentos .subtitle span {
+  font-size: 10pt;
+  color: #000;
+  text-align: center;
+  font-weight: bolder;
+  transform: scaleY(0);
+  transition: 0.1s;
+}
+#main-home #geral .content .usu i, #main-home #site .content .usu i, #main-home #blog .content .usu i, #main-home #configuracao .content .usu i {
+  color: #0d6efd;
+}
+#main-home #geral .content .paginas i, #main-home #site .content .paginas i, #main-home #blog .content .paginas i, #main-home #configuracao .content .paginas i {
+  color: #6c757d;
+}
+#main-home #geral .content .categorias i, #main-home #site .content .categorias i, #main-home #blog .content .categorias i, #main-home #configuracao .content .categorias i {
+  color: #198754;
+}
+#main-home #geral .content .depoimentos i, #main-home #site .content .depoimentos i, #main-home #blog .content .depoimentos i, #main-home #configuracao .content .depoimentos i {
+  color: #ff6a00;
+}
+#main-home #geral .content .artigos i, #main-home #site .content .artigos i, #main-home #blog .content .artigos i, #main-home #configuracao .content .artigos i {
+  color: #dc3545;
+}
+#main-home #geral .content .comentario i, #main-home #site .content .comentario i, #main-home #blog .content .comentario i, #main-home #configuracao .content .comentario i {
+  color: #0dcaf0;
+}
+#main-home #geral .content .funcao i, #main-home #site .content .funcao i, #main-home #blog .content .funcao i, #main-home #configuracao .content .funcao i {
+  color: #000;
+}
+#main-home #geral .content .perm i, #main-home #site .content .perm i, #main-home #blog .content .perm i, #main-home #configuracao .content .perm i {
+  color: #ffc107;
+}
+
+/* Seção Usuários */
+#main-user {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  margin: 40px auto;
+  width: 95%;
+  height: 100%;
+  padding: 30px 30px;
+}
+#main-user #buscar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#main-user #buscar input[type=text] {
+  width: 80%;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+}
+#main-user #buscar a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 12pt;
+  border-radius: 0.25rem;
+  width: 90px;
+  height: 37px;
+  text-decoration: none;
+}
+#main-user #buscar a i {
+  margin-left: 5px;
+}
+
+.table {
+  margin: 0px;
+}
+@media screen and (max-width: 580px) {
+  .table th:nth-child(4) {
+    display: none;
+  }
+  .table th:nth-child(5) {
+    display: none;
+  }
+}
+@media screen and (max-width: 580px) {
+  .table td:nth-child(4) {
+    display: none;
+  }
+  .table td:nth-child(5) {
+    display: none;
+  }
+}
+.table td:nth-child(5) .btn-primary {
+  margin-right: 10px;
+}
+.table td .visible {
+  color: #35ba9b;
+}
+.table td .hidden {
+  color: #d94452;
+}
+.table td a .fa-external-link-alt {
+  margin-left: 10px;
+}
+
+/* Editar USUARIO*/
+#main-new {
+  padding: 0px 30px;
+  margin: 40px 0px;
+}
+#main-new form {
+  padding: 0px 20px 20px 20px;
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  font-size: 11pt;
+}
+#main-new form input::placeholder {
+  font-size: 11pt;
+}
+#main-new form select {
+  font-size: 11pt;
+}
+#main-new form label {
+  font-weight: bold;
+}
+#main-new form .col-md-4 {
+  width: 100%;
+}
+#main-new nav {
+  padding: 0 0 20px 0;
+}
+
+/* Seção Depoimentos */
+#main-testimonials {
+  background: #fff;
+  margin: 20px;
+}
+#main-testimonials .col-md-2 {
+  display: flex;
+  justify-content: left;
+}
+
+/* Seção Paginas */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* MENU PÁGINAS */
+#main-pages {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  margin: 40px auto;
+  width: 95%;
+  height: 100%;
+  padding: 30px 30px;
+}
+
+#main-new-page {
+  padding: 0px 30px;
+  margin: 40px 0px;
+}
+#main-new-page form {
+  padding: 0px 20px 20px 20px;
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  font-size: 11pt;
+}
+#main-new-page form input::placeholder {
+  font-size: 11pt;
+}
+#main-new-page form select {
+  font-size: 11pt;
+}
+#main-new-page form label {
+  font-weight: bold;
+}
+#main-new-page form .col-md-4 {
+  width: 100%;
+}
+#main-new-page form .card-title {
+  font-size: 1.2em;
+}
+#main-new-page .tabs ul {
+  display: flex;
+  margin-bottom: 50px;
+  background: #e6e5e3;
+  width: 100%;
+  padding: 20px 10px;
+  border-radius: 3px;
+}
+#main-new-page .tabs ul li {
+  margin-right: 10px;
+  list-style: none;
+}
+#main-new-page .tabs ul li:nth-child(1).active a, #main-new-page .tabs ul li:nth-child(2).active a {
+  border: none;
+  background: #0d6efd;
+  color: #fff;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  display: inline-block;
+  transition: 0.5s;
+}
+#main-new-page .tabs ul li a {
+  color: #000;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  display: inline-block;
+  transition: 0.5s;
+}
+#main-new-page .tabs ul li a:hover {
+  background: RGB(197, 197, 197);
+}
+#main-new-page #sectionI {
+  overflow-y: hidden;
+  height: 0px;
+}
+#main-new-page #sectionI::-webkit-scrollbar {
+  display: none;
+}
+#main-new-page #sectionI.active {
+  transition: 2s;
+}
+@media screen and (max-width: 5000px) {
+  #main-new-page #sectionI.active {
+    height: 650px;
+  }
+}
+@media screen and (max-width: 2000px) {
+  #main-new-page #sectionI.active {
+    height: 600px;
+  }
+}
+@media screen and (max-width: 770px) {
+  #main-new-page #sectionI.active {
+    height: 770px;
+  }
+}
+#main-new-page #sectionII {
+  overflow-y: hidden;
+  height: 0px;
+}
+#main-new-page #sectionII::-webkit-scrollbar {
+  display: none;
+}
+#main-new-page #sectionII.active {
+  height: 1000px;
+  transition: 2s;
+}
+@media screen and (max-width: 5000px) {
+  #main-new-page #sectionII.active {
+    height: 1250px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #main-new-page #sectionII.active {
+    height: 1080px;
+  }
+}
+@media screen and (max-width: 770px) {
+  #main-new-page #sectionII.active {
+    height: 970px;
+  }
+}
+
+/* Seção Blog */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.content-view-articles {
+  padding: 0px 30px;
+  margin: 40px 0px;
+}
+.content-view-articles form {
+  padding: 0px 20px 20px 20px;
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  font-size: 11pt;
+}
+.content-view-articles form input::placeholder {
+  font-size: 11pt;
+}
+.content-view-articles form select {
+  font-size: 11pt;
+}
+.content-view-articles form label {
+  font-weight: bold;
+}
+.content-view-articles form .col-md-4 {
+  width: 100%;
+}
+.content-view-articles .tabs ul {
+  display: flex;
+  margin-bottom: 50px;
+  background: #e6e5e3;
+  width: 100%;
+  padding: 20px 10px;
+  border-radius: 3px;
+}
+.content-view-articles .tabs ul li {
+  margin-right: 10px;
+  list-style: none;
+}
+.content-view-articles .tabs ul li:nth-child(1).active a, .content-view-articles .tabs ul li:nth-child(2).active a, .content-view-articles .tabs ul li:nth-child(3).active a {
+  border: none;
+  background: #0d6efd;
+  color: #fff;
+  padding: 13px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.content-view-articles .tabs ul li a {
+  color: #000;
+  padding: 13px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: 0.5s;
+}
+.content-view-articles .tabs ul li a:hover {
+  background: RGB(197, 197, 197);
+}
+.content-view-articles .article {
+  overflow-y: hidden;
+  height: 0px;
+}
+.content-view-articles .article::-webkit-scrollbar {
+  display: none;
+}
+.content-view-articles .article.active {
+  transition: 2s;
+}
+@media screen and (max-width: 5000px) {
+  .content-view-articles .article.active {
+    height: 650px;
+  }
+}
+@media screen and (max-width: 2000px) {
+  .content-view-articles .article.active {
+    height: 600px;
+  }
+}
+@media screen and (max-width: 770px) {
+  .content-view-articles .article.active {
+    height: 770px;
+  }
+}
+.content-view-articles .content {
+  overflow-y: hidden;
+  height: 0px;
+}
+.content-view-articles .content::-webkit-scrollbar {
+  display: none;
+}
+.content-view-articles .content.active {
+  height: 1000px;
+  transition: 2s;
+}
+@media screen and (max-width: 5000px) {
+  .content-view-articles .content.active {
+    height: 1250px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .content-view-articles .content.active {
+    height: 1080px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .content-view-articles .content.active {
+    height: 970px;
+  }
+}
+.content-view-articles .categories {
+  overflow-y: hidden;
+  height: 0px;
+}
+.content-view-articles .categories::-webkit-scrollbar {
+  display: none;
+}
+.content-view-articles .categories.active {
+  height: 130px;
+  transition: 2s;
+}
+.content-view-articles .categories h3 {
+  background: #0d6efd;
+  color: #fff;
+  font-size: 12pt;
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.content-view-articles .categories .mb-3 {
+  padding: 20px;
+  background: #fcfcfc;
+}
+.content-view-articles .categories .mb-3 input {
+  font-weight: normal;
+}
+
+/* Seção Sistema */
+.system-main {
+  margin: 20px;
+}
+.system-main form {
+  background: #fff;
+}
+.system-main .cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.system-main .cards-container .cards-view {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.system-main .cards-container .cards-view a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 150px;
+  height: 90px;
+  width: 180px;
+  margin: 10px;
+  text-decoration: none;
+}
+.system-main .cards-container .cards-view a .card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.system-main .cards-container .cards-view a .card h3 {
+  margin: 15px 20px;
+  font-size: 13pt;
+  color: #000;
+}
+.system-main .cards-container .cards-view a .card i {
+  margin: 0px 20px;
+  font-size: 20pt;
+}
+.system-main .cards-container .cards-view .disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+.system-main .cards-container .cards-view .disabled .card i {
+  color: #808080 !important;
+}
+.system-main nav {
+  padding: 20px 0 0 20px;
+}
+
+/* Sub-sistema*/
+.content-view {
+  margin: 20px;
+  background: #fff;
+}
+.content-view nav {
+  padding: 20px 0 0 20px;
 }
 
 /*Import FOOTER*/

@@ -1,3 +1,5 @@
+
+
 <!-- MENU DE NAVEGAÇÃO -->
 <nav id="nav">
         <div id="head">
@@ -36,7 +38,7 @@
         <a href=""><i class="fas fa-cog"></i> <span>Sistema</span></a>
         <a href=""><i class="fas fa-sitemap"></i> <span>Funções</span></a>
         <a href=""><i class="fas fa-lock"></i> <span>Permissões</span></a>
-        <a href=<?= url() . "/exit.php"?>><i class="fas fa-sign-out-alt"></i> <span>Sair</span></a>
+        <a href=<?= url("/exit.php")?>><i class="fas fa-sign-out-alt"></i> <span>Sair</span></a>
     </nav>
 
     <!-- SUB-MENU DE NAVEGAÇÃO -->
@@ -48,12 +50,12 @@
                 <span></span>
             </label>
 
-            <p style="margin-left: 20px; font-weight: bold;">Painel Peach Brasil</p>
+            <p style="margin-left: 20px; font-weight: bold;">CMS PANEL</p>
         </div>
 
         <div class="user-container">
             <h3 id="username" name="username"><i class="fas fa-user"></i><?= $user->name?><i class="fas fa-caret-down"></i></h3>
 
-            <a href=<?= url() . "/exit.php"?> class="exit"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            <a href=<?= url("/exit.php")?> class="exit"><i class="fas fa-sign-out-alt"></i> Sair</a>
         </div>
     </div>

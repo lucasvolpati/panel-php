@@ -1,0 +1,304 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth; }
+
+body {
+  background-color: #f5f5f5 !important;
+  margin-left: 200px !important;
+  margin-top: 60px !important;
+  transition: .3s; }
+
+#nav {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  font-size: 10pt;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  color: #fff;
+  background: #262626;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: .3s;
+  z-index: 1; }
+  #nav::-webkit-scrollbar {
+    width: 3px; }
+  #nav::-webkit-scrollbar-thumb {
+    background: #646464; }
+  #nav #head {
+    padding: 18px 15px;
+    border-bottom: 1px solid #3e3e3e; }
+    #nav #head h3 {
+      font-size: 10pt;
+      cursor: default; }
+  #nav p {
+    color: #fff;
+    font-size: 9pt;
+    padding: 15px;
+    font-weight: bolder;
+    border-top: 1px solid #3e3e3e;
+    border-bottom: 1px solid #3e3e3e;
+    cursor: default; }
+  #nav a {
+    color: #fff;
+    padding: 15px;
+    font-weight: bold;
+    text-decoration: none; }
+    #nav a:hover {
+      background: #1f1f1f; }
+      #nav a:hover i {
+        color: #fff; }
+      #nav a:hover span {
+        margin-top: 5px;
+        color: #fff; }
+      #nav a:hover.disabled:hover i, #nav a:hover.disabled:hover span {
+        color: #808080; }
+  #nav .disabled {
+    color: #808080; }
+    #nav .disabled span {
+      cursor: default; }
+    #nav .disabled:hover {
+      background: #262626; }
+  #nav i {
+    margin-right: 8px;
+    font-size: 11pt; }
+
+#sub-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -60px;
+  width: 100%;
+  height: 60px;
+  padding: 0px 20px;
+  border-bottom: 1px solid #cccccc;
+  background: #e6e5e3; }
+  #sub-nav .hang-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; }
+    #sub-nav .hang-container label {
+      display: flex;
+      flex-direction: column;
+      width: 20px;
+      height: 25px;
+      cursor: pointer;
+      transition: .3s; }
+      #sub-nav .hang-container label span {
+        display: flex;
+        position: absolute;
+        width: 20px;
+        height: 3px;
+        border-radius: 3px;
+        background: #000; }
+        #sub-nav .hang-container label span:nth-child(1) {
+          margin-top: 11px;
+          transform: rotate(45deg); }
+        #sub-nav .hang-container label span:nth-child(2) {
+          opacity: 0; }
+        #sub-nav .hang-container label span:nth-child(3) {
+          margin-top: 11px;
+          transform: rotate(-45deg); }
+    #sub-nav .hang-container img {
+      margin-left: 20px;
+      width: 25px;
+      cursor: pointer; }
+  #sub-nav .user-container.active .exit {
+    height: 40px; }
+  #sub-nav .user-container.active h3 i {
+    transform: rotate(180deg); }
+  #sub-nav .user-container h3 {
+    color: #000;
+    cursor: pointer;
+    font-size: 15pt;
+    font-weight: normal; }
+    #sub-nav .user-container h3 i {
+      margin-left: 5px;
+      transition: .2s; }
+  #sub-nav .user-container .exit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+    right: 0px;
+    top: 60px;
+    width: 100px;
+    height: 0px;
+    overflow-y: hidden;
+    transition: .2s;
+    background: #e6e5e3; }
+    #sub-nav .user-container .exit i {
+      margin-right: 5px; }
+
+body.active {
+  margin-left: 60px !important; }
+
+body.active #nav {
+  text-align: center;
+  width: 60px; }
+  body.active #nav::-webkit-scrollbar {
+    width: 0px; }
+  body.active #nav #head {
+    display: none; }
+  body.active #nav a {
+    padding: 15px 0px; }
+    body.active #nav a:hover span {
+      opacity: 1;
+      margin-top: 5px; }
+  body.active #nav p {
+    display: none; }
+  body.active #nav i {
+    font-size: 14pt;
+    margin-right: 0; }
+  body.active #nav span {
+    display: block;
+    font-size: 7pt;
+    margin-top: -15px;
+    opacity: 0;
+    transition: .4s; }
+
+body.active #sub-nav label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 18px; }
+  body.active #sub-nav label span:nth-child(1) {
+    margin-top: -17px;
+    transform: rotate(0deg); }
+  body.active #sub-nav label span:nth-child(2) {
+    opacity: 1;
+    margin-top: -1px; }
+  body.active #sub-nav label span:nth-child(3) {
+    transform: rotate(0deg);
+    margin-top: 15px; }
+
+@media screen and (max-width: 580px) {
+  body {
+    margin-left: 0px !important; }
+    body.active {
+      margin-left: 0 !important; }
+
+  body.active #nav {
+    text-align: left;
+    width: 0px;
+    transition: .2s; }
+    body.active #nav #head {
+      display: flex;
+      flex-direction: column; }
+    body.active #nav a {
+      display: flex;
+      padding: 10px; }
+    body.active #nav p {
+      display: flex; }
+    body.active #nav i {
+      font-size: 8pt;
+      margin-right: 5px; }
+    body.active #nav span {
+      display: block; }
+
+  body.active #sub-nav label {
+    left: 15px; }
+
+  #sub-nav h4 {
+    display: none; }
+  #sub-nav label {
+    position: absolute;
+    left: 220px; }
+  #sub-nav .hang-container img {
+    display: none; } }
+body::-webkit-scrollbar {
+  display: none; }
+
+#main {
+  width: 100%;
+  height: 100%;
+  padding: 15px 20px; }
+  #main #geral, #main #site, #main #blog, #main #configuracao {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: white;
+    margin-top: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px; }
+    #main #geral .head, #main #site .head, #main #blog .head, #main #configuracao .head {
+      background: #f5f5f5;
+      width: 100%;
+      height: 100%;
+      padding: 15px 20px;
+      border-bottom: 1px solid #dee2e6; }
+      #main #geral .head h2, #main #site .head h2, #main #blog .head h2, #main #configuracao .head h2 {
+        font-size: 13pt; }
+    #main #geral .content, #main #site .content, #main #blog .content, #main #configuracao .content {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      padding: 20px 20px 0px 30px; }
+      #main #geral .content .usu, #main #geral .content .paginas, #main #geral .content .categorias, #main #geral .content .artigos, #main #geral .content .comentario, #main #geral .content .funcao, #main #geral .content .perm, #main #site .content .usu, #main #site .content .paginas, #main #site .content .categorias, #main #site .content .artigos, #main #site .content .comentario, #main #site .content .funcao, #main #site .content .perm, #main #blog .content .usu, #main #blog .content .paginas, #main #blog .content .categorias, #main #blog .content .artigos, #main #blog .content .comentario, #main #blog .content .funcao, #main #blog .content .perm, #main #configuracao .content .usu, #main #configuracao .content .paginas, #main #configuracao .content .categorias, #main #configuracao .content .artigos, #main #configuracao .content .comentario, #main #configuracao .content .funcao, #main #configuracao .content .perm {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 180px;
+        height: 80px;
+        padding: 20px 30px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #d8d8d8;
+        border-radius: 4px;
+        text-decoration: none; }
+        #main #geral .content .usu h3, #main #geral .content .paginas h3, #main #geral .content .categorias h3, #main #geral .content .artigos h3, #main #geral .content .comentario h3, #main #geral .content .funcao h3, #main #geral .content .perm h3, #main #site .content .usu h3, #main #site .content .paginas h3, #main #site .content .categorias h3, #main #site .content .artigos h3, #main #site .content .comentario h3, #main #site .content .funcao h3, #main #site .content .perm h3, #main #blog .content .usu h3, #main #blog .content .paginas h3, #main #blog .content .categorias h3, #main #blog .content .artigos h3, #main #blog .content .comentario h3, #main #blog .content .funcao h3, #main #blog .content .perm h3, #main #configuracao .content .usu h3, #main #configuracao .content .paginas h3, #main #configuracao .content .categorias h3, #main #configuracao .content .artigos h3, #main #configuracao .content .comentario h3, #main #configuracao .content .funcao h3, #main #configuracao .content .perm h3 {
+          color: #000;
+          font-size: 15pt; }
+        #main #geral .content .usu i, #main #geral .content .paginas i, #main #geral .content .categorias i, #main #geral .content .artigos i, #main #geral .content .comentario i, #main #geral .content .funcao i, #main #geral .content .perm i, #main #site .content .usu i, #main #site .content .paginas i, #main #site .content .categorias i, #main #site .content .artigos i, #main #site .content .comentario i, #main #site .content .funcao i, #main #site .content .perm i, #main #blog .content .usu i, #main #blog .content .paginas i, #main #blog .content .categorias i, #main #blog .content .artigos i, #main #blog .content .comentario i, #main #blog .content .funcao i, #main #blog .content .perm i, #main #configuracao .content .usu i, #main #configuracao .content .paginas i, #main #configuracao .content .categorias i, #main #configuracao .content .artigos i, #main #configuracao .content .comentario i, #main #configuracao .content .funcao i, #main #configuracao .content .perm i {
+          font-size: 20pt; }
+        #main #geral .content .usu:hover .subtitle i, #main #geral .content .paginas:hover .subtitle i, #main #geral .content .categorias:hover .subtitle i, #main #geral .content .artigos:hover .subtitle i, #main #geral .content .comentario:hover .subtitle i, #main #geral .content .funcao:hover .subtitle i, #main #geral .content .perm:hover .subtitle i, #main #site .content .usu:hover .subtitle i, #main #site .content .paginas:hover .subtitle i, #main #site .content .categorias:hover .subtitle i, #main #site .content .artigos:hover .subtitle i, #main #site .content .comentario:hover .subtitle i, #main #site .content .funcao:hover .subtitle i, #main #site .content .perm:hover .subtitle i, #main #blog .content .usu:hover .subtitle i, #main #blog .content .paginas:hover .subtitle i, #main #blog .content .categorias:hover .subtitle i, #main #blog .content .artigos:hover .subtitle i, #main #blog .content .comentario:hover .subtitle i, #main #blog .content .funcao:hover .subtitle i, #main #blog .content .perm:hover .subtitle i, #main #configuracao .content .usu:hover .subtitle i, #main #configuracao .content .paginas:hover .subtitle i, #main #configuracao .content .categorias:hover .subtitle i, #main #configuracao .content .artigos:hover .subtitle i, #main #configuracao .content .comentario:hover .subtitle i, #main #configuracao .content .funcao:hover .subtitle i, #main #configuracao .content .perm:hover .subtitle i {
+          margin-top: 0px; }
+        #main #geral .content .usu:hover .subtitle span, #main #geral .content .paginas:hover .subtitle span, #main #geral .content .categorias:hover .subtitle span, #main #geral .content .artigos:hover .subtitle span, #main #geral .content .comentario:hover .subtitle span, #main #geral .content .funcao:hover .subtitle span, #main #geral .content .perm:hover .subtitle span, #main #site .content .usu:hover .subtitle span, #main #site .content .paginas:hover .subtitle span, #main #site .content .categorias:hover .subtitle span, #main #site .content .artigos:hover .subtitle span, #main #site .content .comentario:hover .subtitle span, #main #site .content .funcao:hover .subtitle span, #main #site .content .perm:hover .subtitle span, #main #blog .content .usu:hover .subtitle span, #main #blog .content .paginas:hover .subtitle span, #main #blog .content .categorias:hover .subtitle span, #main #blog .content .artigos:hover .subtitle span, #main #blog .content .comentario:hover .subtitle span, #main #blog .content .funcao:hover .subtitle span, #main #blog .content .perm:hover .subtitle span, #main #configuracao .content .usu:hover .subtitle span, #main #configuracao .content .paginas:hover .subtitle span, #main #configuracao .content .categorias:hover .subtitle span, #main #configuracao .content .artigos:hover .subtitle span, #main #configuracao .content .comentario:hover .subtitle span, #main #configuracao .content .funcao:hover .subtitle span, #main #configuracao .content .perm:hover .subtitle span {
+          transform: scaleY(1); }
+        #main #geral .content .usu .subtitle, #main #geral .content .paginas .subtitle, #main #geral .content .categorias .subtitle, #main #geral .content .artigos .subtitle, #main #geral .content .comentario .subtitle, #main #geral .content .funcao .subtitle, #main #geral .content .perm .subtitle, #main #site .content .usu .subtitle, #main #site .content .paginas .subtitle, #main #site .content .categorias .subtitle, #main #site .content .artigos .subtitle, #main #site .content .comentario .subtitle, #main #site .content .funcao .subtitle, #main #site .content .perm .subtitle, #main #blog .content .usu .subtitle, #main #blog .content .paginas .subtitle, #main #blog .content .categorias .subtitle, #main #blog .content .artigos .subtitle, #main #blog .content .comentario .subtitle, #main #blog .content .funcao .subtitle, #main #blog .content .perm .subtitle, #main #configuracao .content .usu .subtitle, #main #configuracao .content .paginas .subtitle, #main #configuracao .content .categorias .subtitle, #main #configuracao .content .artigos .subtitle, #main #configuracao .content .comentario .subtitle, #main #configuracao .content .funcao .subtitle, #main #configuracao .content .perm .subtitle {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+          #main #geral .content .usu .subtitle i, #main #geral .content .paginas .subtitle i, #main #geral .content .categorias .subtitle i, #main #geral .content .artigos .subtitle i, #main #geral .content .comentario .subtitle i, #main #geral .content .funcao .subtitle i, #main #geral .content .perm .subtitle i, #main #site .content .usu .subtitle i, #main #site .content .paginas .subtitle i, #main #site .content .categorias .subtitle i, #main #site .content .artigos .subtitle i, #main #site .content .comentario .subtitle i, #main #site .content .funcao .subtitle i, #main #site .content .perm .subtitle i, #main #blog .content .usu .subtitle i, #main #blog .content .paginas .subtitle i, #main #blog .content .categorias .subtitle i, #main #blog .content .artigos .subtitle i, #main #blog .content .comentario .subtitle i, #main #blog .content .funcao .subtitle i, #main #blog .content .perm .subtitle i, #main #configuracao .content .usu .subtitle i, #main #configuracao .content .paginas .subtitle i, #main #configuracao .content .categorias .subtitle i, #main #configuracao .content .artigos .subtitle i, #main #configuracao .content .comentario .subtitle i, #main #configuracao .content .funcao .subtitle i, #main #configuracao .content .perm .subtitle i {
+            margin-top: 13px;
+            transition: .1s; }
+          #main #geral .content .usu .subtitle span, #main #geral .content .paginas .subtitle span, #main #geral .content .categorias .subtitle span, #main #geral .content .artigos .subtitle span, #main #geral .content .comentario .subtitle span, #main #geral .content .funcao .subtitle span, #main #geral .content .perm .subtitle span, #main #site .content .usu .subtitle span, #main #site .content .paginas .subtitle span, #main #site .content .categorias .subtitle span, #main #site .content .artigos .subtitle span, #main #site .content .comentario .subtitle span, #main #site .content .funcao .subtitle span, #main #site .content .perm .subtitle span, #main #blog .content .usu .subtitle span, #main #blog .content .paginas .subtitle span, #main #blog .content .categorias .subtitle span, #main #blog .content .artigos .subtitle span, #main #blog .content .comentario .subtitle span, #main #blog .content .funcao .subtitle span, #main #blog .content .perm .subtitle span, #main #configuracao .content .usu .subtitle span, #main #configuracao .content .paginas .subtitle span, #main #configuracao .content .categorias .subtitle span, #main #configuracao .content .artigos .subtitle span, #main #configuracao .content .comentario .subtitle span, #main #configuracao .content .funcao .subtitle span, #main #configuracao .content .perm .subtitle span {
+            font-size: 10pt;
+            color: #000;
+            text-align: center;
+            font-weight: bolder;
+            transform: scaleY(0);
+            transition: .1s; }
+      #main #geral .content .usu i, #main #site .content .usu i, #main #blog .content .usu i, #main #configuracao .content .usu i {
+        color: #0d6efd; }
+      #main #geral .content .paginas i, #main #site .content .paginas i, #main #blog .content .paginas i, #main #configuracao .content .paginas i {
+        color: #6c757d; }
+      #main #geral .content .categorias i, #main #site .content .categorias i, #main #blog .content .categorias i, #main #configuracao .content .categorias i {
+        color: #198754; }
+      #main #geral .content .artigos i, #main #site .content .artigos i, #main #blog .content .artigos i, #main #configuracao .content .artigos i {
+        color: #dc3545; }
+      #main #geral .content .comentario i, #main #site .content .comentario i, #main #blog .content .comentario i, #main #configuracao .content .comentario i {
+        color: #0dcaf0; }
+      #main #geral .content .funcao i, #main #site .content .funcao i, #main #blog .content .funcao i, #main #configuracao .content .funcao i {
+        color: #000; }
+      #main #geral .content .perm i, #main #site .content .perm i, #main #blog .content .perm i, #main #configuracao .content .perm i {
+        color: #ffc107; }
+
+/*# sourceMappingURL=home.css.map */

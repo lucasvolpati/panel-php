@@ -2,6 +2,8 @@
 
 namespace Source\Core;
 
+use Source\Core\Message;
+
 abstract class Model {
 
     /** @var object|null */
@@ -19,6 +21,29 @@ abstract class Model {
     public function __construct()
     {
         $this->message = new Message();
+    }
+
+    public function __set($name, $value)
+    {
+        if (empty($this->data)) {
+            $this->data = new \stdClass();
+        }
+
+        $this->data->$name = $value;
+    }
+
+    public function __get($name)
+    {
+        return ($this->data->$name ?? null);
+    }
+
+    /**
+     * @param $name
+     * @return bool
+     */
+    public function __isset($name)
+    {
+        return isset($this->data->$name);
     }
 
     /**
@@ -97,9 +122,46 @@ abstract class Model {
         }
     }
 
-    public function safe()
+    protected function update(string $entity, array $data, string $terms, string $params): ?int
     {
-        
+        try {
+            $dateSet = [];
+            foreach ($data as $bind => $value) {
+                $dateSet[] = "{$bind} = :{$bind}";
+            }
+            $dateSet = implode(", ", $dateSet);
+            parse_str($params, $params);
+
+            $stmt = Connect::getInstance()->prepare("UPDATE {$entity} SET {$dateSet} WHERE {$terms}");
+            $stmt->execute($this->filter(array_merge($data, $params)));
+            return ($stmt->rowCount() ?? 1);
+        } catch (\PDOException $th) {
+            $this->fail = $th;
+            return null;
+        }
+    }
+
+    protected function delete(string $entity, string $terms, string $id): ?int
+    {
+        try {
+            $stmt = Connect::getInstance()->prepare("DELETE FROM {$entity} WHERE {$terms}");
+            // parse_str($params, $parames);
+            $stmt->bindValue(":id", $id);
+            $stmt->execute();
+            return ($stmt->rowCount() ?? 1);
+        } catch (\PDOException $exception) {
+            $this->fail = $exception;
+            return null;
+        }
+    }
+
+    protected function safe(): ?array
+    {
+        $safe = (array)$this->data;
+        foreach (static::$safe as $unset) {
+            unset($safe[$unset]);
+        }
+        return $safe;
     }
 
 

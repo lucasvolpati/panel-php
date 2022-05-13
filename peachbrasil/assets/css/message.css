@@ -1,0 +1,22 @@
+.trigger {
+  padding: 15px;
+  border: 1px solid #666;
+  border-radius: 6px; }
+
+.info {
+  background: rgba(58, 173, 217, 0.2);
+  border: 1px solid #3aadd9; }
+
+.success {
+  background: rgba(53, 186, 157, 0.2);
+  border: 1px solid #35ba9d; }
+
+.warning {
+  background: rgba(245, 185, 69, 0.2);
+  border: 1px solid #f5b945; }
+
+.error {
+  background: rgba(217, 68, 82, 0.2);
+  border: 1px solid #d94452; }
+
+/*# sourceMappingURL=message.css.map */

@@ -19,14 +19,14 @@ $user = new User();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- LINK CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="<?= theme("/assets/css/style.css") ?>">
 
     <link rel="shortcut icon" href="../assets/img/favicon-peach.png" type="image/x-icon">
     <title>Peach Brasil | Login</title>
 </head>
 <body>
    
-    <main id="main">
+    <main id="main-login">
         <img src="../assets/img/logo.png" alt="logo peachbrail">
 
         <form action="" method="post" id="content" novalidate>
@@ -45,7 +45,7 @@ $user = new User();
 
         <section class="validate">
         <?php
-
+          
             $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS);
             
             if ($data) {

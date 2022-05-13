@@ -4,11 +4,28 @@
 @import "message";
 
 /*Import HEADER*/
-@import "header";
-@import "menu";
+// @import "panel/nav";
 
-/*Import BODY*/
+/* Seção Login Page */
 @import "login";
+
+/* Seção Home Painel */
+@import "panel/home";
+
+/* Seção Usuários */
+@import "panel/usuarios";
+
+/* Seção Depoimentos */
+@import "panel/testimonials";
+
+/* Seção Paginas */
+@import "panel/paginas";
+
+/* Seção Blog */
+@import "panel/blog";
+
+/* Seção Sistema */
+@import "panel/sistema";
 
 /*Import FOOTER*/
 @import "footer";

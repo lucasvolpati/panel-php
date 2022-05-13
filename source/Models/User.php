@@ -10,7 +10,7 @@ class User extends Model
     /** @var string $entity database table */
     protected static $entity = 'users';
 
-    protected $safe = ['id_user', 'updated_at'];
+    protected static $safe = ['id_user', 'updated_at'];
 
     public function bootstrap(string $name, string $email, string $password): User
     {
@@ -74,6 +74,17 @@ class User extends Model
             $this->password = passwd($this->password);
         }
 
+        /** Update User */
+        // if(!empty($this->id)) {
+        //     $userId = $this->id;
+
+        //     $this->update(self::$entity, $this->safe(), "id=:id", "id={$userId}");
+        //     if ($this->fail()) {
+        //         $this->message->error("Erro ao atualizar, verifique os dados /" . $this->fail());
+        //         return null;
+        //     }
+        // }
+
         /** Create User */
 
         if (empty($this->id)) {
@@ -82,8 +93,38 @@ class User extends Model
                 return null;
             }
 
-            // $userId = $this->create(self::$entity, )
+            $userId = $this->create(self::$entity, $this->safe());
+            if ($this->fail()) {
+                $this->message->error("Erro ao cadastrar, verifique os dados e tente novamente");
+                return null;
+            }
         }
 
+        $this->data = ($this->findById($userId));
+        return $this;
+
+    }
+
+    public function updateUser(string $userId) 
+    {
+        
+        $this->update(self::$entity, $this->safe(), "id_user=:id", "id={$userId}");
+        if ($this->fail()) {
+            $this->message->error("Erro ao atualizar, verifique os dados!");
+            return null;
+        }
+        $this->data = ($this->findById($userId));
+        return $this;
+        
+    }
+
+    public function deleteUser(string $userId) {
+        $this->delete(self::$entity, "id_user = :id", $userId);
+        if ($this->fail()) {
+            $this->message->error("Erro ao deletar usuário!" . $this->fail());
+            return null;
+        }
+        $this->data = null;
+        return $this;
     }
 }

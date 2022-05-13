@@ -1,0 +1,12 @@
+
+@import '../nav.scss';
+
+main {
+    margin: 20px;
+    background: $white;
+
+    .col-md-2 {
+        display: flex;
+        justify-content: left;
+    }
+}

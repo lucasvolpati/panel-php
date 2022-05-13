@@ -24,8 +24,8 @@ define("CONF_PASSWD_OPTION", ["cost" => 10]);
  * URLS
  */
 
-define("CONF_URL_BASE", "https://peachbrasil.com.br");
-define("CONF_URL_TEST", "https://localhost/Peach/panel-php");
+define("CONF_URL_BASE", "https://localhost/Peach/panel-php");
+// define("CONF_URL_TEST", "https://localhost/Peach/panel-php");
 
 
 /**
@@ -40,6 +40,12 @@ define("CONF_MESSAGE_ERROR", "error");
 
 
 /**
+ * DATE
+ */
+
+define("CONF_DATE_BR", "d/m/Y - H:i");
+
+/**
  * SESSION
  */
 
@@ -47,9 +53,23 @@ define("CONF_MESSAGE_ERROR", "error");
 
 
 /**
- * VIEWS
- */
+* VIEWS
+*/
+define("CONF_VIEW_PATH", __DIR__ . "/../../assets/panel");
+define("CONF_VIEW_THEME", "panel");
+define("CONF_VIEW_EXT", "php");
 
- define("CONF_VIEW_PATH", __DIR__ . "/../../assets/panel");
- define("CONF_VIEW_THEME", "panel");
- define("CONF_VIEW_EXT", "php");
+/**
+* UPLOAD
+*/
+
+define("CONF_UPLOAD_DIR", "storage");
+define("CONF_UPLOAD_IMAGE_DIR", "images");
+
+/**
+* IMAGES
+*/
+
+define("CONF_IMAGE_CACHE", CONF_UPLOAD_DIR . "/" . CONF_UPLOAD_IMAGE_DIR . "/cache");
+define("CONF_IMAGE_SIZE", 2000);
+define("CONF_IMAGE_QUALITY", ["jpg" => 75, "png" => 5]);
