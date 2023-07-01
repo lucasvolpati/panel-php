@@ -110,7 +110,7 @@ class User extends Model
         
         $this->update(self::$entity, $this->safe(), "id=:id", "id={$userId}");
         if ($this->fail()) {
-            $this->message->error("Erro ao atualizar, verifique os dados!");
+            $this->message->error("Erro ao atualizar, verifique os dados!" . $this->fail());
             return null;
         }
         $this->data = ($this->findById($userId));
