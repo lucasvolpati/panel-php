@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="<?= theme("/assets/css/style.css") ?>">
 
     <link rel="shortcut icon" href="" type="image/x-icon">
-    <title>teste</title>
+    <title><?= $this->e($title) ?></title>
 </head>
 <body>
     <style>
@@ -34,7 +34,7 @@
     <main id="main-login">
         <img src="<?= theme("/assets/img/lock.jpg") ?>" alt="logo desenvolvedor">
 
-        <form action="" method="post" id="content" novalidate>
+        <form method="post" id="content" novalidate>
             <label for="email"><i class="fa-solid fa-lock"></i>Email</label>
             <input type="email" name="email" id="email" placeholder="Email">
 
