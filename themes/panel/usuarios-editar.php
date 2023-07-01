@@ -4,7 +4,7 @@ use Source\Models\User;
 
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
 
-$user = new User(1);
+$user = new User();
 $userData = $user->findById($id);
 
 if ($id) {
