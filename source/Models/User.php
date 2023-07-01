@@ -12,9 +12,11 @@ class User extends Model
 
     protected static $safe = ['id', 'created_at', 'updated_at'];
 
+    private $debug;
+
     public function __construct(int $debug = 0)
     {
-        parent::__construct($debug, $this->fail());
+        $this->debug = $debug;
     }
 
     public function bootstrap(string $name, string $email, string $password): User

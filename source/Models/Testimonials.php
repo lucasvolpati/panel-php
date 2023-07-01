@@ -12,6 +12,13 @@ class Testimonials extends Model
 
     protected static $safe = ["id", "created_at", "updated_at"];
 
+    private $debug;
+
+    public function __construct(int $debug = 0)
+    {
+        $this->debug = $debug;
+    }
+
     public function bootstrap(string $name, string $email, string $testimonial, string $visibility)
     {
         $this->name = $name;
@@ -35,6 +42,7 @@ class Testimonials extends Model
     {
         $find = $this->read("SELECT {$columns} FROM " . self::$entity . " WHERE {$terms}", $params);
         if ($this->fail() || !$find->rowCount()) {
+            $this->message->error("Não foi possivel realizar a busca.", $this->debug, $this->fail());
             return null;
         }
 
@@ -59,7 +67,7 @@ class Testimonials extends Model
     {
         $depoId = $this->create(self::$entity, $this->safe());
         if ($this->fail()) {
-            $this->message->error("Erro ao cadastrar novo depoimentos, verifique os dados e tente novamente.");
+            $this->message->error("Erro ao cadastrar novo depoimentos, verifique os dados e tente novamente.", $this->debug, $this->fail());
             return null;
         }
         // $this->data = $this->findById($depoId);
@@ -70,18 +78,18 @@ class Testimonials extends Model
     {
         $this->update(self::$entity, $this->safe(), "id=:id", "id={$depoId}");
         if ($this->fail()) {
-            $this->message()->error("Erro ao atualizar, tente novamente mais tarde!");
-            return null;
+            return $this->message()->error("Erro ao atualizar, tente novamente mais tarde!", $this->debug, $this->fail());
+            //return null;
         }
 
-        return $this;
+        return $this->message()->error("Cadastro atualizado com sucesso!");
     }
 
     public function deleteTestimonial(string $depoId)
     {
         $this->delete(self::$entity, "id = :id", $depoId);
         if ($this->fail()) {
-            $this->message->error("Erro ao deletar depoimento!");
+            $this->message->error("Erro ao deletar depoimento!", $this->debug, $this->fail());
             return null;
         }
         $this->data = null;

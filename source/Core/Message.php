@@ -6,15 +6,6 @@ class Message {
     private $text;
     private $type;
 
-    private $debug;
-    private $debugMessage;
-
-    public function __construct(int $debug = 0, string $fail = null)
-    {
-        $this->debug = $debug;
-        $this->debugMessage = $fail;
-    }
-
     public function __toString()
     {
         return $this->render();
@@ -51,10 +42,10 @@ class Message {
         return $this;
     }
 
-    public function error(String $message): Message 
+    public function error(String $message, $debug = 0, $debugMessage = null): Message 
     {
         $this->type = CONF_MESSAGE_ERROR;
-        $this->text = $this->debug == 0 ? $this->filter($message) : $this->filter($message) . ' ### DEBUG ERROR:' . $this->debugMessage; 
+        $this->text = $debug == 0 ? $this->filter($message) : $this->filter($message) . ' ### DEBUG ERROR:' . $debugMessage; 
         return $this;
     }
 

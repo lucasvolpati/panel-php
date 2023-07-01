@@ -52,12 +52,14 @@ if ($id) {
 
                 $depo->bootstrap($data['name'], $data['email'], $data['testimonial'], $data['visibility']);
 
-                if (!$depo->updateTestimonial($depo->id)) {
-                    echo $depo->message();
-                    return null;
-                }
+                // if (!$depo->updateTestimonial($depo->id)) {
+                //     echo $depo->message()->error('Não foi possivel atualizar o registro!');
+                //     return null;
+                // }
 
-                echo $depo->message()->success("Depoimento atualizado com sucesso!");
+                echo $depo->updateTestimonial($depo->id);
+
+                //echo $depo->message()->success("Depoimento atualizado com sucesso!");
             }
 
             ?>
