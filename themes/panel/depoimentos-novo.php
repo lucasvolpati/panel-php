@@ -14,6 +14,8 @@ $this->layout("_template", ['title' => $this->e($title)]);
         $depo = new Testimonials(1);
         $depo->bootstrap($data['name'], $data['email'], $data['testimonial'], $data['visibility']);
 
+        var_dump($depo);
+        exit();
         // if (!$depo->save()) {
         //     echo $depo->fail();
         //     return null;
