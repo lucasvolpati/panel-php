@@ -25,9 +25,14 @@
     <title>Painel CMS | Login</title>
 </head>
 <body>
+    <style>
+        img {
+            mix-blend-mode: multiply;
+        }
+    </style>
    
     <main id="main-login">
-        <img src="../assets/img/logo.png" alt="logo peachbrail">
+        <img src="../assets/img/lock.jpg" alt="logo peachbrail">
 
         <form action="" method="post" id="content" novalidate>
             <label for="email"><i class="fa-solid fa-lock"></i>Email</label>
@@ -40,7 +45,7 @@
         </form>
 
         <div class="copy">
-            <p>&copy; Desenvolvido por <a href="https://peachbrasil.com.br">Peach Brasil &trade;</a>  | <script> document.write(new Date().getFullYear()) </script></p>
+            <p>&copy; Desenvolvido por <a href="https://lucasalcantara.dev.br">Luk</a> <a href="https://venicio.dev.br">e Vini &trade;</a>  | <script> document.write(new Date().getFullYear()) </script></p>
         </div>
 
         <section class="validate">
@@ -68,7 +73,7 @@
                 $dataUser = $user->findUserByEmail($email);
                 if($email == $dataUser->email && passwd_verify($password, $dataUser->password)) {
                     $session->set("login", $email);
-                    header("Location: ".url()."/"); //Location: ".CONF_URL_TEST."/home
+                    echo "<script>document.location='".url("/")."'</script>";
                 }else {
                     echo $message->error("Email ou senha inválidos, verifique e tente novamente!");
                 }
