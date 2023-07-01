@@ -27,6 +27,14 @@ class Web extends Controller
         
     }
 
+    public function exit():void
+    {
+        echo $this->view->render("exit", [
+            "title" => "Painel CMS | Logout"
+        ]);
+        
+    }
+
     /****************
      * MENU USUARIOOS
      ****************/
