@@ -10,7 +10,7 @@ $depo = new Testimonials();
 $testimonial = $depo->findById($id);
 
 if ($id) {
-    $depo->id_depo = $id;
+    $depo->id = $id;
 }
 
 ?>
@@ -52,7 +52,7 @@ if ($id) {
 
                 $depo->bootstrap($data['name'], $data['email'], $data['testimonial'], $data['visibility']);
 
-                if (!$depo->updateTestimonial($depo->id_depo)) {
+                if (!$depo->updateTestimonial($depo->id)) {
                     echo $depo->message() . $depo->fail();
                     return null;
                 }

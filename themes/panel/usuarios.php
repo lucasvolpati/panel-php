@@ -62,7 +62,7 @@ $this->layout("_template", ['title' => $this->e($title)]);
                                     <button id='{$users[$i]->id}' class='btn btn-danger deleteBtn' ><i class='fas fa-trash'></i></button>
                                     
                                 </td>" . "\n";
-                echo "</tr>"; //onclick='deleteUser({$users[$i]->id_user})'
+                echo "</tr>"; //onclick='deleteUser({$users[$i]->id})'
             }
 
 

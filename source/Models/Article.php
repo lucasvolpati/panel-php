@@ -26,7 +26,7 @@ class Article  extends Model
 
     public function find(string $terms, string $params, string $columns = "*")
     {
-        $find = $this->read("SELECT {$columns} FROM ".self::$entity." WHERE {$terms}", $params);
+        $find = $this->read("SELECT {$columns} FROM " . self::$entity . " WHERE {$terms}", $params);
         if ($this->fail() || !$find->rowCount()) {
             return null;
         }
@@ -36,12 +36,12 @@ class Article  extends Model
 
     public function findById(int $id, string $columns = "*")
     {
-        return $this->find("id_article = :id", "id={$id}", $columns);
+        return $this->find("id = :id", "id={$id}", $columns);
     }
 
-    public function findAll() 
+    public function findAll()
     {
-        $stmt = Connect::getInstance()->prepare("SELECT * FROM ".self::$entity);
+        $stmt = Connect::getInstance()->prepare("SELECT * FROM " . self::$entity);
         $stmt->execute();
 
         $articles = $stmt->fetchAll();

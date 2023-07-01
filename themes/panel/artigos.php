@@ -53,15 +53,15 @@ $this->layout("_template", ['title' => $this->e($title)]);
 
                 echo "
                     <tr>
-                        <th scope='row'>{$articles[$i]->id_article}</th>
+                        <th scope='row'>{$articles[$i]->id}</th>
                         <td><img src='{$image}' alt='Thumb Artigo' /></td>
                         <td>{$articles[$i]->title}</td>
                         <td>{$visible}</td>
                         <td>" . date_fmt($articles[$i]->created_at) . "</td>
                         <td>" . date_fmt($articles[$i]->updated_at) . "</td>
                         <td>
-                            <a class='btn btn-primary' href='editar-depoimento&id={$articles[$i]->id_article}'><i id='edit' class='fas fa-pencil-alt'></i></a>
-                            <button id='{$articles[$i]->id_article}' class='btn btn-danger deleteBtn' ><i class='fas fa-trash'></i></button>
+                            <a class='btn btn-primary' href='editar-depoimento&id={$articles[$i]->id}'><i id='edit' class='fas fa-pencil-alt'></i></a>
+                            <button id='{$articles[$i]->id}' class='btn btn-danger deleteBtn' ><i class='fas fa-trash'></i></button>
                         </td>
                     </tr>
                     ";

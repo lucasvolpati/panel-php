@@ -30,8 +30,8 @@
                 <td>02/05/2022 16:32:47</td>
                 <td>02/05/2022 16:32:47</td>
                 <td>
-                    <a class='btn btn-primary' href='editar-usuario&id={$users[$i]->id_user}'><i id='edit' class='fas fa-pencil-alt'></i></a>
-                    <a class='btn btn-danger' href='?id={$users[$i]->id_user}' data-bs-toggle='modal' data-bs-target='#modalDelete'><i id='delete' class='fas fa-trash'></i></a>
+                    <a class='btn btn-primary' href='editar-usuario&id={$users[$i]->id}'><i id='edit' class='fas fa-pencil-alt'></i></a>
+                    <a class='btn btn-danger' href='?id={$users[$i]->id}' data-bs-toggle='modal' data-bs-target='#modalDelete'><i id='delete' class='fas fa-trash'></i></a>
                 </td>
             </tr>
 
@@ -43,8 +43,8 @@
                 <td>02/05/2022 16:32:47</td>
                 <td>02/05/2022 16:32:47</td>
                 <td>
-                    <a class='btn btn-primary' href='editar-usuario&id={$users[$i]->id_user}'><i id='edit' class='fas fa-pencil-alt'></i></a>
-                    <a class='btn btn-danger' href='?id={$users[$i]->id_user}' data-bs-toggle='modal' data-bs-target='#modalDelete'><i id='delete' class='fas fa-trash'></i></a>
+                    <a class='btn btn-primary' href='editar-usuario&id={$users[$i]->id}'><i id='edit' class='fas fa-pencil-alt'></i></a>
+                    <a class='btn btn-danger' href='?id={$users[$i]->id}' data-bs-toggle='modal' data-bs-target='#modalDelete'><i id='delete' class='fas fa-trash'></i></a>
                 </td>
             </tr>
         </tbody>

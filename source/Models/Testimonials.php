@@ -20,7 +20,6 @@ class Testimonials extends Model
         $this->visibility = $visibility;
 
         return $this;
-
     }
 
     public function bootstrapUpdate(string $name, string $testimonial, string $visibility)
@@ -30,12 +29,11 @@ class Testimonials extends Model
         $this->visibility = $visibility;
 
         return $this;
-
     }
 
     public function find(string $terms, string $params, string $columns = "*")
     {
-        $find = $this->read("SELECT {$columns} FROM ".self::$entity." WHERE {$terms}", $params);
+        $find = $this->read("SELECT {$columns} FROM " . self::$entity . " WHERE {$terms}", $params);
         if ($this->fail() || !$find->rowCount()) {
             return null;
         }
@@ -45,12 +43,12 @@ class Testimonials extends Model
 
     public function findById(int $id, string $columns = "*")
     {
-        return $this->find("id_depo = :id", "id={$id}", $columns);
+        return $this->find("id = :id", "id={$id}", $columns);
     }
 
-    public function findAll() 
+    public function findAll()
     {
-        $stmt = Connect::getInstance()->prepare("SELECT * FROM ".self::$entity);
+        $stmt = Connect::getInstance()->prepare("SELECT * FROM " . self::$entity);
         $stmt->execute();
 
         $testimonials = $stmt->fetchAll();
@@ -70,7 +68,7 @@ class Testimonials extends Model
 
     public function updateTestimonial(string $depoId)
     {
-        $this->update(self::$entity, $this->safe(), "id_depo=:id", "id={$depoId}");
+        $this->update(self::$entity, $this->safe(), "id=:id", "id={$depoId}");
         if ($this->fail()) {
             $this->message()->error("Erro ao atualizar, tente novamente mais tarde!");
             return null;
@@ -81,7 +79,7 @@ class Testimonials extends Model
 
     public function deleteTestimonial(string $depoId)
     {
-        $this->delete(self::$entity, "id_depo = :id", $depoId);
+        $this->delete(self::$entity, "id = :id", $depoId);
         if ($this->fail()) {
             $this->message->error("Erro ao deletar depoimento!");
             return null;

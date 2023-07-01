@@ -88,15 +88,15 @@ $all = $depo->findAll();
 
                         echo "
                                 <tr>
-                                    <th scope='row'>{$all[$i]->id_depo}</th>
+                                    <th scope='row'>{$all[$i]->id}</th>
                                     <td>{$all[$i]->name}</td>
                                     <td>{$all[$i]->email}</td>
                                     <td>{$visible}</td>
                                     <td>" . date_fmt($all[$i]->created_at) . "</td>
                                     <td>" . date_fmt($all[$i]->updated_at) . "</td>
                                     <td>
-                                        <a class='btn btn-primary' href='editar-depoimento&id={$all[$i]->id_depo}'><i id='edit' class='fas fa-pencil-alt'></i></a>
-                                        <button id='{$all[$i]->id_depo}' class='btn btn-danger deleteBtn' ><i class='fas fa-trash'></i></button>
+                                        <a class='btn btn-primary' href='editar-depoimento&id={$all[$i]->id}'><i id='edit' class='fas fa-pencil-alt'></i></a>
+                                        <button id='{$all[$i]->id}' class='btn btn-danger deleteBtn' ><i class='fas fa-trash'></i></button>
                                     </td>
                                 </tr>
                             "; //data-bs-toggle='modal' data-bs-target='#modalDelete'
@@ -107,8 +107,8 @@ $all = $depo->findAll();
                         <td>Lucas Alcantara Rodrigues</td>
                         <td><i class="fas fa-check-circle visible"></i></td>
                         <td>
-                            <a class='btn btn-primary' href='editar-usuario&id={$users[$i]->id_user}'><i id='edit' class='fas fa-pencil-alt'></i></a>
-                            <a class='btn btn-danger' href='?id={$users[$i]->id_user}' data-bs-toggle='modal' data-bs-target='#modalDelete'><i id='delete' class='fas fa-trash'></i></a>
+                            <a class='btn btn-primary' href='editar-usuario&id={$users[$i]->id}'><i id='edit' class='fas fa-pencil-alt'></i></a>
+                            <a class='btn btn-danger' href='?id={$users[$i]->id}' data-bs-toggle='modal' data-bs-target='#modalDelete'><i id='delete' class='fas fa-trash'></i></a>
                         </td>
                     </tr> -->
 

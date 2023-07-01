@@ -8,7 +8,7 @@ $user = new User();
 $userData = $user->findById($id);
 
 if ($id) {
-    $user->id_user = $id;
+    $user->id = $id;
 }
 
 $this->layout("_template", ['title' => $this->e($title)]);
@@ -61,7 +61,7 @@ $this->layout("_template", ['title' => $this->e($title)]);
 
         //     // var_dump($user);
 
-        //     if (!$user->updateUser($user->id_user)) {
+        //     if (!$user->updateUser($user->id)) {
         //         echo $user->message();
         //     }else {
         //         echo $user->message()->success("Usuário atualizado com sucesso!");
@@ -82,7 +82,7 @@ $this->layout("_template", ['title' => $this->e($title)]);
                 $min = CONF_PASSWD_MIN_LEN;
                 $max = CONF_PASSWD_MAX_LEN;
                 echo $user->message()->error("A senha deve conter entre {$min} e {$max} caracteres.");
-            } else if (!$user->updateUser($user->id_user)) {
+            } else if (!$user->updateUser($user->id)) {
                 echo $user->message();
             } else {
                 echo $user->message()->success("Usuário atualizado com sucesso!");
