@@ -11,7 +11,7 @@ $this->layout("_template", ['title' => $this->e($title)]);
 
     if (key_exists("name", $data)) {
 
-        $depo = new Testimonials();
+        $depo = new Testimonials(1);
         $depo->bootstrap($data['name'], $data['email'], $data['testimonial'], $data['visibility']);
 
         // if (!$depo->save()) {
