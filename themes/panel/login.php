@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="<?= theme("/assets/css/style.css") ?>">
 
     <link rel="shortcut icon" href="../assets/img/favicon-peach.png" type="image/x-icon">
-    <title><?= $this->title ?></title>
+    <title><?= $this->e($title) ?></title>
 </head>
 <body>
     <style>
