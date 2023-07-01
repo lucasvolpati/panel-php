@@ -4,10 +4,10 @@
  * DATABASE
  */
 
-define('CONF_DB_HOST', 'localhost');
-define('CONF_DB_USER', 'lucas');
-define('CONF_DB_PASS', '1805');
-define('CONF_DB_NAME', 'cms_panel');
+define('CONF_DB_HOST', '192.185.131.59');
+define('CONF_DB_USER', 'brabo277_painel');
+define('CONF_DB_PASS', '~xLt=YU%tD^V');
+define('CONF_DB_NAME', 'brabo277_projetos');
 
 
 /**
@@ -24,7 +24,7 @@ define("CONF_PASSWD_OPTION", ["cost" => 10]);
  * URLS
  */
 
-define("CONF_URL_BASE", "https://localhost/panel-php");
+define("CONF_URL_BASE", "https://painel.venicio.dev.br");
 
 
 /**
