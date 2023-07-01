@@ -22,6 +22,7 @@ if (!$session->login) {
  */
 $route->namespace("Source\App");
 $route->get("/", "Web:home");
+$route->get("/login", "Web:login");
 
 /** MENU USUÁRIOS */
 $route->get("/usuarios", "Web:users");

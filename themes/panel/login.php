@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="<?= theme("/assets/css/style.css") ?>">
 
     <link rel="shortcut icon" href="../assets/img/favicon-peach.png" type="image/x-icon">
-    <title>Painel CMS | Login</title>
+    <title><?= $this->title ?></title>
 </head>
 <body>
     <style>

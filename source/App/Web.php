@@ -19,6 +19,14 @@ class Web extends Controller
         
     }
 
+    public function login():void
+    {
+        echo $this->view->render("login", [
+            "title" => "Painel CMS | Login"
+        ]);
+        
+    }
+
     /****************
      * MENU USUARIOOS
      ****************/
@@ -26,7 +34,7 @@ class Web extends Controller
     public function users():void
     {
         echo $this->view->render("usuarios", [
-            "title" => "Painel ADM Peach Breasil"
+            "title" => "Painel CMS | Usuários"
         ]);
     }
 
@@ -40,7 +48,7 @@ class Web extends Controller
     public function new_user():void
     {
         echo $this->view->render("usuarios-novo", [
-            "title" => "Painel ADM Peach Breasil"
+            "title" => "CMS | Novo Usuário"
         ]);
     }
 
@@ -62,14 +70,14 @@ class Web extends Controller
     public function page(): void
     {
         echo $this->view->render("paginas", [
-            "title" => "Painel ADM Peach Breasil"
+            "title" => "Painel CMS | Páginas"
         ]);
     }
 
     public function new_page(): void
     {
         echo $this->view->render("paginas-nova", [
-            "title" => "Painel ADM Peach Breasil"
+            "title" => "CM | Nova Página"
         ]);
     }
 
@@ -80,21 +88,21 @@ class Web extends Controller
     public function testimonials(): void
     {
         echo $this->view->render("depoimentos", [
-            "title" => "Painel ADM Peach Breasil"
+            "title" => "Painel CMS | Depoimentos"
         ]);
     }
 
     public function new_testimonials(): void
     {
         echo $this->view->render("depoimentos-novo", [
-            "title" => "Painel ADM Peach Breasil"
+            "title" => "CMS | Novo Depoimento"
         ]);
     }
 
     public function edit_testimonials(): void
     {
         echo $this->view->render("depoimentos-editar", [
-            "title" => "Painel ADM Peach Breasil"
+            "title" => "CMS | Editar Depoimento"
         ]);
     }
 
@@ -105,14 +113,14 @@ class Web extends Controller
     public function articles(): void
     {
         echo $this->view->render("artigos", [
-            "title" => "Painel ADM Peach Breasil"
+            "title" => "Painel CMS | Artigos"
         ]);
     }
 
     public function new_article(): void
     {
         echo $this->view->render("artigos-novo", [
-            "title" => "Painel ADM Peach Breasil"
+            "title" => "CMS | Novo Artigo"
         ]);
     }
 
@@ -123,56 +131,56 @@ class Web extends Controller
     public function system(): void
     {
         echo $this->view->render("sistema", [
-            "title" => "Painel ADM Peach Breasil"
+            "title" => "Painel CMS | Sistema"
         ]);
     }
 
     public function address_system(): void
     {
         echo $this->view->render("includes/sistema/endereco", [
-            "title" => "Painel ADM Peach Breasil"
+            "title" => "Painel CMS | Endereço"
         ]);
     }
 
     public function contact_system(): void
     {
         echo $this->view->render("includes/sistema/contato", [
-            "title" => "Painel ADM Peach Breasil"
+            "title" => "Painel CMS | Contatos"
         ]);
     }
 
     public function social_system(): void
     {
         echo $this->view->render("includes/sistema/sociais", [
-            "title" => "Painel ADM Peach Breasil"
+            "title" => "Painel CMS | Social"
         ]);
     }
 
     public function virtual_system(): void
     {
         echo $this->view->render("includes/sistema/virtual", [
-            "title" => "Painel ADM Peach Breasil"
+            "title" => "Painel CMS | Loja Virtual"
         ]);
     }
 
     public function lgpd_system(): void
     {
         echo $this->view->render("includes/sistema/lgpd", [
-            "title" => "Painel ADM Peach Breasil"
+            "title" => "Painel CMS | LGPD"
         ]);
     }
 
     public function floater_system(): void
     {
         echo $this->view->render("includes/sistema/floater", [
-            "title" => "Painel ADM Peach Breasil"
+            "title" => "Painel CMS | Floater"
         ]);
     }
 
     public function ftp_system(): void
     {
         echo $this->view->render("includes/sistema/ftp", [
-            "title" => "Painel ADM Peach Breasil"
+            "title" => "Painel CMS | FTP"
         ]);
     }
 
