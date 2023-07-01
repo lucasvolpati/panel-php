@@ -2,7 +2,7 @@
 
 use Source\Models\User;
 
-$users = (new User())->findAll();
+$users = User::findAll();
 
 $this->layout("_template", ['title' => $this->e($title)]);
 

@@ -12,6 +12,11 @@ class User extends Model
 
     protected static $safe = ['id', 'created_at', 'updated_at'];
 
+    public function __construct(int $debug = 0)
+    {
+        parent::__construct($debug);
+    }
+
     public function bootstrap(string $name, string $email, string $password): User
     {
         $this->name = $name;
@@ -45,7 +50,7 @@ class User extends Model
         return $this->find("id = :id", "id={$id}", $columns);
     }
 
-    public function findAll()
+    public static function findAll()
     {
         $stmt = Connect::getInstance()->prepare("SELECT id, name, email, updated_at FROM users");
         $stmt->execute();
@@ -110,7 +115,7 @@ class User extends Model
         
         $this->update(self::$entity, $this->safe(), "id=:id", "id={$userId}");
         if ($this->fail()) {
-            $this->message->error("Erro ao atualizar, verifique os dados!" . $this->fail());
+            $this->message->error("Erro ao atualizar, verifique os dados!");
             return null;
         }
         $this->data = ($this->findById($userId));
@@ -121,7 +126,7 @@ class User extends Model
     public function deleteUser(string $userId) {
         $this->delete(self::$entity, "id = :id", $userId);
         if ($this->fail()) {
-            $this->message->error("Erro ao deletar usuário!" . $this->fail());
+            $this->message->error("Erro ao deletar usuário!");
             return null;
         }
         $this->data = null;

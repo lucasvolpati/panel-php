@@ -53,7 +53,7 @@ if ($id) {
                 $depo->bootstrap($data['name'], $data['email'], $data['testimonial'], $data['visibility']);
 
                 if (!$depo->updateTestimonial($depo->id)) {
-                    echo $depo->message() . $depo->fail();
+                    echo $depo->message();
                     return null;
                 }
 

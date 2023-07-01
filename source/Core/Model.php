@@ -18,9 +18,10 @@ abstract class Model {
     /**
      * Model constructor
      */
-    public function __construct()
+    public function __construct(int $debug = 0)
     {
         $this->message = new Message();
+        $this->message .= $debug ?? $this->fail();
     }
 
     public function __set($name, $value)
