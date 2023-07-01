@@ -35,7 +35,7 @@ $this->layout("template");
         </nav>
         <!-- <input type="text" name="seach" id="seach" placeholder="Buscar"> -->
 
-        <a href="<?= url() ?>/novo-usuario" class="btn btn-primary">Novo <i class="fas fa-plus-circle"></i></a>
+        <a href="<?= url() ?>/novo-usuario" class="btn btn-primary btn-new">Novo <i class="fas fa-plus-circle"></i></a>
     </div>
 
 
