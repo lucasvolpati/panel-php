@@ -6,7 +6,7 @@
 
 define('CONF_DB_HOST', '192.185.131.59');
 define('CONF_DB_USER', 'brabo277_painel');
-define('CONF_DB_PASS', '~xLt=YU%tD^V');
+define('CONF_DB_PASS', 'PQNGnZdzM,hs');
 define('CONF_DB_NAME', 'brabo277_projetos');
 
 
