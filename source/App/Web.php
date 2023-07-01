@@ -13,7 +13,7 @@ class Web extends Controller
 
     public function home():void
     {
-        echo $this->view->render("home", [
+        echo $this->view->render("views/home", [
             "title" => "Painel CMS | Home"
         ]);
         
@@ -21,7 +21,7 @@ class Web extends Controller
 
     public function login():void
     {
-        echo $this->view->render("login", [
+        echo $this->view->render("views/login", [
             "title" => "Painel CMS | Login"
         ]);
         
@@ -33,21 +33,21 @@ class Web extends Controller
 
     public function users():void
     {
-        echo $this->view->render("usuarios", [
+        echo $this->view->render("views/usuarios", [
             "title" => "Painel CMS | Usuários"
         ]);
     }
 
     public function edit_user():void
     {
-        echo $this->view->render("usuarios-editar", [
-            "title" => "Painel ADM Peach Breasil"
+        echo $this->view->render("views/usuarios-editar", [
+            "title" => "CMS | Editar Usuário"
         ]);
     }
 
     public function new_user():void
     {
-        echo $this->view->render("usuarios-novo", [
+        echo $this->view->render("views/usuarios-novo", [
             "title" => "CMS | Novo Usuário"
         ]);
     }
@@ -58,7 +58,7 @@ class Web extends Controller
 
     public function error(array $data): void
     {
-        echo $this->view->render("error", [
+        echo $this->view->render("views/error", [
             "title" => "{$data['errcode']} | Oopps!"
         ]);
     }
@@ -69,14 +69,14 @@ class Web extends Controller
 
     public function page(): void
     {
-        echo $this->view->render("paginas", [
+        echo $this->view->render("views/paginas", [
             "title" => "Painel CMS | Páginas"
         ]);
     }
 
     public function new_page(): void
     {
-        echo $this->view->render("paginas-nova", [
+        echo $this->view->render("views/paginas-nova", [
             "title" => "CM | Nova Página"
         ]);
     }
@@ -87,21 +87,21 @@ class Web extends Controller
 
     public function testimonials(): void
     {
-        echo $this->view->render("depoimentos", [
+        echo $this->view->render("views/depoimentos", [
             "title" => "Painel CMS | Depoimentos"
         ]);
     }
 
     public function new_testimonials(): void
     {
-        echo $this->view->render("depoimentos-novo", [
+        echo $this->view->render("views/depoimentos-novo", [
             "title" => "CMS | Novo Depoimento"
         ]);
     }
 
     public function edit_testimonials(): void
     {
-        echo $this->view->render("depoimentos-editar", [
+        echo $this->view->render("views/depoimentos-editar", [
             "title" => "CMS | Editar Depoimento"
         ]);
     }
@@ -112,14 +112,14 @@ class Web extends Controller
 
     public function articles(): void
     {
-        echo $this->view->render("artigos", [
+        echo $this->view->render("views/artigos", [
             "title" => "Painel CMS | Artigos"
         ]);
     }
 
     public function new_article(): void
     {
-        echo $this->view->render("artigos-novo", [
+        echo $this->view->render("views/artigos-novo", [
             "title" => "CMS | Novo Artigo"
         ]);
     }
@@ -130,7 +130,7 @@ class Web extends Controller
 
     public function system(): void
     {
-        echo $this->view->render("sistema", [
+        echo $this->view->render("views/sistema", [
             "title" => "Painel CMS | Sistema"
         ]);
     }
