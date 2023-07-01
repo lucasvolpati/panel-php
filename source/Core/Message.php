@@ -33,28 +33,28 @@ class Message {
     public function info(String $message): Message 
     {
         $this->type = CONF_MESSAGE_INFO;
-        $this->text = $this->debug == 0 ? $this->filter($message) : $this->filter($message) . 'Error:' . $this->debugMessage; 
+        $this->text = $this->filter($message); 
         return $this;
     }
 
     public function success(String $message): Message 
     {
         $this->type = CONF_MESSAGE_SUCCESS;
-        $this->text = $this->debug == 0 ? $this->filter($message) : $this->filter($message) . 'Error:' . $this->debugMessage; 
+        $this->text = $this->filter($message); 
         return $this;
     }
 
     public function warning(String $message): Message 
     {
         $this->type = CONF_MESSAGE_WARNING;
-        $this->text = $this->debug == 0 ? $this->filter($message) : $this->filter($message) . 'Error:' . $this->debugMessage; 
+        $this->text = $this->filter($message); 
         return $this;
     }
 
     public function error(String $message): Message 
     {
         $this->type = CONF_MESSAGE_ERROR;
-        $this->text = $this->debug == 0 ? $this->filter($message) : $this->filter($message) . 'Error:' . $this->debugMessage; 
+        $this->text = $this->debug == 0 ? $this->filter($message) : $this->filter($message) . ' ### DEBUG ERROR:' . $this->debugMessage; 
         return $this;
     }
 
