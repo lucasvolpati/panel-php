@@ -8,7 +8,7 @@ $users = (new User())->findAll();
 $depo = (new Testimonials())->findAll();
 $article = (new Article())->findAll();
 
-$this->layout("_template");
+$this->layout("_template", ['title' => $this->e($title)]);
 ?>
 
 <main id="main-home">

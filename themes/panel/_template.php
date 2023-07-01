@@ -3,7 +3,7 @@
 use Source\Models\User;
 use Source\Core\Session;
 
-$this->insert("includes/head");
+$this->insert("includes/head", ['title' => $this->e($title)]);
 
     $session = new Session();
 
