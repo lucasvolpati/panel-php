@@ -6,8 +6,8 @@
 
 define('CONF_DB_HOST', 'localhost');
 define('CONF_DB_USER', 'lucas');
-define('CONF_DB_PASS', 'Luk1805@');
-define('CONF_DB_NAME', 'panel-peach');
+define('CONF_DB_PASS', '1805');
+define('CONF_DB_NAME', 'cms_panel');
 
 
 /**
@@ -24,8 +24,7 @@ define("CONF_PASSWD_OPTION", ["cost" => 10]);
  * URLS
  */
 
-define("CONF_URL_BASE", "https://localhost/Peach/panel-php");
-// define("CONF_URL_TEST", "https://localhost/Peach/panel-php");
+define("CONF_URL_BASE", "https://localhost/panel-php");
 
 
 /**

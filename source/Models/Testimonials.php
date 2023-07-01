@@ -8,9 +8,9 @@ use Source\Core\Model;
 
 class Testimonials extends Model
 {
-    protected static $entity = "depoimentos";
+    protected static $entity = "testimonials";
 
-    protected static $safe = ["id_depo", "created_at", "updated_at"];
+    protected static $safe = ["id", "created_at", "updated_at"];
 
     public function bootstrap(string $name, string $email, string $testimonial, string $visibility)
     {

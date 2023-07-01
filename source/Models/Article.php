@@ -7,9 +7,9 @@ use Source\Core\Connect;
 
 class Article  extends Model
 {
-    protected static $entity = "artigos";
+    protected static $entity = "articles";
 
-    protected static $safe = ["id_article", "created_at", "updated_at"];
+    protected static $safe = ["id", "created_at", "updated_at"];
 
     public function bootstrap(string $image, string $title, string $tags, string $category, int $visibility, int $comments, string $content)
     {

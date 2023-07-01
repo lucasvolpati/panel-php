@@ -1,6 +1,6 @@
 {
-    "name": "lucasvolpati/painel-adm",
-    "description": "Painel de controle.",
+    "name": "lucas-volpati/panel-php",
+    "description": "Painel CMS",
     "minimum-stability": "stable",
     "authors": 
     [
@@ -10,7 +10,7 @@
             "role": "Back-end developer"
         },
         {
-            "name": "José Venicio ded Oliveira Marinho",
+            "name": "José Venicio de Oliveira Marinho",
             "email": "viniciork@gmail.com",
             "role": "Front-end developer"
         }
@@ -28,9 +28,10 @@
         ]
     },
     "require": {
-        "league/plates": "v4.0.0-alpha",
-        "coffeecode/router": "^1.0.8",
-        "coffeecode/uploader": "^1.0",
-        "coffeecode/cropper": "^1.0"
+        "php": ">=8.0",
+        "league/plates": "3.5.0",
+        "coffeecode/router": "2.0.2",
+        "coffeecode/uploader": "2.0.4",
+        "coffeecode/cropper": "2.0.4"
     }
 }

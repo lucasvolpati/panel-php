@@ -10,7 +10,7 @@ class User extends Model
     /** @var string $entity database table */
     protected static $entity = 'users';
 
-    protected static $safe = ['id_user', 'updated_at'];
+    protected static $safe = ['id', 'created_at', 'updated_at'];
 
     public function bootstrap(string $name, string $email, string $password): User
     {
