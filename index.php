@@ -15,12 +15,13 @@ $route = new Router(url(), ":");
 
 
 /**
- * WEB ROUTES
+ * PRINCIPAL ROUTES
  */
 $route->namespace("Source\App");
 $route->get("/", "Web:home");
 $route->get("/login", "Web:login");
 $route->post("/login", "Web:login");
+$route->get("/exit", "Web:exit");
 
 /** MENU USUÁRIOS */
 $route->get("/usuarios", "Web:users");
