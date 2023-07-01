@@ -13,9 +13,6 @@ use CoffeeCode\Router\Router;
 $session = new Session();
 $route = new Router(url(), ":");
 
-if (!$session->login) {
-    header("Location: ".url()."/login");
-}
 
 /**
  * WEB ROUTES
