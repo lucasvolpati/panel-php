@@ -67,11 +67,11 @@ class Testimonials extends Model
     {
         $depoId = $this->create(self::$entity, $this->safe());
         if ($this->fail()) {
-            $this->message->error("Erro ao cadastrar novo depoimentos, verifique os dados e tente novamente.", $this->debug, $this->fail());
-            return null;
+            return $this->message->error("Erro ao cadastrar novo depoimentos, verifique os dados e tente novamente.", $this->debug, $this->fail());
+            //return null;
         }
-        // $this->data = $this->findById($depoId);
-        return $this;
+        // $this->data = $this->findById($depoId);Depoimento cadastrado com sucesso
+        return $this->message->error("Depoimento cadastrado com sucesso.");
     }
 
     public function updateTestimonial(string $depoId)

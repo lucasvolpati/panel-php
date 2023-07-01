@@ -14,12 +14,13 @@ $this->layout("_template", ['title' => $this->e($title)]);
         $depo = new Testimonials();
         $depo->bootstrap($data['name'], $data['email'], $data['testimonial'], $data['visibility']);
 
-        if (!$depo->save()) {
-            echo $depo->fail();
-            return null;
-        }
+        // if (!$depo->save()) {
+        //     echo $depo->fail();
+        //     return null;
+        // }
 
-        echo $depo->message()->success("Depoimento cadastrado com sucesso.");
+        echo $depo->save();
+        //echo $depo->message()->success("Depoimento cadastrado com sucesso.");
     }
 
     ?>
