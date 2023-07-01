@@ -55,7 +55,7 @@ define("CONF_DATE_BR", "d/m/Y - H:i");
 * VIEWS
 */
 define("CONF_VIEW_PATH", __DIR__ . "/../../assets/panel");
-define("CONF_VIEW_THEME", "panel");
+define("CONF_VIEW_THEME", "panel/views");
 define("CONF_VIEW_EXT", "php");
 
 /**
