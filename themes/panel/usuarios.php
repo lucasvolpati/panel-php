@@ -26,13 +26,13 @@ $this->layout("template");
     }
 
     ?>
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?= url("/") ?>">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Usuários</li>
-        </ol>
-    </nav>
     <div id="buscar">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="<?= url("/") ?>">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Usuários</li>
+            </ol>
+        </nav>
         <!-- <input type="text" name="seach" id="seach" placeholder="Buscar"> -->
 
         <a href="<?= url() ?>/novo-usuario" class="btn btn-primary">Novo <i class="fas fa-plus-circle"></i></a>
