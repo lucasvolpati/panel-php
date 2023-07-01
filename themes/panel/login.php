@@ -21,7 +21,7 @@
     <!-- LINK CSS -->
     <link rel="stylesheet" href="<?= theme("/assets/css/style.css") ?>">
 
-    <link rel="shortcut icon" href="../assets/img/favicon-peach.png" type="image/x-icon">
+    <link rel="shortcut icon" href="" type="image/x-icon">
     <title>teste</title>
 </head>
 <body>
@@ -32,7 +32,7 @@
     </style>
    
     <main id="main-login">
-        <img src="../assets/img/lock.jpg" alt="logo peachbrail">
+        <img src="<?= theme("/assets/img/lock.jpg") ?>" alt="logo desenvolvedor">
 
         <form action="" method="post" id="content" novalidate>
             <label for="email"><i class="fa-solid fa-lock"></i>Email</label>

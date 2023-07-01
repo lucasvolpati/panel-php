@@ -8,7 +8,7 @@ $this->insert("includes/head");
     $session = new Session();
 
     if (!$session->login) {
-        header("Location: ".url("/login"));
+        echo "<script>document.location='".url("/login")."'</script>";
     }
 
 ?>
