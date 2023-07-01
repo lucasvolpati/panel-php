@@ -3,7 +3,7 @@
 use Source\Models\Article;
 use Source\Support\Thumb;
 
-$this->layout("template")
+$this->layout("_template")
 ?>
 
 <main id="main-pages">

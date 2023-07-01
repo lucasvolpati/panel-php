@@ -1,4 +1,4 @@
-<?php $this->layout("template") ?>
+<?php $this->layout("_template") ?>
 
 <main id="main-pages">
     <div id="buscar">

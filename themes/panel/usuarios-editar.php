@@ -11,7 +11,7 @@ if ($id) {
     $user->id_user = $id;
 }
 
-$this->layout("template");
+$this->layout("_template");
 
 ?>
 

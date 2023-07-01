@@ -1,8 +1,15 @@
 <?php
 
 use Source\Models\User;
-// $this->insert("includes/header");
+use Source\Core\Session;
+
 $this->insert("includes/head");
+
+    $session = new Session();
+
+    if (!$session->login) {
+        header("Location: ".url("/login"));
+    }
 
 ?>
 

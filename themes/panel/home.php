@@ -4,24 +4,24 @@ use Source\Models\Testimonials;
 use Source\Models\User;
 use Source\Models\Article;
 
-    $users = (new User())->findAll();
-    $depo = (new Testimonials())->findAll();
-    $article = (new Article())->findAll();
-    
-    $this->layout("template");
+$users = (new User())->findAll();
+$depo = (new Testimonials())->findAll();
+$article = (new Article())->findAll();
+
+$this->layout("_template");
 ?>
 
-<main id="main-home"> 
-    <!-- GERAL -->    
+<main id="main-home">
+    <!-- GERAL -->
     <section id="geral">
         <div class="head">
             <h2>Geral</h2>
         </div>
 
         <div class="content">
-            <a href="<?= url() . "/usuarios"?>" class="usu">
-                <h3><?= count($users)?></h3>
-                
+            <a href="<?= url() . "/usuarios" ?>" class="usu">
+                <h3><?= count($users) ?></h3>
+
                 <div class="subtitle">
                     <i class="fas fa-users"></i>
                     <span>usuários</span>
@@ -38,7 +38,7 @@ use Source\Models\Article;
         </div>
 
         <div class="content">
-            <a href="<?= url() . "/paginas"?>" class="paginas">
+            <a href="<?= url() . "/paginas" ?>" class="paginas">
                 <h3>0</h3>
 
                 <div class="subtitle">
@@ -56,11 +56,11 @@ use Source\Models\Article;
                 </div>
             </a>
 
-            <a href="<?= url() . "/depoimentos"?>" class="depoimentos">
-                <h3><?= count($depo)?></h3>
+            <a href="<?= url() . "/depoimentos" ?>" class="depoimentos">
+                <h3><?= count($depo) ?></h3>
 
                 <div class="subtitle">
-                <i class="fas fa-grin-beam"></i>
+                    <i class="fas fa-grin-beam"></i>
                     <span>depoimentos</span>
                 </div>
             </a>
@@ -75,8 +75,8 @@ use Source\Models\Article;
         </div>
 
         <div class="content">
-            <a href="<?= url() . "/artigos"?>" class="artigos">
-                <h3><?= count($article)?></h3>
+            <a href="<?= url() . "/artigos" ?>" class="artigos">
+                <h3><?= count($article) ?></h3>
 
                 <div class="subtitle">
                     <i class="fas fa-newspaper"></i>
