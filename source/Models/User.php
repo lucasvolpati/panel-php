@@ -14,7 +14,7 @@ class User extends Model
 
     public function __construct(int $debug = 0)
     {
-        parent::__construct($debug);
+        parent::__construct($debug, $this->fail());
     }
 
     public function bootstrap(string $name, string $email, string $password): User

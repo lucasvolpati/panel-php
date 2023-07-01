@@ -6,6 +6,15 @@ class Message {
     private $text;
     private $type;
 
+    private $debug;
+    private $debugMessage;
+
+    public function __construct(int $debug = 0, string $fail = null)
+    {
+        $this->debug = $debug;
+        $this->debugMessage = $fail;
+    }
+
     public function __toString()
     {
         return $this->render();
@@ -24,28 +33,28 @@ class Message {
     public function info(String $message): Message 
     {
         $this->type = CONF_MESSAGE_INFO;
-        $this->text = $this->filter($message);
+        $this->text = $this->debug == 0 ? $this->filter($message) : $this->debugMessage; 
         return $this;
     }
 
     public function success(String $message): Message 
     {
         $this->type = CONF_MESSAGE_SUCCESS;
-        $this->text = $this->filter($message);
+        $this->text = $this->debug == 0 ? $this->filter($message) : $this->debugMessage; 
         return $this;
     }
 
     public function warning(String $message): Message 
     {
         $this->type = CONF_MESSAGE_WARNING;
-        $this->text = $this->filter($message);
+        $this->text = $this->debug == 0 ? $this->filter($message) : $this->debugMessage; 
         return $this;
     }
 
     public function error(String $message): Message 
     {
         $this->type = CONF_MESSAGE_ERROR;
-        $this->text = $this->filter($message);
+        $this->text = $this->debug == 0 ? $this->filter($message) : $this->debugMessage; 
         return $this;
     }
 
