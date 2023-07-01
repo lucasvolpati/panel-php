@@ -1,5 +1,5 @@
 <?php
-$this->layout("_template");
+$this->layout("_template", ['title' => $this->e($title)]);
 
 use Source\Models\User;
 

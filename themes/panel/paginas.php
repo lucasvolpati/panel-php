@@ -1,4 +1,4 @@
-<?php $this->layout("_template") ?>
+<?php $this->layout("_template", ['title' => $this->e($title)]); ?>
 
 <main id="main-pages">
     <div id="buscar">

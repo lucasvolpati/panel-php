@@ -4,7 +4,7 @@ use Source\Models\User;
 
 $users = (new User())->findAll();
 
-$this->layout("_template");
+$this->layout("_template", ['title' => $this->e($title)]);
 
 
 ?>

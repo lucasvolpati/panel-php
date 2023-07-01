@@ -1,4 +1,4 @@
-<?php $this->layout("_template") ?>
+<?php $this->layout("_template", ['title' => $this->e($title)]); ?>
 
 <main id="main-new-page" class="content-view">
     <div class="container-main">

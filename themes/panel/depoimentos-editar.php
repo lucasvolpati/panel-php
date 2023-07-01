@@ -2,7 +2,7 @@
 
 use Source\Models\Testimonials;
 
-$this->layout('template');
+$this->layout("_template", ['title' => $this->e($title)]);;
 
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
 

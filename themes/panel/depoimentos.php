@@ -2,7 +2,7 @@
 
 use Source\Models\Testimonials;
 
-$this->layout('template');
+$this->layout("_template", ['title' => $this->e($title)]);;
 
 $depo = new Testimonials();
 $all = $depo->findAll();

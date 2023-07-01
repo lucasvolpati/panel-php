@@ -1,5 +1,5 @@
 <?php
-$this->layout('template')
+$this->layout("_template", ['title' => $this->e($title)]);
 ?>
 
 <section class="system-main">
