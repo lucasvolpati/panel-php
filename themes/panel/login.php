@@ -73,7 +73,9 @@
                 $dataUser = $user->findUserByEmail($email);
                 if($email == $dataUser->email && passwd_verify($password, $dataUser->password)) {
                     $session->set("login", $email);
-                    echo "<script>document.location='".url("/")."'</script>";
+                    var_dump($session);
+                    var_dump(url());
+                    //echo "<script>document.location='".url("/")."'</script>";
                 }else {
                     echo $message->error("Email ou senha inválidos, verifique e tente novamente!");
                 }
