@@ -1,10 +1,10 @@
 <?php
-    $v->layout('template')
+$this->layout('template')
 ?>
 
-<?php $v->start('css') ?>
-    <link rel="stylesheet" href="<?= theme("/assets/dist/ui/trumbowyg.min.css") ?>">
-<?php $v->stop() ?>
+<?php $this->start('css') ?>
+<link rel="stylesheet" href="<?= theme("/assets/dist/ui/trumbowyg.min.css") ?>">
+<?php $this->stop() ?>
 
 <main class="content-view-articles">
     <nav aria-label="breadcrumb">
@@ -15,50 +15,50 @@
         </ol>
     </nav>
     <div class="container-main">
-                        <?php
+        <?php
 
-                            use Source\Models\Article;
-                            use Source\Support\Upload;
+        use Source\Models\Article;
+        use Source\Support\Upload;
 
-                            $upload = new Upload();
+        $upload = new Upload();
 
-                            $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS);
+        $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS);
 
-                            if ($data) {
-                                $u = $upload->image($_FILES['image'], "image", $width = 500);
+        if ($data) {
+            $u = $upload->image($_FILES['image'], "image", $width = 500);
 
-                                if (!$u) {
-                                    echo $upload->message();
-                                }
+            if (!$u) {
+                echo $upload->message();
+            }
 
-                                
 
-                                $article = new Article();
 
-                                $article->bootstrap(
-                                    $u,
-                                    $data['title'],
-                                    $data['tags'],
-                                    $data['category'],
-                                    $data['visibility'],
-                                    $data['comments'],
-                                    $data['content']
-                                );
+            $article = new Article();
 
-                                if (!$article->save()) {
-                                    echo $article->fail();
-                                    return null;
-                                }
-                        
-                                echo $article->message()->success("Artigo cadastrado com sucesso.");
-                            }
-                        ?>
+            $article->bootstrap(
+                $u,
+                $data['title'],
+                $data['tags'],
+                $data['category'],
+                $data['visibility'],
+                $data['comments'],
+                $data['content']
+            );
+
+            if (!$article->save()) {
+                echo $article->fail();
+                return null;
+            }
+
+            echo $article->message()->success("Artigo cadastrado com sucesso.");
+        }
+        ?>
         <form action="" method="post" class="border p-4 form-validate" enctype="multipart/form-data" novalidate>
 
             <div class="tabs">
                 <div class="row">
                     <div class="form-group mb-3">
-                        
+
                         <label class="form-label"><strong>Capa:</strong></label>
                         <span><small>O ideal seria uma imagem de até 300kb que tenha no máximo 1920 x 1080 de resolução</small></span>
 
@@ -118,42 +118,41 @@
     </div>
 </main>
 
-<?php $v->start('script') ?>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src=<?= theme("/assets/js/new-blog.js") ?>></script>
-    <script src="<?= theme("/assets/dist/trumbowyg.min.js") ?>"></script>
-    <script src="<?= theme("/assets/dist/plugins/upload/trumbowyg.upload.min.js") ?>"></script>
+<?php $this->start('script') ?>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src=<?= theme("/assets/js/new-blog.js") ?>></script>
+<script src="<?= theme("/assets/dist/trumbowyg.min.js") ?>"></script>
+<script src="<?= theme("/assets/dist/plugins/upload/trumbowyg.upload.min.js") ?>"></script>
 
-    <script>
-        $('#trumbowyg-content').trumbowyg({
-            btns: [
-                ['viewHTML'],
-                ['undo', 'redo'], // Only supported in Blink browsers
-                ['formatting'],
-                ['strong', 'em', 'del'],
-                ['superscript', 'subscript'],
-                ['link'],
-                ['insertImage'],
-                ['upload'],
-                ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
-                ['unorderedList', 'orderedList'],
-                ['horizontalRule'],
-                ['removeformat'],
-                ['fullscreen']
-            ],
-            plugins: {
-                // Add imagur parameters to upload plugin for demo purposes
-                upload: {
-                    serverPath: 'https://api.imgur.com/3/image',
-                    fileFieldName: 'image',
-                    headers: {
-                        'Authorization': 'Client-ID xxxxxxxxxxxx'
-                    },
-                    urlPropertyName: 'data.link'
-                }
-            },
-            autogrow: true
-        });
-    </script>
-<?php $v->stop() ?>
-
+<script>
+    $('#trumbowyg-content').trumbowyg({
+        btns: [
+            ['viewHTML'],
+            ['undo', 'redo'], // Only supported in Blink browsers
+            ['formatting'],
+            ['strong', 'em', 'del'],
+            ['superscript', 'subscript'],
+            ['link'],
+            ['insertImage'],
+            ['upload'],
+            ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+            ['unorderedList', 'orderedList'],
+            ['horizontalRule'],
+            ['removeformat'],
+            ['fullscreen']
+        ],
+        plugins: {
+            // Add imagur parameters to upload plugin for demo purposes
+            upload: {
+                serverPath: 'https://api.imgur.com/3/image',
+                fileFieldName: 'image',
+                headers: {
+                    'Authorization': 'Client-ID xxxxxxxxxxxx'
+                },
+                urlPropertyName: 'data.link'
+            }
+        },
+        autogrow: true
+    });
+</script>
+<?php $this->stop() ?>

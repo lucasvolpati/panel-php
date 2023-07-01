@@ -88,7 +88,10 @@ function theme(string $path = null)
  * ##############
  */
 
-function date_fmt(string $date = "now"): string
+function date_fmt(?string $date = "now"): string
 {
+    if (!$date) {
+        return '--';
+    }
     return (new DateTime($date))->format(CONF_DATE_BR);
 }

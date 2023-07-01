@@ -1,4 +1,4 @@
-<?php $v->layout("template") ?>
+<?php $this->layout("template") ?>
 
 <main id="main-pages">
     <div id="buscar">
@@ -19,8 +19,8 @@
             </tr>
         </thead>
 
-            
-        
+
+
         <tbody>
             <tr>
                 <th scope="row">1</th>

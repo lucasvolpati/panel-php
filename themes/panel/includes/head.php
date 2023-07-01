@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="<?= theme("/assets/css/panel/nav.css") ?>">
 
     <!-- TRUMBOWYG STYLE -->
-    <?php if($v->section("css")): ?>
-        <?= $v->section('css') ?>
+    <?php if($this->section("css")): ?>
+        <?= $this->section('css') ?>
     <?php endif ?>
 
     

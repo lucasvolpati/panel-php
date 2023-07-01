@@ -1,10 +1,10 @@
 <?php
 
-    use Source\Models\User;
+use Source\Models\User;
 
-    $users = (new User())->findAll();
+$users = (new User())->findAll();
 
-    $v->layout("template");
+$this->layout("template");
 
 
 ?>
@@ -13,18 +13,18 @@
     <?php
     $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
 
-    
+
     if ($id) {
 
         $user = new User();
-        
+
         if (!$user->deleteUser($id)) {
             echo $user->message();
-        }else {
+        } else {
             echo $user->message()->success("Usuário deletado com sucesso!");
         }
     }
-    
+
     ?>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -51,21 +51,21 @@
         </thead>
         <tbody>
             <?php
-                for ($i=0; $i < count($users); $i++) { 
-                    echo "<tr>" . "\n";
-                        echo "<th scope='row'>{$users[$i]->id_user}</th>" . "\n";
-                            echo "<td>{$users[$i]->name}</td>" . "\n";
-                            echo "<td>{$users[$i]->email}</td>" . "\n";
-                            echo "<td>".date_fmt($users[$i]->updated_at)."</td>" . "\n";
-                            echo "<td>
-                                    <a class='btn btn-primary' href='editar-usuario&id={$users[$i]->id_user}'><i id='edit' class='fas fa-pencil-alt'></i></a>
-                                    <button id='{$users[$i]->id_user}' class='btn btn-danger deleteBtn' ><i class='fas fa-trash'></i></button>
+            for ($i = 0; $i < count($users); $i++) {
+                echo "<tr>" . "\n";
+                echo "<th scope='row'>{$users[$i]->id}</th>" . "\n";
+                echo "<td>{$users[$i]->name}</td>" . "\n";
+                echo "<td>{$users[$i]->email}</td>" . "\n";
+                echo "<td>" . date_fmt($users[$i]->updated_at) . "</td>" . "\n";
+                echo "<td>
+                                    <a class='btn btn-primary' href='editar-usuario&id={$users[$i]->id}'><i id='edit' class='fas fa-pencil-alt'></i></a>
+                                    <button id='{$users[$i]->id}' class='btn btn-danger deleteBtn' ><i class='fas fa-trash'></i></button>
                                     
-                                </td>" . "\n"; 
-                    echo "</tr>"; //onclick='deleteUser({$users[$i]->id_user})'
-                }
-            
-            
+                                </td>" . "\n";
+                echo "</tr>"; //onclick='deleteUser({$users[$i]->id_user})'
+            }
+
+
             ?>
             <div class="modal" id="modalDelete" tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered">

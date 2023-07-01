@@ -1,5 +1,5 @@
 <?php
-    $v->layout('template')
+$this->layout('template')
 ?>
 
 <main class="content-view">
@@ -13,43 +13,37 @@
     <div class="container-main">
 
         <div class="mt-2">
-            <form action="" method="POST"
-                class="border p-4 form-validate">
+            <form action="" method="POST" class="border p-4 form-validate">
                 <input type="hidden" name="_method" value="PUT">
 
                 <div class="form-group mb-3">
                     <label class="form-label"><strong>CEP:</strong></label>
-                    <input type="text" name="postal_code" placeholder="CEP" value="04134090" required
-                        class="form-control required cep-mask postal-code-search">
+                    <input type="text" name="postal_code" placeholder="CEP" value="04134090" required class="form-control required cep-mask postal-code-search">
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label"><strong>Logradouro:</strong></label>
-                            <input type="text" name="street" placeholder="Logradouro"
-                                value="Rua Dom Antônio Barreiros" required class="form-control required">
+                            <input type="text" name="street" placeholder="Logradouro" value="Rua Dom Antônio Barreiros" required class="form-control required">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label"><strong>Número:</strong></label>
-                            <input type="text" name="number" placeholder="Número" value="167" required
-                                class="form-control required">
+                            <input type="text" name="number" placeholder="Número" value="167" required class="form-control required">
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group mb-3">
                     <label class="form-label"><strong>Bairro:</strong></label>
-                    <input type="text" name="district" placeholder="Bairro" value="Vila Gumercindo" required
-                        class="form-control required">
+                    <input type="text" name="district" placeholder="Bairro" value="Vila Gumercindo" required class="form-control required">
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label"><strong>Cidade:</strong></label>
-                            <input type="text" name="city" placeholder="Cidade" value="São Paulo" required
-                                class="form-control required">
+                            <input type="text" name="city" placeholder="Cidade" value="São Paulo" required class="form-control required">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -92,15 +86,13 @@
                     <div class="col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label"><strong>Latitude:</strong></label>
-                            <input type="text" name="latitude" placeholder="Latitude" value="-23.60773775177359"
-                                class="form-control ">
+                            <input type="text" name="latitude" placeholder="Latitude" value="-23.60773775177359" class="form-control ">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label"><strong>Longitude:</strong></label>
-                            <input type="text" name="longitude" placeholder="Longitude" value="-23.60773775177359"
-                                class="form-control ">
+                            <input type="text" name="longitude" placeholder="Longitude" value="-23.60773775177359" class="form-control ">
                         </div>
                     </div>
                 </div>

@@ -11,7 +11,7 @@ if ($id) {
     $user->id_user = $id;
 }
 
-$v->layout("template");
+$this->layout("template");
 
 ?>
 
@@ -46,10 +46,10 @@ $v->layout("template");
         <div class="col-12">
             <a onclick="window.location.href='<?= url() ?>/usuarios'" class="btn btn-secondary">Voltar <i class="fas fa-reply"></i></a>
             <button type="submit" class="btn btn-success">Atualizar <i class="fas fa-save"></i></button>
-            
+
         </div>
 
-    <?php
+        <?php
         $data = filter_input_array(INPUT_GET, FILTER_DEFAULT);
 
         // if (key_exists("name", $data)) {
@@ -73,24 +73,22 @@ $v->layout("template");
                 $data['email'],
                 passwd($data['pass'])
             );
-    
+
             if (in_array("", $data)) {
                 echo $user->message()->error("Preencha todos os dados.");
-            }else if(!filter_var($user->email, FILTER_VALIDATE_EMAIL)) {
+            } else if (!filter_var($user->email, FILTER_VALIDATE_EMAIL)) {
                 echo $user->message()->error("E-mail inválido, favor verificar.");
-            }else if(!is_passwd($data['pass'])) {
+            } else if (!is_passwd($data['pass'])) {
                 $min = CONF_PASSWD_MIN_LEN;
                 $max = CONF_PASSWD_MAX_LEN;
                 echo $user->message()->error("A senha deve conter entre {$min} e {$max} caracteres.");
-            }
-            else if(!$user->updateUser($user->id_user)) {
+            } else if (!$user->updateUser($user->id_user)) {
                 echo $user->message();
-            }
-            else {
+            } else {
                 echo $user->message()->success("Usuário atualizado com sucesso!");
             }
         }
-    
-    ?>
+
+        ?>
     </form>
-    </main>
+</main>

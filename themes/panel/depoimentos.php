@@ -2,32 +2,32 @@
 
 use Source\Models\Testimonials;
 
-    $v->layout('template');
+$this->layout('template');
 
-    $depo = new Testimonials();
-    $all = $depo->findAll();
+$depo = new Testimonials();
+$all = $depo->findAll();
 
-    
 
-    // var_dump($all);
+
+// var_dump($all);
 ?>
 
 <main id="main-testimonials" class="content-view">
     <?php
-        $delete = new Testimonials();
+    $delete = new Testimonials();
 
-        $id = filter_input(INPUT_GET, "id",FILTER_SANITIZE_SPECIAL_CHARS);
+    $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
 
-        if ($id) {
-            // var_dump($id);
-            if (!$delete->deleteTestimonial($id)) {
-                echo $delete->message();
-            }else {
-                echo $delete->message()->success("Depoimento deletado com sucesso!");
-            }
+    if ($id) {
+        // var_dump($id);
+        if (!$delete->deleteTestimonial($id)) {
+            echo $delete->message();
+        } else {
+            echo $delete->message()->success("Depoimento deletado com sucesso!");
         }
+    }
 
-        
+
     ?>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -56,13 +56,10 @@ use Source\Models\Testimonials;
     <div class="container-main">
 
         <div class="p-4 bg-white border">
-            <form action="" method="POST"
-                class="form mb-4">
+            <form action="" method="POST" class="form mb-4">
                 <div class="row">
                     <div class="col-md-2">
-                        <a href="<?= url("/novo-depoimento") ?>"
-                            class="btn btn-primary float-end" title="Novo Depoimento">Novo <i
-                                class="fas fa-plus-circle"></i></a>
+                        <a href="<?= url("/novo-depoimento") ?>" class="btn btn-primary float-end" title="Novo Depoimento">Novo <i class="fas fa-plus-circle"></i></a>
                     </div>
                 </div>
             </form>
@@ -81,29 +78,29 @@ use Source\Models\Testimonials;
                 <tbody>
                     <?php
 
-                        for ($i=0; $i < count($all) ; $i++) { 
+                    for ($i = 0; $i < count($all); $i++) {
 
-                            if ($all[$i]->visibility == 1) {
-                                $visible = "<i class='fas fa-check-circle visible'></i>";
-                            }else {
-                                $visible = "<i class='fas fa-times-circle hidden'></i>";
-                            }
+                        if ($all[$i]->visibility == 1) {
+                            $visible = "<i class='fas fa-check-circle visible'></i>";
+                        } else {
+                            $visible = "<i class='fas fa-times-circle hidden'></i>";
+                        }
 
-                            echo "
+                        echo "
                                 <tr>
                                     <th scope='row'>{$all[$i]->id_depo}</th>
                                     <td>{$all[$i]->name}</td>
                                     <td>{$all[$i]->email}</td>
                                     <td>{$visible}</td>
-                                    <td>".date_fmt($all[$i]->created_at)."</td>
-                                    <td>".date_fmt($all[$i]->updated_at)."</td>
+                                    <td>" . date_fmt($all[$i]->created_at) . "</td>
+                                    <td>" . date_fmt($all[$i]->updated_at) . "</td>
                                     <td>
                                         <a class='btn btn-primary' href='editar-depoimento&id={$all[$i]->id_depo}'><i id='edit' class='fas fa-pencil-alt'></i></a>
                                         <button id='{$all[$i]->id_depo}' class='btn btn-danger deleteBtn' ><i class='fas fa-trash'></i></button>
                                     </td>
                                 </tr>
-                            ";//data-bs-toggle='modal' data-bs-target='#modalDelete'
-                        }
+                            "; //data-bs-toggle='modal' data-bs-target='#modalDelete'
+                    }
                     ?>
                     <!-- <tr>
                         <th scope="row">1</th>
@@ -119,9 +116,7 @@ use Source\Models\Testimonials;
             </table>
             <nav class="m-0">
                 <ul class="pagination m-0">
-                    <li class="page-item"><a class="page-link"
-                            href="https://www.peachbrasil.com.br/loja/painel/site/depoimentos?page=1"
-                            title="Página 1">1</a></li>
+                    <li class="page-item"><a class="page-link" href="https://www.peachbrasil.com.br/loja/painel/site/depoimentos?page=1" title="Página 1">1</a></li>
                 </ul>
             </nav>
         </div>

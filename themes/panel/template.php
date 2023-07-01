@@ -1,26 +1,27 @@
 <?php
-    use Source\Models\User;
-    // $v->insert("includes/header");
-    $v->insert("includes/head");
-    
+
+use Source\Models\User;
+// $this->insert("includes/header");
+$this->insert("includes/head");
+
 ?>
 
 
 <body id="body">
 
-    <?php if($_SESSION['login']): ?>
-        <?php 
-            $user = (new User())->findNameByEmail($_SESSION['login']); 
-            
-        
+    <?php if ($_SESSION['login']) : ?>
+        <?php
+        $user = (new User())->findNameByEmail($_SESSION['login']);
+
+
         ?>
     <?php endif ?>
 
     <!-- MENU DE NAVEGAÇÃO -->
     <nav id="nav">
         <div id="head">
-            <h3 id="user" name="user"><?= $user->name?></h3>
-            <h3 id="useremail" name="useremail"><?= $user->email?></h3>
+            <h3 id="user" name="user"><?= $user->name ?></h3>
+            <h3 id="useremail" name="useremail"><?= $user->email ?></h3>
         </div>
 
         <a href="<?= url() ?>/"><i class="fas fa-home"></i> <span>Início</span></a>
@@ -52,9 +53,9 @@
         <p>Configurações</p>
 
         <a href="<?= url("/sistema") ?>"><i class="fas fa-cog"></i> <span>Sistema</span></a>
-        <a href="<?=url("/funcoes") ?>"><i class="fas fa-sitemap"></i> <span>Funções</span></a>
-        <a href="<?=url("/permissoes") ?>"><i class="fas fa-lock"></i> <span>Permissões</span></a>
-        <a href=<?= url() . "/exit.php"?>><i class="fas fa-sign-out-alt"></i> <span>Sair</span></a>
+        <a href="<?= url("/funcoes") ?>"><i class="fas fa-sitemap"></i> <span>Funções</span></a>
+        <a href="<?= url("/permissoes") ?>"><i class="fas fa-lock"></i> <span>Permissões</span></a>
+        <a href=<?= url() . "/exit.php" ?>><i class="fas fa-sign-out-alt"></i> <span>Sair</span></a>
     </nav>
 
     <!-- SUB-MENU DE NAVEGAÇÃO -->
@@ -70,17 +71,18 @@
         </div>
 
         <div class="user-container">
-            <h3 id="username" name="username"><i class="fas fa-user"></i><?= $user->name?><i class="fas fa-caret-down"></i></h3>
+            <h3 id="username" name="username"><i class="fas fa-user"></i><?= $user->name ?><i class="fas fa-caret-down"></i></h3>
 
-            <a href=<?= url() . "/exit.php"?> class="exit"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            <a href=<?= url() . "/exit.php" ?> class="exit"><i class="fas fa-sign-out-alt"></i> Sair</a>
         </div>
     </div>
 
-    <?= $v->section("content"); ?>
+    <?= $this->section("content"); ?>
 
     <?php
-        $v->insert("includes/footer");
+    $this->insert("includes/footer");
     ?>
 
 </body>
+
 </html>

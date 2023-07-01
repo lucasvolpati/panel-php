@@ -1,5 +1,5 @@
 <?php
-    $v->layout('template')
+$this->layout('template')
 ?>
 
 <main class="content-view">
@@ -13,8 +13,7 @@
     <div class="container-main">
 
         <div class="mt-2">
-            <form action="" method="POST"
-                class="border p-4 form-validate">
+            <form action="" method="POST" class="border p-4 form-validate">
                 <input type="hidden" name="_method" value="PUT">
 
                 <div class="form-group mb-3">
@@ -38,8 +37,7 @@
                     <div class="col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label"><strong>Porta:</strong></label>
-                            <input type="number" name="port" placeholder="Porta" value="0" min="0" max="65536"
-                                class="form-control ">
+                            <input type="number" name="port" placeholder="Porta" value="0" min="0" max="65536" class="form-control ">
                         </div>
                     </div>
                 </div>
@@ -48,8 +46,7 @@
                     <div class="col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label"><strong>Username:</strong></label>
-                            <input type="text" name="username" placeholder="Username" value=""
-                                class="form-control ">
+                            <input type="text" name="username" placeholder="Username" value="" class="form-control ">
                         </div>
                     </div>
                     <div class="col-md-6">

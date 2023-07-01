@@ -1,5 +1,5 @@
 <?php
-    $v->layout('template')
+$this->layout('template')
 ?>
 
 <main class="content-view">
@@ -13,8 +13,7 @@
     <div class="container-main">
 
         <div class="mt-2">
-            <form action="" method="POST"
-                class="border p-4 form-validate" enctype="multipart/form-data">
+            <form action="" method="POST" class="border p-4 form-validate" enctype="multipart/form-data">
                 <input type="hidden" name="_method" value="PUT">
 
                 <div class="form-group mb-3">

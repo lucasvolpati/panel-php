@@ -8,7 +8,7 @@ use Source\Models\Article;
     $depo = (new Testimonials())->findAll();
     $article = (new Article())->findAll();
     
-    $v->layout("template");
+    $this->layout("template");
 ?>
 
 <main id="main-home"> 

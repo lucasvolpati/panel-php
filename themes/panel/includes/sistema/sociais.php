@@ -1,5 +1,5 @@
 <?php
-    $v->layout('template')
+$this->layout('template')
 ?>
 
 <main class="content-view">
@@ -13,23 +13,20 @@
     <div class="container-main">
 
         <div class="mt-2">
-            <form action="https://www.peachbrasil.com.br/admin/configuracoes/sistema/redes-sociais/salvar"
-                method="POST" class="border p-4 form-validate">
+            <form action="https://www.peachbrasil.com.br/admin/configuracoes/sistema/redes-sociais/salvar" method="POST" class="border p-4 form-validate">
                 <input type="hidden" name="_method" value="PUT">
 
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label"><strong>Facebook:</strong></label>
-                            <input type="url" name="facebook" placeholder="Facebook"
-                                value="https://www.facebook.com/peachbrasil" class="form-control ">
+                            <input type="url" name="facebook" placeholder="Facebook" value="https://www.facebook.com/peachbrasil" class="form-control ">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label"><strong>Instagram:</strong></label>
-                            <input type="url" name="instagram" placeholder="Instagram"
-                                value="https://www.instagram.com/peachbrasil" class="form-control ">
+                            <input type="url" name="instagram" placeholder="Instagram" value="https://www.instagram.com/peachbrasil" class="form-control ">
                         </div>
                     </div>
                 </div>
@@ -74,8 +71,7 @@
                     <div class="col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label"><strong>WhatsApp:</strong></label>
-                            <input type="text" name="whatsapp" placeholder="WhatsApp" value=""
-                                class="form-control cell-mask">
+                            <input type="text" name="whatsapp" placeholder="WhatsApp" value="" class="form-control cell-mask">
                         </div>
                     </div>
                 </div>

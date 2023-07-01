@@ -42,12 +42,12 @@ class User extends Model
 
     public function findById(int $id, string $columns = "*")
     {
-        return $this->find("id_user = :id", "id={$id}", $columns);
+        return $this->find("id = :id", "id={$id}", $columns);
     }
 
     public function findAll()
     {
-        $stmt = Connect::getInstance()->prepare("SELECT id_user, name, email, updated_at FROM users");
+        $stmt = Connect::getInstance()->prepare("SELECT id, name, email, updated_at FROM users");
         $stmt->execute();
 
         $users = $stmt->fetchAll();
@@ -108,7 +108,7 @@ class User extends Model
     public function updateUser(string $userId) 
     {
         
-        $this->update(self::$entity, $this->safe(), "id_user=:id", "id={$userId}");
+        $this->update(self::$entity, $this->safe(), "id=:id", "id={$userId}");
         if ($this->fail()) {
             $this->message->error("Erro ao atualizar, verifique os dados!");
             return null;
@@ -119,7 +119,7 @@ class User extends Model
     }
 
     public function deleteUser(string $userId) {
-        $this->delete(self::$entity, "id_user = :id", $userId);
+        $this->delete(self::$entity, "id = :id", $userId);
         if ($this->fail()) {
             $this->message->error("Erro ao deletar usuário!" . $this->fail());
             return null;

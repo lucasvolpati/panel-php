@@ -42,11 +42,11 @@ use \PDOException;
         return self::$instance;
       }
 
-      final private function __construct() {
+      final public function __construct() {
 
       }
 
-      final private function __clone() {
+      final public function __clone() {
 
       }
  }

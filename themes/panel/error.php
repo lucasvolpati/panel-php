@@ -1,5 +1,5 @@
-<?php 
-    $v->layout("template"); 
+<?php
+$this->layout("template");
 ?>
 
 <main>

@@ -1,15 +1,15 @@
-<?php 
-    $v->layout("template"); 
+<?php
+$this->layout("template");
 
-    use Source\Models\User;
+use Source\Models\User;
 
-    $user = new User();
+$user = new User();
 
-    
+
 ?>
 
 <main id="main-new">
-    
+
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -44,40 +44,38 @@
         </div>
 
         <?php
-            //$data = (object) filter_input_array(INPUT_GET, FILTER_DEFAULT);
-            // $name = filter_input(INPUT_GET, "name", FILTER_DEFAULT);
-            // $data = (object) [
-            //     "name" => filter_input(INPUT_GET, "name", FILTER_DEFAULT),
-            //     "email" => filter_input(INPUT_GET, "email", FILTER_DEFAULT),
-            //     "password" => filter_input(INPUT_GET, "pass", FILTER_DEFAULT)
-            // ];
+        //$data = (object) filter_input_array(INPUT_GET, FILTER_DEFAULT);
+        // $name = filter_input(INPUT_GET, "name", FILTER_DEFAULT);
+        // $data = (object) [
+        //     "name" => filter_input(INPUT_GET, "name", FILTER_DEFAULT),
+        //     "email" => filter_input(INPUT_GET, "email", FILTER_DEFAULT),
+        //     "password" => filter_input(INPUT_GET, "pass", FILTER_DEFAULT)
+        // ];
 
-            $data = filter_input_array(INPUT_GET, FILTER_DEFAULT);
+        $data = filter_input_array(INPUT_GET, FILTER_DEFAULT);
 
-            if (key_exists("name", $data)) {
-                $user->bootstrap(
-                    $data['name'],
-                    $data['email'],
-                    $data['pass']
-                );
-        
-                if (in_array("", $data)) {
-                    echo $user->message()->error("Preencha todos os dados.");
-                }else if(!filter_var($user->email, FILTER_VALIDATE_EMAIL)) {
-                    echo $user->message()->error("E-mail inválido, favor verificar.");
-                }else if(!is_passwd($data['pass'])) {
-                    $min = CONF_PASSWD_MIN_LEN;
-                    $max = CONF_PASSWD_MAX_LEN;
-                    echo $user->message()->error("A senha deve conter entre {$min} e {$max} caracteres.");
-                }
-                else if(!$user->save()) {
-                    echo $user->message();
-                }
-                else {
-                    echo $user->message()->success("Cadastro realizado com sucesso!");
-                }
+        if (key_exists("name", $data)) {
+            $user->bootstrap(
+                $data['name'],
+                $data['email'],
+                $data['pass']
+            );
+
+            if (in_array("", $data)) {
+                echo $user->message()->error("Preencha todos os dados.");
+            } else if (!filter_var($user->email, FILTER_VALIDATE_EMAIL)) {
+                echo $user->message()->error("E-mail inválido, favor verificar.");
+            } else if (!is_passwd($data['pass'])) {
+                $min = CONF_PASSWD_MIN_LEN;
+                $max = CONF_PASSWD_MAX_LEN;
+                echo $user->message()->error("A senha deve conter entre {$min} e {$max} caracteres.");
+            } else if (!$user->save()) {
+                echo $user->message();
+            } else {
+                echo $user->message()->success("Cadastro realizado com sucesso!");
             }
+        }
         ?>
     </form>
-    
-    </main>
+
+</main>
