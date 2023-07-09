@@ -39,6 +39,9 @@
   border: 1px solid #d94452;
   color: #d94452; }
 
+table td {
+  vertical-align: middle; }
+
 /*Import HEADER*/
 /* Seção Login Page */
 #main-login {
