@@ -1,25 +1,18 @@
 #main-user {
     display: flex;
     flex-direction: column;
-    background: #fff;
     margin: 40px auto;
     width: 95%;
     height: 100%;
-    padding: 30px 30px;
+    // padding: 30px 30px;
 
-    #buscar {
+    .top-row {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 20px;
-
-        input[type=text] {
-            width: 80%;
-            border: 1px solid #ced4da;
-            border-radius: 0.25rem;
-            padding: .375rem 0.75rem;
-            font-size: 1rem;
-        }
+        background: #fff;
+        padding: 30px 30px;
 
         a.btn-new {
             display: flex;
@@ -38,10 +31,27 @@
             }
         }
     }
+
+    #buscar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        input[type=text] {
+            width: 80%;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            padding: .375rem 0.75rem;
+            font-size: 1rem;
+        }
+    }
 }
 
 .table {
     margin: 0px;
+    background: #fff;
+    padding: 30px 30px;
 
     th {        
         @media screen and (max-width: 580px) {

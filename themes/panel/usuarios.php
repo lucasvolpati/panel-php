@@ -26,16 +26,19 @@ $this->layout("_template", ['title' => $this->e($title)]);
     }
 
     ?>
-    <div id="buscar">
+    <div class="top-row">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?= url("/") ?>">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Usuários</li>
             </ol>
         </nav>
-        <!-- <input type="text" name="seach" id="seach" placeholder="Buscar"> -->
 
         <a href="<?= url() ?>/novo-usuario" class="btn btn-primary btn-new">Novo <i class="fas fa-plus-circle"></i></a>
+    </div>
+    
+    <div id="buscar">
+        <!-- <input type="text" name="seach" id="seach" placeholder="Buscar"> -->
     </div>
 
 
