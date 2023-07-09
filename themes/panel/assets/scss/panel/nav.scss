@@ -19,7 +19,7 @@ body {
     font-size: 10pt;
     left: 0;
     top: 0;
-    width: 200px;
+    width: 60px;
     height: 100%;
     color: $white;
     background: $gray-nav;
@@ -217,7 +217,7 @@ body.active {
 
 body.active #nav {
     text-align: center;
-    width: 60px;
+    width: 200px;
 
     &::-webkit-scrollbar {
         width: 0px;
