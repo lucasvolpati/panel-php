@@ -14,7 +14,7 @@ $this->insert("includes/head", ['title' => $this->e($title)]);
 ?>
 
 
-<body id="body">
+<body id="body" class="active">
 
     <?php if ($_SESSION['login']) : ?>
         <?php

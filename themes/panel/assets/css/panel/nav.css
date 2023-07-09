@@ -16,6 +16,7 @@ body {
   font-size: 10pt;
   left: 0;
   top: 0;
+  width: 200px;
   width: 60px;
   height: 100%;
   color: #fff;
@@ -143,7 +144,7 @@ body.active {
 
 body.active #nav {
   text-align: center;
-  width: 200px; }
+  width: 60px; }
   body.active #nav::-webkit-scrollbar {
     width: 0px; }
   body.active #nav #head {
