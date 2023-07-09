@@ -114,7 +114,8 @@ body {
   #sub-nav .user-container h3 {
     color: #000;
     cursor: pointer;
-    font-size: 15pt;
+    font-size: 13pt;
+    margin-bottom: 0;
     font-weight: normal; }
     #sub-nav .user-container h3 .fa-user {
       margin-right: 10px; }

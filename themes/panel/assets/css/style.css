@@ -207,9 +207,11 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     background: #fff;
     padding: 30px 30px; }
+    #main-user .top-row .breadcrumb {
+      margin-bottom: 0 !important; }
     #main-user .top-row a.btn-new {
       display: flex;
       justify-content: center;
@@ -234,28 +236,29 @@ body::-webkit-scrollbar {
       padding: .375rem 0.75rem;
       font-size: 1rem; }
 
-.table {
-  margin: 0px;
+.table-row {
   background: #fff;
   padding: 30px 30px; }
-  @media screen and (max-width: 580px) {
-    .table th:nth-child(4) {
-      display: none; }
-    .table th:nth-child(5) {
-      display: none; } }
-  @media screen and (max-width: 580px) {
-    .table td:nth-child(4) {
-      display: none; }
-    .table td:nth-child(5) {
-      display: none; } }
-  .table td:nth-child(5) .btn-primary {
-    margin-right: 10px; }
-  .table td .visible {
-    color: #35ba9b; }
-  .table td .hidden {
-    color: #d94452; }
-  .table td a .fa-external-link-alt {
-    margin-left: 10px; }
+  .table-row .table {
+    margin: 0px; }
+    @media screen and (max-width: 580px) {
+      .table-row .table th:nth-child(4) {
+        display: none; }
+      .table-row .table th:nth-child(5) {
+        display: none; } }
+    @media screen and (max-width: 580px) {
+      .table-row .table td:nth-child(4) {
+        display: none; }
+      .table-row .table td:nth-child(5) {
+        display: none; } }
+    .table-row .table td:nth-child(5) .btn-primary {
+      margin-right: 10px; }
+    .table-row .table td .visible {
+      color: #35ba9b; }
+    .table-row .table td .hidden {
+      color: #d94452; }
+    .table-row .table td a .fa-external-link-alt {
+      margin-left: 10px; }
 
 /* Editar USUARIO*/
 #main-new {

@@ -10,9 +10,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         background: #fff;
         padding: 30px 30px;
+
+        .breadcrumb {
+            margin-bottom: 0 !important;
+        }
 
         a.btn-new {
             display: flex;
@@ -48,65 +52,68 @@
     }
 }
 
-.table {
-    margin: 0px;
+.table-row {
     background: #fff;
     padding: 30px 30px;
 
-    th {        
-        @media screen and (max-width: 580px) {
-            &:nth-child(4) {
-                display: none;
+    .table {
+        margin: 0px;
+
+        th {        
+            @media screen and (max-width: 580px) {
+                &:nth-child(4) {
+                    display: none;
+                }
+
+                &:nth-child(5) {
+                    display: none;
+                }
+            }
+        }
+
+        td {
+            @media screen and (max-width: 580px) {
+                &:nth-child(4) {
+                    display: none;
+                }
+
+                &:nth-child(5) {
+                    display: none;
+                }
             }
 
             &:nth-child(5) {
-                display: none;
+                .btn-primary {
+                    margin-right: 10px;
+                }
+                //i {
+                    // padding: 8px;
+                    // font-size: 10pt;
+                    // border-radius: 0.25rem;
+
+                    // &:nth-child(1) {
+                    //     margin-right: 10px;
+
+                    // }
+
+                    // &:nth-child(2) {
+                        
+                    // }
+                //}
             }
-        }
-    }
 
-    td {
-        @media screen and (max-width: 580px) {
-            &:nth-child(4) {
-                display: none;
+            .visible {
+                color: $success;
             }
 
-            &:nth-child(5) {
-                display: none;
+            .hidden {
+                color: $error;
             }
-        }
 
-        &:nth-child(5) {
-            .btn-primary {
-                margin-right: 10px;
-            }
-            //i {
-                // padding: 8px;
-                // font-size: 10pt;
-                // border-radius: 0.25rem;
-
-                // &:nth-child(1) {
-                //     margin-right: 10px;
-
-                // }
-
-                // &:nth-child(2) {
-                    
-                // }
-            //}
-        }
-
-        .visible {
-            color: $success;
-        }
-
-        .hidden {
-            color: $error;
-        }
-
-        a {
-            .fa-external-link-alt {
-                margin-left: 10px;
+            a {
+                .fa-external-link-alt {
+                    margin-left: 10px;
+                }
             }
         }
     }
