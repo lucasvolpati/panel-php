@@ -52,17 +52,18 @@ $this->layout("_template", ['title' => $this->e($title)]);
         <tbody>
             <?php
             for ($i = 0; $i < count($users); $i++) {
-                echo "<tr>" . "\n";
-                echo "<th scope='row'>{$users[$i]->id}</th>" . "\n";
-                echo "<td>{$users[$i]->name}</td>" . "\n";
-                echo "<td>{$users[$i]->email}</td>" . "\n";
-                echo "<td>" . date_fmt($users[$i]->updated_at) . "</td>" . "\n";
-                echo "<td>
-                                    <a class='btn btn-primary' href='editar-usuario&id={$users[$i]->id}'><i id='edit' class='fas fa-pencil-alt'></i></a>
-                                    <button id='{$users[$i]->id}' class='btn btn-danger deleteBtn' ><i class='fas fa-trash'></i></button>
-                                    
-                                </td>" . "\n";
-                echo "</tr>"; //onclick='deleteUser({$users[$i]->id})'
+                echo "
+                        <tr>
+                            <th scope='row'>{$users[$i]->id}</th>
+                            <td>{$users[$i]->name}</td>
+                            <td>{$users[$i]->email}</td>
+                            <td>" . date_fmt($users[$i]->updated_at) . "</td>
+                            <td>
+                                <a class='btn btn-primary btn-sm' href='editar-usuario&id={$users[$i]->id}'><i id='edit' class='fas fa-pencil-alt'></i></a>
+                                <button id='{$users[$i]->id}' class='btn btn-danger btn-sm deleteBtn' ><i class='fas fa-trash'></i></button>
+                            </td>
+                        </tr>
+                    "; //onclick='deleteUser({$users[$i]->id})'
             }
 
 

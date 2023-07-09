@@ -95,8 +95,8 @@ $all = $depo->findAll();
                                     <td>" . date_fmt($all[$i]->created_at) . "</td>
                                     <td>" . date_fmt($all[$i]->updated_at) . "</td>
                                     <td>
-                                        <a class='btn btn-primary' href='editar-depoimento&id={$all[$i]->id}'><i id='edit' class='fas fa-pencil-alt'></i></a>
-                                        <button id='{$all[$i]->id}' class='btn btn-danger deleteBtn' ><i class='fas fa-trash'></i></button>
+                                        <a class='btn btn-primary btn-sm' href='editar-depoimento&id={$all[$i]->id}'><i id='edit' class='fas fa-pencil-alt'></i></a>
+                                        <button id='{$all[$i]->id}' class='btn btn-danger btn-sm deleteBtn' ><i class='fas fa-trash'></i></button>
                                     </td>
                                 </tr>
                             "; //data-bs-toggle='modal' data-bs-target='#modalDelete'

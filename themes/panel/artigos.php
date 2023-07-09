@@ -60,8 +60,8 @@ $this->layout("_template", ['title' => $this->e($title)]);
                         <td>" . date_fmt($articles[$i]->created_at) . "</td>
                         <td>" . date_fmt($articles[$i]->updated_at) . "</td>
                         <td>
-                            <a class='btn btn-primary' href='editar-depoimento&id={$articles[$i]->id}'><i id='edit' class='fas fa-pencil-alt'></i></a>
-                            <button id='{$articles[$i]->id}' class='btn btn-danger deleteBtn' ><i class='fas fa-trash'></i></button>
+                            <a class='btn btn-primary btn-sm' href='editar-depoimento&id={$articles[$i]->id}'><i id='edit' class='fas fa-pencil-alt'></i></a>
+                            <button id='{$articles[$i]->id}' class='btn btn-danger btn-sm deleteBtn' ><i class='fas fa-trash'></i></button>
                         </td>
                     </tr>
                     ";
