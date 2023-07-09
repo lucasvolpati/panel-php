@@ -39,7 +39,7 @@
   border: 1px solid #d94452;
   color: #d94452; }
 
-table td {
+table tbody :is(td, th) {
   vertical-align: middle; }
 
 /*Import HEADER*/
