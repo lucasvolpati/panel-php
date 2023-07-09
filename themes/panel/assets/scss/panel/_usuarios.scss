@@ -1,10 +1,9 @@
 #main-user {
     display: flex;
     flex-direction: column;
-    margin: 40px auto;
+    margin: 30px auto;
     width: 95%;
     height: 100%;
-    // padding: 30px 30px;
 
     .top-row {
         display: flex;
@@ -12,7 +11,7 @@
         align-items: center;
         margin-bottom: 10px;
         background: #fff;
-        padding: 30px 30px;
+        padding: 20px;
 
         .breadcrumb {
             margin-bottom: 0 !important;
@@ -36,94 +35,91 @@
         }
     }
 
-    #buscar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
+    .main-row {
+        background: #fff;
+        padding: 20px;
+        
+        .buscar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
 
-        input[type=text] {
-            width: 80%;
-            border: 1px solid #ced4da;
-            border-radius: 0.25rem;
-            padding: .375rem 0.75rem;
-            font-size: 1rem;
+            input[type=text] {
+                width: 100%;
+                border: 1px solid #ced4da;
+                border-radius: 0.25rem;
+                padding: .375rem 0.75rem;
+                font-size: 1rem;
+            }
         }
-    }
-}
 
-.table-row {
-    background: #fff;
-    padding: 30px 30px;
+        .table {
+            margin: 0px;
 
-    .table {
-        margin: 0px;
+            th {        
+                @media screen and (max-width: 580px) {
+                    &:nth-child(4) {
+                        display: none;
+                    }
 
-        th {        
-            @media screen and (max-width: 580px) {
-                &:nth-child(4) {
-                    display: none;
+                    &:nth-child(5) {
+                        display: none;
+                    }
+                }
+            }
+
+            td {
+                @media screen and (max-width: 580px) {
+                    &:nth-child(4) {
+                        display: none;
+                    }
+
+                    &:nth-child(5) {
+                        display: none;
+                    }
                 }
 
                 &:nth-child(5) {
-                    display: none;
+                    .btn-primary {
+                        margin-right: 10px;
+                    }
+                    //i {
+                        // padding: 8px;
+                        // font-size: 10pt;
+                        // border-radius: 0.25rem;
+
+                        // &:nth-child(1) {
+                        //     margin-right: 10px;
+
+                        // }
+
+                        // &:nth-child(2) {
+                            
+                        // }
+                    //}
                 }
-            }
-        }
 
-        td {
-            @media screen and (max-width: 580px) {
-                &:nth-child(4) {
-                    display: none;
+                .visible {
+                    color: $success;
                 }
 
-                &:nth-child(5) {
-                    display: none;
+                .hidden {
+                    color: $error;
                 }
-            }
 
-            &:nth-child(5) {
-                .btn-primary {
-                    margin-right: 10px;
-                }
-                //i {
-                    // padding: 8px;
-                    // font-size: 10pt;
-                    // border-radius: 0.25rem;
-
-                    // &:nth-child(1) {
-                    //     margin-right: 10px;
-
-                    // }
-
-                    // &:nth-child(2) {
-                        
-                    // }
-                //}
-            }
-
-            .visible {
-                color: $success;
-            }
-
-            .hidden {
-                color: $error;
-            }
-
-            a {
-                .fa-external-link-alt {
-                    margin-left: 10px;
+                a {
+                    .fa-external-link-alt {
+                        margin-left: 10px;
+                    }
                 }
             }
         }
     }
-}
 
-/* Editar USUARIO*/ 
-#main-new {
-    padding: 0px 30px;
-    margin: 40px 0px;
-
+    /*
+    * Editar/Novo
+    */ 
     form {
         padding: 0px 20px 20px 20px;
         background: #fff;
@@ -147,9 +143,5 @@
         .col-md-4 {
             width: 100%;
         }
-    }
-
-    nav {
-        padding: 0 0 20px 0;
     }
 }
