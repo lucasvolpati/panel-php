@@ -15,6 +15,10 @@
 
         .breadcrumb {
             margin-bottom: 0 !important;
+
+            nav {
+                font-size: 11pt;
+            }
         }
 
         a.btn-new {
@@ -121,9 +125,6 @@
     * Editar/Novo
     */ 
     form {
-        padding: 0px 20px 20px 20px;
-        background: #fff;
-        border: 1px solid rgb(227, 227, 227);
         font-size: 11pt;
 
         input {

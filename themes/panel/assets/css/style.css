@@ -215,6 +215,8 @@ body::-webkit-scrollbar {
     padding: 20px; }
     #main-user .top-row .breadcrumb {
       margin-bottom: 0 !important; }
+      #main-user .top-row .breadcrumb nav {
+        font-size: 11pt; }
     #main-user .top-row a.btn-new {
       display: flex;
       justify-content: center;
@@ -262,9 +264,6 @@ body::-webkit-scrollbar {
       #main-user .main-row .table td a .fa-external-link-alt {
         margin-left: 10px; }
   #main-user form {
-    padding: 0px 20px 20px 20px;
-    background: #fff;
-    border: 1px solid #e3e3e3;
     font-size: 11pt; }
     #main-user form input::placeholder {
       font-size: 11pt; }
