@@ -20,7 +20,8 @@
     },
     "autoload": {
         "psr-4" : {
-            "Source\\": "source/"
+            "Source\\": "source/",
+            "Database\\Migrations\\": "database/migrations/"
         },
         "files": [
             "source/Support/Config.php",
@@ -32,7 +33,9 @@
         "league/plates": "3.*",
         "coffeecode/router": "2.*",
         "coffeecode/uploader": "2.*",
-        "coffeecode/cropper": "2.*"
+        "coffeecode/cropper": "2.*",
+        "illuminate/database": "^12.1",
+        "illuminate/events": "^12.1"
     },
     "license": "MIT"
 }

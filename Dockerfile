@@ -33,6 +33,8 @@ COPY . /var/www/html
 
 RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
 
+RUN ["/bin/bash", "-c", "set -o pipefail && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer"]
+
 EXPOSE 80
 
 ENTRYPOINT ["/bin/bash", "-c", "apachectl -D FOREGROUND"]
