@@ -1,7 +1,8 @@
 
 # Created by https://www.toptal.com/developers/gitignore/api/composer,windows,linux,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=composer,windows,linux,macos
-
+/.idea/
+/docker/database/*
 ### Composer ###
 composer.phar
 /vendor/
