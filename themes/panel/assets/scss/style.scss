@@ -1,32 +1,12 @@
-/*Import CONFIG*/
-@import "reset";
-@import "variables";
-@import "message";
-@import "custom";
-
-/*Import HEADER*/
-// @import "panel/nav";
-
-/* Seção Login Page */
-@import "login";
-
-/* Seção Home Painel */
-@import "panel/home";
-
-/* Seção Usuários */
-@import "panel/usuarios";
-
-/* Seção Depoimentos */
-@import "panel/testimonials";
-
-/* Seção Paginas */
-@import "panel/paginas";
-
-/* Seção Blog */
-@import "panel/blog";
-
-/* Seção Sistema */
-@import "panel/sistema";
-
-/*Import FOOTER*/
-@import "footer";
+@use "variables";
+@use "reset";
+@use "message";
+@use "custom";
+@use "login";
+@use "panel/home";
+@use "panel/usuarios";
+@use "panel/testimonials";
+@use "panel/paginas";
+@use "panel/blog";
+@use "panel/sistema";
+@use "footer";

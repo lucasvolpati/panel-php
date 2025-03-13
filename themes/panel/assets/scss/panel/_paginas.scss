@@ -1,3 +1,5 @@
+@use "../variables";
+
 body {
     &::-webkit-scrollbar {
         display: none;
@@ -24,7 +26,7 @@ body {
 
     form {
         padding: 0px 20px 20px 20px;
-        background: $white;
+        background: variables.$white;
         border: 1px solid rgb(227, 227, 227);
         font-size: 11pt;
 
@@ -57,7 +59,7 @@ body {
         ul {
             display: flex;
             margin-bottom: 50px;
-            background: $gray-sub-nav;
+            background: variables.$gray-sub-nav;
             width: 100%;
             padding: 20px 10px;
             border-radius: 3px;
@@ -69,8 +71,8 @@ body {
                 &:nth-child(1).active a,
                 &:nth-child(2).active a {
                     border: none;
-                    background: $edit;
-                    color: $white;
+                    background: variables.$edit;
+                    color: variables.$white;
                     padding: .375rem .75rem;
                     border: 1px solid transparent;
                     border-radius: .25rem;
@@ -79,7 +81,7 @@ body {
                 }
 
                 a {
-                    color: $black;
+                    color: variables.$black;
                     padding: .375rem .75rem;
                     font-size: 1rem;
                     line-height: 1.5rem;

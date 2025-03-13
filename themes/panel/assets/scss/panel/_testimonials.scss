@@ -1,5 +1,7 @@
+@use "../variables";
+
 #main-testimonials {
-    background: $white;
+    background: variables.$white;
     margin: 20px;
 
     .col-md-2 {

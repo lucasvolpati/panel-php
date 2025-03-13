@@ -1,8 +1,10 @@
+@use "../variables";
+
 .system-main {
     margin: 20px;
 
     form {
-        background: $white;
+        background: variables.$white;
     }
 
     .cards-container {
@@ -36,7 +38,7 @@
                     h3 {
                         margin: 15px 20px;
                         font-size: 13pt;
-                        color: $black;
+                        color: variables.$black;
                     }
 
                     i {
@@ -53,7 +55,7 @@
 
                 .card {
                     i {
-                        color: $gray !important;
+                        color: variables.$gray !important;
                     }
                 }
         
@@ -73,7 +75,7 @@
 
 .content-view {
     margin: 20px;
-    background: $white;
+    background: variables.$white;
 
     nav {
         padding: 20px 0 0 20px;

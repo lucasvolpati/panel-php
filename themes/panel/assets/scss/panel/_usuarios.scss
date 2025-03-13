@@ -1,3 +1,5 @@
+@use "../variables";
+
 #main-user {
     display: flex;
     flex-direction: column;
@@ -105,11 +107,11 @@
                 }
 
                 .visible {
-                    color: $success;
+                    color: variables.$success;
                 }
 
                 .hidden {
-                    color: $error;
+                    color: variables.$error;
                 }
 
                 a {

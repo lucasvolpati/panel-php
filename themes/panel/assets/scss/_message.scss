@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "variables";
+
 .trigger {
     padding: 15px;
     font-size: 0.875em;
@@ -9,23 +12,23 @@
 .info {
     background: rgba($color: #3aadd9, $alpha: 0.2);
     border: 1px solid #3aadd9;
-    color: $info;
+    color: variables.$info;
 }
 
 .success {
     background: rgba($color: #35ba9b, $alpha: 0.2);
     border: 1px solid #35ba9b;
-    color: $success;
+    color: variables.$success;
 }
 
 .warning {
     background: rgba($color: #f5b945, $alpha: 0.2);
     border: 1px solid #f5b945;
-    color: $warning;
+    color: variables.$warning;
 }
 
 .error {
     background: rgba($color: #d94452, $alpha: 0.2);
     border: 1px solid #d94452;
-    color: $error;
+    color: variables.$error;
 }
