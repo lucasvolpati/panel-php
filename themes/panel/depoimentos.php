@@ -5,28 +5,23 @@ use Source\Models\Testimonials;
 $this->layout("_template", ['title' => $this->e($title)]);;
 
 $depo = new Testimonials();
-$all = $depo->findAll();
+$all = $depo->all();
 
-
-
-// var_dump($all);
 ?>
 
 <main id="main-testimonials" class="content-view">
     <?php
-    $delete = new Testimonials();
 
     $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
 
     if ($id) {
-        // var_dump($id);
-        if (!$delete->deleteTestimonial($id)) {
-            echo $delete->message();
-        } else {
-            echo $delete->message()->success("Depoimento deletado com sucesso!");
+        $delete = Testimonials::find($id);
+        if (!$delete->delete()) {
+            echo $delete->message()->error('Erro ao excluir depoimento.');
         }
-    }
 
+        echo $delete->message()->success("Depoimento deletado com sucesso!");
+    }
 
     ?>
     <nav aria-label="breadcrumb">

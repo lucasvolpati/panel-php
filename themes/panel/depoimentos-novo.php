@@ -7,22 +7,24 @@ $this->layout("_template", ['title' => $this->e($title)]);
 
     use Source\Models\Testimonials;
 
-    $data = filter_input_array(INPUT_GET, FILTER_SANITIZE_SPECIAL_CHARS);
+    $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS);
 
-    if (key_exists("name", $data)) {
+    if ($data) {
+        if (key_exists("name", $data)) {
 
-        $depo = new Testimonials(1);
-        $depo->bootstrap($data['name'], $data['email'], $data['testimonial'], $data['visibility']);
+            $depo = new Testimonials();
+            $depo->name = $data['name'];
+            $depo->email = $data['email'];
+            $depo->testimonial = $data['testimonial'];
+            $depo->visibility = $data['visibility'];
 
-        var_dump($depo);
-        exit();
-        // if (!$depo->save()) {
-        //     echo $depo->fail();
-        //     return null;
-        // }
+            if (!$depo->save()) {
+                $depo->message()->error("Depoimento não cadastrado.");
+                return null;
+            }
 
-        echo $depo->save();
-        //echo $depo->message()->success("Depoimento cadastrado com sucesso.");
+            echo $depo->message()->success("Depoimento cadastrado com sucesso.");
+        }
     }
 
     ?>
@@ -34,9 +36,7 @@ $this->layout("_template", ['title' => $this->e($title)]);
         </ol>
     </nav>
     <div class="container-main">
-        <form action="" method="GET" class="border p-4 form-validate">
-
-            <!-- <input type="hidden" name="_method" value="POST"> -->
+        <form action="" method="POST" class="border p-4 form-validate">
             <div class="form-group mb-3">
                 <label class="form-label"><strong>Nome:</strong></label>
                 <input type="text" name="name" placeholder="Nome" required class="form-control required">

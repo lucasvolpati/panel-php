@@ -6,10 +6,9 @@ $this->layout("_template", ['title' => $this->e($title)]);;
 
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
 
-$depo = new Testimonials();
-$testimonial = $depo->findById($id);
 
 if ($id) {
+    $testimonial = new Testimonials::find($id);
     $depo->id = $id;
 }
 

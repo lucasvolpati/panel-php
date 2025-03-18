@@ -36,6 +36,7 @@ $route->get("/nova-pagina", "Web:new_page");
 $route->get("/depoimentos", "Web:testimonials");
 $route->get("/editar-depoimento", "Web:edit_testimonials");
 $route->get("/novo-depoimento", "Web:new_testimonials");
+$route->post("/novo-depoimento", "Web:new_testimonials");
 
 /** MENU ARTIGOS */
 $route->get("/artigos", "Web:articles");

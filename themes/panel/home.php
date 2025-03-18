@@ -5,7 +5,7 @@ use Source\Models\User;
 use Source\Models\Article;
 
 $users = (new User())->findAll();
-$depo = (new Testimonials())->findAll();
+$depo = (new Testimonials())->all();
 $article = (new Article())->findAll();
 
 $this->layout("_template", ['title' => $this->e($title)]);

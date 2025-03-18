@@ -25,27 +25,21 @@
     <title><?= $this->e($title) ?></title>
 </head>
 <body>
-    <style>
-        img {
-            mix-blend-mode: multiply;
-        }
-    </style>
-   
     <main id="main-login">
-        <img src="<?= theme("/assets/img/lock.jpg") ?>" alt="logo desenvolvedor">
+        <h1>Painel Admin</h1>
 
         <form method="post" id="content" novalidate>
-            <label for="email"><i class="fa-solid fa-lock"></i>Email</label>
-            <input type="email" name="email" id="email" placeholder="Email">
+            <label for="email"><i class="fa-solid fa-lock"></i>E-mail</label>
+            <input type="email" name="email" id="email" placeholder="E-mail">
 
             <label for="senha"><i class="fa-solid fa-key"></i>Senha</label>
             <input type="password" name="password" id="senha" placeholder="Senha">
 
-            <button type="submit"><i class="fa-solid fa-arrow-right-to-bracket"></i>FAZER LOGIN</button>
+            <button type="submit"><i class="fa-solid fa-arrow-right-to-bracket"></i>ENTRAR</button>
         </form>
 
         <div class="copy">
-            <p>&copy; Desenvolvido por <a href="https://lucasalcantara.dev.br">Luk</a> <a href="https://venicio.dev.br">e Vini &trade;</a>  | <script> document.write(new Date().getFullYear()) </script></p>
+            <p>&copy; Desenvolvido por <a href="https://lucasalcantara.dev.br">Lucas</a> <a href="https://venicio.dev.br">e Vini</a>  | <script> document.write(new Date().getFullYear()) </script></p>
         </div>
 
         <section class="validate">
