@@ -55,8 +55,8 @@ const CONF_SES_PATH = __DIR__ . "/../../storage/sessions";
 /**
 * VIEWS
 */
-const CONF_VIEW_PATH = __DIR__ . "/../../assets/panel";
-const CONF_VIEW_THEME = "panel";
+const CONF_VIEW_PATH = __DIR__ . "/../../themes/panel";
+const CONF_PANEL_THEME = "panel";
 const CONF_VIEW_EXT = "php";
 
 /**

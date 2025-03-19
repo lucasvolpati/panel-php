@@ -4,55 +4,56 @@ ob_start();
 require "vendor/autoload.php";
 
 /**
- * BBOSTRAP
+ * BOOTSTRAP
  */
 use Source\Core\Session;
-use Source\Models\User;
 use CoffeeCode\Router\Router;
+use Source\App\Middlewares\AuthMiddleware;
 
 $session = new Session();
 $route = new Router(url(), ":");
 
-
 /**
  * PRINCIPAL ROUTES
  */
-$route->namespace("Source\App");
-$route->get("/", "Web:home");
-$route->get("/login", "Web:login");
-$route->post("/login", "Web:login");
-$route->get("/exit", "Web:exit");
+$route->namespace("Source\App\Controllers");
+$route->get("/login", "AuthController:index", 'login.index');
+$route->post("/login", "AuthController:attempt");
+
+$route->group('', AuthMiddleware::class);
+$route->get("/logout", "AuthController:logout");
+$route->get("/", "AuthController:home", 'panel.home');
 
 /** MENU USUÁRIOS */
-$route->get("/usuarios", "Web:users");
-$route->get("/editar-usuario", "Web:edit_user");
-$route->get("/novo-usuario", "Web:new_user");
+$route->get("/usuarios", "UserController:users");
+$route->get("/editar-usuario", "UserController:edit_user");
+$route->get("/novo-usuario", "UserController:new_user");
 
 /** MENU PÁGINAS */
-$route->get("/paginas", "Web:page");
-$route->get("/nova-pagina", "Web:new_page");
+//$route->get("/paginas", "Web:page");
+//$route->get("/nova-pagina", "Web:new_page");
 
 /** MENU DEPOIMENTOS */
-$route->get("/depoimentos", "Web:testimonials");
-$route->get("/editar-depoimento", "Web:edit_testimonials");
-$route->get("/novo-depoimento", "Web:new_testimonials");
-$route->post("/novo-depoimento", "Web:new_testimonials");
+$route->get("/depoimentos", "TestimonialController:testimonials");
+$route->get("/editar-depoimento", "TestimonialController:edit_testimonials");
+$route->get("/novo-depoimento", "TestimonialController:new_testimonials");
+$route->post("/novo-depoimento", "TestimonialController:new_testimonials");
 
 /** MENU ARTIGOS */
-$route->get("/artigos", "Web:articles");
-$route->get("/artigos/novo-artigo", "Web:new_article");
-$route->post("/artigos/novo-artigo", "Web:new_article");
+$route->get("/artigos", "ArticleController:articles");
+$route->get("/artigos/novo-artigo", "ArticleController:new_article");
+$route->post("/artigos/novo-artigo", "ArticleController:new_article");
 
 
 /** MENU SISTEMA */
-$route->get("/sistema", "Web:system");
-$route->get("/sistema/endereco", "Web:address_system");
-$route->get("/sistema/contato", "Web:contact_system");
-$route->get("/sistema/redes-sociais", "Web:social_system");
-$route->get("/sistema/loja-virtual", "Web:virtual_system");
-$route->get("/sistema/lgpd", "Web:lgpd_system");
-$route->get("/sistema/floater", "Web:floater_system");
-$route->get("/sistema/ftp", "Web:ftp_system");
+$route->get("/sistema", "SystemController:system");
+$route->get("/sistema/endereco", "SystemController:address_system");
+$route->get("/sistema/contato", "SystemController:contact_system");
+$route->get("/sistema/redes-sociais", "SystemController:social_system");
+$route->get("/sistema/loja-virtual", "SystemController:virtual_system");
+$route->get("/sistema/lgpd", "SystemController:lgpd_system");
+$route->get("/sistema/floater", "SystemController:floater_system");
+$route->get("/sistema/ftp", "SystemController:ftp_system");
 
 
 /**

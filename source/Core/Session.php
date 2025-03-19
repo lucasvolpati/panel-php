@@ -14,7 +14,7 @@ class Session {
 
     public function __get($name)
     {
-        if($_SESSION[$name]) {
+        if(key_exists($name, $_SESSION)) {
             return $_SESSION[$name];
         }
 
@@ -29,14 +29,9 @@ class Session {
         return $this;
     }
 
-    public function unset(string $key): Session
-    {
-        unset($_SESSION[$key]);
-        return $this;
-    }
-
     public function destroy(): Session
     {
+        $_SESSION = [];
         session_destroy();
         return $this;
     }

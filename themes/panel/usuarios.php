@@ -1,7 +1,7 @@
 <?php
     use Source\Models\User;
 
-    $users = User::findAll();
+    $users = User::all();
     $this->layout("_template", ['title' => $this->e($title)]);
 ?>
 
@@ -10,13 +10,13 @@
         $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
 
         if ($id) {
-            $user = new User();
+//            $user = new User();
 
-            if (!$user->deleteUser($id)) {
-                echo $user->message();
-            } else {
-                echo $user->message()->success("Usuário deletado com sucesso!");
-            }
+//            if (!$user->deleteUser($id)) {
+//                echo $user->message();
+//            } else {
+//                echo $user->message()->success("Usuário deletado com sucesso!");
+//            }
         }
     ?>
 

@@ -62,10 +62,10 @@ function passwd_verify(string $password, string $hash): bool
 function theme(string $path = null) 
 {
     if ($path) {
-        return CONF_URL_BASE . "/themes/" . CONF_VIEW_THEME . "/" . ($path[0] == "/" ? mb_substr($path, 1) : $path);
+        return CONF_URL_BASE . "/themes/" . CONF_PANEL_THEME . "/" . ($path[0] == "/" ? mb_substr($path, 1) : $path);
     }
 
-    return CONF_URL_BASE . "/themes/" . CONF_VIEW_THEME;
+    return CONF_URL_BASE . "/themes/" . CONF_PANEL_THEME;
 }
 
 /**

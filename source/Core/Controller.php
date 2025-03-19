@@ -2,12 +2,20 @@
 
 namespace Source\Core;
 
-use Source\Core\View;
+use League\Plates\Engine;
 
-class Controller {
-	protected $view;
+abstract class Controller {
+    private Engine $engine;
+    protected Session $session;
 
-	public function __construct(string $pathToView = null) {
-		$this->view = new View($pathToView);
-	}
+    public function __construct()
+    {
+        $this->engine = new Engine(CONF_VIEW_PATH, CONF_VIEW_EXT);
+        $this->session = new Session();
+    }
+
+    public function render(string $templateName, array $data): string
+    {
+        return $this->engine->render($templateName, $data);
+    }
 }

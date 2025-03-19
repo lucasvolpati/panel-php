@@ -4,7 +4,7 @@ use Source\Models\Testimonials;
 use Source\Models\User;
 use Source\Models\Article;
 
-$users = (new User())->findAll();
+$users = (new User())->all();
 $depo = (new Testimonials())->all();
 $article = (new Article())->findAll();
 

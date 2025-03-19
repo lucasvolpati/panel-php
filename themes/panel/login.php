@@ -44,35 +44,44 @@
 
         <section class="validate">
         <?php
-          
-            $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS);
-            
-            if ($data) {
-                $email = $data['email'];
-                $password = $data['password'];
 
-                if (in_array("", $data)) {
-                    echo $message->error("Favor preencher todos os campos!");
-                    return null;
-                }elseif(!is_email($email)) {
-                    echo $message->error("Favor informar um e-mail válido!");
-                    return null;
-                }elseif(!is_passwd($password)) {
-                    echo $message->error("A senha deve conter entre 8 e 40 caracteres!");
-                    return null;
-                }elseif(!$user->findNameByEmail($email)) {
-                    echo $message->error("Email não cadastrado!");
-                    return null;
-                }
-                $dataUser = $user->findUserByEmail($email);
-                if($email == $dataUser->email && passwd_verify($password, $dataUser->password)) {
-                    $session->set("login", $email);
-                    
-                    echo "<script>document.location='".url("/")."'</script>";
-                }else {
-                    echo $message->error("Email ou senha inválidos, verifique e tente novamente!");
-                }
+            $fail = filter_input(INPUT_GET, 'login-failed', FILTER_DEFAULT);
+
+            if ($fail) {
+                $messageText = match ($fail) {
+                    'invalid.credentials' => 'Credenciais inválidas',
+                };
+
+                echo $message->error($messageText);
             }
+            
+//            if ($data) {
+//                $email = $data['email'];
+//                $password = $data['password'];
+//
+//                if (in_array("", $data)) {
+//                    echo $message->error("Favor preencher todos os campos!");
+//                    return null;
+//                }elseif(!is_email($email)) {
+//                    echo $message->error("Favor informar um e-mail válido!");
+//                    return null;
+//                }elseif(!is_passwd($password)) {
+//                    echo $message->error("A senha deve conter entre 8 e 40 caracteres!");
+//                    return null;
+//                }elseif(!$user->findNameByEmail($email)) {
+//                    echo $message->error("Email não cadastrado!");
+//                    return null;
+//                }
+//                $dataUser = $user->findUserByEmail($email);
+//                if($email == $dataUser->email && passwd_verify($password, $dataUser->password)) {
+//                    $session->set("login", $email);
+//
+//                    echo "<script>document.location='".url("/")."'</script>";
+//                }else {
+//                    echo $message->error("Email ou senha inválidos, verifique e tente novamente!");
+//                }
+//            }
+
         ?>
         </section>
     </main>

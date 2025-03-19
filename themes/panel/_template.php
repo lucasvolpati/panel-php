@@ -1,28 +1,16 @@
 <?php
 
 use Source\Models\User;
-use Source\Core\Session;
 
 $this->insert("includes/head", ['title' => $this->e($title)]);
 
-    $session = new Session();
-
-    if (!$session->login) {
-        echo "<script>document.location='".url("/login")."'</script>";
-    }
-
 ?>
-
 
 <body id="body" class="active">
 
-    <?php if ($_SESSION['login']) : ?>
-        <?php
-        $user = (new User())->findNameByEmail($_SESSION['login']);
-
-
-        ?>
-    <?php endif ?>
+    <?php
+        $user = User::where('email', $_SESSION['login'])->first();
+    ?>
 
     <!-- MENU DE NAVEGAÇÃO -->
     <nav id="nav">
@@ -36,7 +24,7 @@ $this->insert("includes/head", ['title' => $this->e($title)]);
 
         <p>Site</p>
 
-        <a href="<?= url() ?>/paginas"><i class="fas fa-file"></i> <span>Páginas</span></a>
+<!--        <a href="--><?php //= url() ?><!--/paginas"><i class="fas fa-file"></i> <span>Páginas</span></a>-->
         <a class="disabled"><i class="fas fa-users"></i> <span>Clientes</span></a>
         <a href=""><i class="fas fa-tag"></i> <span>Categorias</span></a>
         <a class="disabled"><i class="fas fa-image"></i> <span>Carrossel</span></a>
@@ -62,7 +50,7 @@ $this->insert("includes/head", ['title' => $this->e($title)]);
         <a href="<?= url("/sistema") ?>"><i class="fas fa-cog"></i> <span>Sistema</span></a>
         <a href="<?= url("/funcoes") ?>"><i class="fas fa-sitemap"></i> <span>Funções</span></a>
         <a href="<?= url("/permissoes") ?>"><i class="fas fa-lock"></i> <span>Permissões</span></a>
-        <a style="color: red;" href="<?= url("/exit") ?>"><i class="fas fa-sign-out-alt"></i> <span>Sair</span></a>
+        <a style="color: red;" href="<?= url("/logout") ?>"><i class="fas fa-sign-out-alt"></i> <span>Sair</span></a>
     </nav>
 
     <!-- SUB-MENU DE NAVEGAÇÃO -->
@@ -80,7 +68,7 @@ $this->insert("includes/head", ['title' => $this->e($title)]);
         <div class="user-container">
             <h3 id="username" name="username"><i class="fas fa-user"></i><?= $user->name ?><i class="fas fa-caret-down"></i></h3>
 
-            <a href=<?= url("/exit") ?> class="exit"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            <a href=<?= url("/logout") ?> class="exit"><i class="fas fa-sign-out-alt"></i> Sair</a>
         </div>
     </div>
 

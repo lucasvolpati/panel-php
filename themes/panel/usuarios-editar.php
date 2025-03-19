@@ -4,11 +4,7 @@
     $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
 
     $user = new User();
-    $userData = $user->findById($id);
-
-    if ($id) {
-        $user->id = $id;
-    }
+    $userData = User::find($id);
 
     $this->layout("_template", ['title' => $this->e($title)]);
 ?>
@@ -56,25 +52,25 @@
 <?php
     $data = filter_input_array(INPUT_GET, FILTER_DEFAULT);
 
-    if (key_exists("name", $data)) {
-        $user->bootstrap(
-            $data['name'],
-            $data['email'],
-            passwd($data['pass'])
-        );
-
-        if (in_array("", $data)) {
-            echo $user->message()->error("Preencha todos os dados.");
-        } else if (!filter_var($user->email, FILTER_VALIDATE_EMAIL)) {
-            echo $user->message()->error("E-mail inválido, favor verificar.");
-        } else if (!is_passwd($data['pass'])) {
-            $min = CONF_PASSWD_MIN_LEN;
-            $max = CONF_PASSWD_MAX_LEN;
-            echo $user->message()->error("A senha deve conter entre {$min} e {$max} caracteres.");
-        } else if (!$user->updateUser($user->id)) {
-            echo $user->message();
-        } else {
-            echo $user->message()->success("Usuário atualizado com sucesso!");
-        }
-    }
+//    if (key_exists("name", $data)) {
+//        $user->bootstrap(
+//            $data['name'],
+//            $data['email'],
+//            passwd($data['pass'])
+//        );
+//
+//        if (in_array("", $data)) {
+//            echo $user->message()->error("Preencha todos os dados.");
+//        } else if (!filter_var($user->email, FILTER_VALIDATE_EMAIL)) {
+//            echo $user->message()->error("E-mail inválido, favor verificar.");
+//        } else if (!is_passwd($data['pass'])) {
+//            $min = CONF_PASSWD_MIN_LEN;
+//            $max = CONF_PASSWD_MAX_LEN;
+//            echo $user->message()->error("A senha deve conter entre {$min} e {$max} caracteres.");
+//        } else if (!$user->updateUser($user->id)) {
+//            echo $user->message();
+//        } else {
+//            echo $user->message()->success("Usuário atualizado com sucesso!");
+//        }
+//    }
 ?>
