@@ -1,5 +1,6 @@
 <?php
 
+use Source\Core\Message;
 /*
  * ############
  * ##VALIDATE##
@@ -80,4 +81,10 @@ function date_fmt(?string $date = "now"): string
         return '--';
     }
     return (new DateTime($date))->format(CONF_DATE_BR);
+}
+
+function toast(string $message = "", string $method = "success"): string
+{
+    $handle = new Message();
+    return $handle->{$method}($message);
 }

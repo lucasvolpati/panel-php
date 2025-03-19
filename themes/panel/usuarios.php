@@ -130,6 +130,6 @@
             ]
         };
 
-        echo $message->{$content['method']}($content['message']);
+        echo toast($content['message'], $content['method']);
     }
 ?>
