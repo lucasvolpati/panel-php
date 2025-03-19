@@ -25,9 +25,10 @@ $route->get("/logout", "AuthController:logout");
 $route->get("/", "AuthController:home", 'panel.home');
 
 /** MENU USUÁRIOS */
-$route->get("/usuarios", "UserController:users");
-$route->get("/editar-usuario", "UserController:edit_user");
-$route->get("/novo-usuario", "UserController:new_user");
+$route->get("/usuarios/", 'UserController:index', 'panel.users');
+$route->get("/usuario/remover/{id}", 'UserController:remove', 'panel.users');
+$route->get("/usuario", "UserController:update", 'panel.users-update');
+$route->post("/usuario", "UserController:create");
 
 /** MENU PÁGINAS */
 //$route->get("/paginas", "Web:page");

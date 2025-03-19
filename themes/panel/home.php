@@ -6,7 +6,7 @@ use Source\Models\Article;
 
 $users = (new User())->all();
 $depo = (new Testimonials())->all();
-$article = (new Article())->findAll();
+$article = Article::all();
 
 $this->layout("_template", ['title' => $this->e($title)]);
 ?>

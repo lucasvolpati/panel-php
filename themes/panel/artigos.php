@@ -36,10 +36,9 @@ $this->layout("_template", ['title' => $this->e($title)]);
 
         <tbody>
             <?php
-            $article = new Article();
             $thumb = new Thumb();
 
-            $articles = $article->findAll();
+            $articles = Article::all();
 
 
             for ($i = 0; $i < count($articles); $i++) {

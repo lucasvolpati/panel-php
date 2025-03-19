@@ -17,7 +17,7 @@
     </div>
 
     <div class="main-row border">
-        <form method="get" action="" class="row g-3" novalidate>
+        <form id="createUser" method="get" action="" class="row g-3" novalidate>
             <div class="col-12">
                 <label for="inputName" class="form-label">Nome:</label>
                 <input name="name" type="text" class="form-control" id="inputName" placeholder="Nome">
@@ -39,7 +39,7 @@
             </div> -->
             <div class="col-12">
                 <a onclick="window.location.href='<?= url() ?>/usuarios'" class="btn btn-secondary">Voltar <i class="fas fa-reply"></i></a>
-                <button type="submit" class="btn btn-success">Cadastrar <i class="fas fa-save"></i></button>
+                <button type="submit" class="btn btn-success" onclick="document.querySelector('#createUser').submit()">Cadastrar <i class="fas fa-save"></i></button>
             </div>
         </form>
     </div>

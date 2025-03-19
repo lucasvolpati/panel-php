@@ -52,29 +52,7 @@ btnCancel.forEach((btn) => {
 })
 
  /************************************************************************
- * MODAL DELETE USER
- ***********************************************************************/
-
-//   deleteBtn.forEach((btn) => {
-//     btn.addEventListener("click", () => {
-//         setTimeout(() => {
-//             modal.classList.add('show')
-//         }, 300);
-   
-//         modal.style.display = 'block';
-        
-//         var id = btn.getAttribute("id")
-
-//         var deleteConfirm = document.querySelector("#deleteConfirm")
-
-//         deleteConfirm.setAttribute('href', '?id=' + id)
-        
-//     })
-//  })
-
-
- /************************************************************************
- * MODAL DELETE TESTIMONIAL
+ * MODAL DELETE
  ***********************************************************************/
 
   deleteBtn.forEach((btn) => {
@@ -84,13 +62,13 @@ btnCancel.forEach((btn) => {
         }, 300);
    
         modal.style.display = 'block';
-        
-        var id = btn.getAttribute("id")
 
-        var deleteConfirm = document.querySelector("#deleteConfirm")
+        const id = btn.getAttribute("id")
 
-        deleteConfirm.setAttribute('href', '?id=' + id)
+        const deleteConfirm = document.querySelector("#deleteConfirm")
+        const module = deleteConfirm.dataset.module
+
+        deleteConfirm.setAttribute('href', `/${module}/remover/${id}`)
         
     })
  })
-

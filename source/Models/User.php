@@ -12,4 +12,9 @@ class User extends Base
     }
 
     protected $table = 'users';
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
 }
