@@ -1,14 +1,14 @@
-# Painel CMS em php.
+# php CMS panel
 
-## Requisitos
+## Require
 - php >= 8.3
 
-## Instalar dependências
+## Installing Dependencies
 ```
 make composer-install
 ```
 
-## Executar migrations
+## Migrate
 
 ```
 make migrate
