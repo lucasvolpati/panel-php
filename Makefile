@@ -5,11 +5,11 @@ build:
 	@docker-compose up -d --build
 
 up:
-	@echo "Subindo containers"
+	@echo "Up containers"
 	@docker-compose up -d
 
 down:
-	@echo "Destruindo containers"
+	@echo "Destroy containers"
 	@docker-compose down
 
 composer-install:
@@ -20,9 +20,9 @@ composer-update:
 
 package ?=
 add:
-	@# add - Executar composer require: Ex.: make add package=rollbar/rollbar.
+	@# add - Execute composer require: Ex.: make add package=rollbar/rollbar.
 	@docker exec -it $(CONTAINER_HASH_API) sh -c "composer require --optimize-autoloader --prefer-dist ${package}"
 
 migrate:
-	@echo "Executando as migrations"
+	@echo "Migrating"
 	@docker exec -it $(CONTAINER_HASH_API) sh -c "php migrate.php"
